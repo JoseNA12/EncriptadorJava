@@ -1,6 +1,9 @@
 package servidor;
 
 
+import controlador.EscritorTxt;
+import controlador.EscritorXml;
+
 import java.io.*;
 import java.net.*;
 
@@ -21,12 +24,11 @@ public class Servidor {
     public void iniciar(){
         // running infinite loop for getting
         // client request
-        while (true)
-        {
+        while (true) {
             Socket s = null;
 
-            try
-            {
+            try {
+                EscritorXml x = new EscritorXml(); x.Escribir(null);
                 // socket object to receive incoming client requests
                 s = ss.accept();
 
