@@ -21,8 +21,6 @@ public class Controlador implements IValidable {
 
     public void ProcesarTexto(AlgoritmosDTO miDTO)
     {
-        System.out.println("Controlador.ProcesarTexto(dto)");
-
         String textoOriginal = miDTO.getTextoOriginal();
         Alfabeto miAlfabeto = miDTO.getAlfabeto();
         List<TipoAlgoritmo> algoritmos = miDTO.getAlgoritmos();
@@ -46,7 +44,7 @@ public class Controlador implements IValidable {
                         break;
 
                     case SUSTVIGENERE:
-                        resultado.agregarLineaResultado(SustVigenere.Codificar(textoOriginal));
+                        resultado.agregarLineaResultado(SustVigenere.Codificar(textoOriginal, "", miAlfabeto.getSimbolos()));
                         break;
                 }
             }
