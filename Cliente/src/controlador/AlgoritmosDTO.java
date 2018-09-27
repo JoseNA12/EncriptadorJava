@@ -6,23 +6,17 @@ public class AlgoritmosDTO {
 
     private String textoOriginal;
     private String parametroArg;
-    private Object miResultado;
-    private Object miAlfabeto;
-    private List<Object> algoritmos;
+    private String miResultado;
+    private String miAlfabeto;
+    private List<String> algoritmos;
     private Boolean modoCodificacion;
 
-    public AlgoritmosDTO(String textoOriginal, Object miResultado, Object miAlfabeto, List<Object> algoritmos, Boolean modoCodificacion) {
-        System.out.println("new DTO(texto, alfabeto, algoritmos, modo)");
+    public AlgoritmosDTO(String textoOriginal, String miResultado, String miAlfabeto, List<String> algoritmos, Boolean modoCodificacion) {
         this.textoOriginal = textoOriginal;
         this.miResultado = miResultado;
         this.miAlfabeto = miAlfabeto;
         this.algoritmos = algoritmos;
         this.modoCodificacion = modoCodificacion;
-    }
-
-    public AlgoritmosDTO(Object miAlfabeto) {
-        System.out.println("new DTO(nuevoAlfabeto)");
-        this.miAlfabeto = miAlfabeto;
     }
 
     public String getTextoOriginal() {
@@ -45,7 +39,7 @@ public class AlgoritmosDTO {
         return miResultado;
     }
 
-    public void setMiResultado(Object miResultado) {
+    public void setMiResultado(String miResultado) {
         this.miResultado = miResultado;
     }
 
@@ -53,15 +47,15 @@ public class AlgoritmosDTO {
         return this.miAlfabeto;
     }
 
-    public void setIdAlfabeto(Object miAlfabeto) {
+    public void setIdAlfabeto(String miAlfabeto) {
         this.miAlfabeto = miAlfabeto;
     }
 
-    public List<Object> getAlgoritmos() {
+    public List<String> getAlgoritmos() {
         return algoritmos;
     }
 
-    public void setAlgoritmos(List<Object> algoritmos) {
+    public void setAlgoritmos(List<String> algoritmos) {
         this.algoritmos = algoritmos;
     }
 

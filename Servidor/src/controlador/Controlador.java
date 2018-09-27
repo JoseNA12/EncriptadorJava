@@ -98,12 +98,22 @@ public class Controlador implements IValidable {
         }
     }
 
-    public ArrayList<Alfabeto> CargarAlfabetos()
+    public List<String> CargarAlfabetos() // Llamar al DAO (misAlfabetos.getAlfabetos();) y obtener el nombre los alfabetos
     {
-        System.out.println("Controlador.CargarAlfabetos()");
-        ArrayList<Alfabeto> lista = new ArrayList<Alfabeto>();
-        lista = misAlfabetos.getAlfabetos();
-        lista.add(lista.size(), alfabetoDefault);
+        List<String> lista = new ArrayList<String>();
+        lista.add("Alfabeto 1");
+        lista.add("Alfabeto 2");
+        lista.add("Alfabeto 3");
+
+        return lista;
+    }
+
+    public List<String> CargarAlgoritmos() // Llamar al DAO (misAlfabetos.getAlfabetos();) y obtener el nombre los alfabetos
+    {
+        List<String> lista = new ArrayList<String>();
+        lista.add("Algoritmo 1");
+        lista.add("Algoritmo 2");
+        lista.add("Algoritmo 3");
 
         return lista;
     }

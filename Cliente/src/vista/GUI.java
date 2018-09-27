@@ -1,9 +1,8 @@
 package vista;
 
-import Controlador.Controlador;
-import Controlador.AlgoritmosDTO;
-import Modelo.Alfabeto;
-import Modelo.TipoAlgoritmo;
+import controlador.CargarDatosDTO;
+import controlador.Controlador;
+import controlador.AlgoritmosDTO;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,12 +22,12 @@ import java.util.Optional;
 public class GUI extends Application {
 
     @FXML private ListView lv_algoritmos, lv_algoritmos_deseados;
-    @FXML private ComboBox <Alfabeto> cb_alfabetos;
+    @FXML private ComboBox<String> cb_alfabetos;
     @FXML private TextArea ta_textoEntrada, ta_textoProcesado;
     @FXML private CheckBox cb_codificar;
-    @FXML private Button bt_procesar, btn_agregar_alfabeto;
+    @FXML private Button bt_procesar;
 
-    private Controlador miControlador = new Controlador();
+    private Controlador miControlador;
 
     public static final ObservableList ol_algoritmos =
             FXCollections.observableArrayList();
@@ -42,7 +41,10 @@ public class GUI extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("GUI.fxml"));
         primaryStage.setTitle("Procesamiento textual");
 
-        primaryStage.setScene(new Scene(root, 680, 427));
+        Scene miScene = new Scene(root);
+        miScene.getStylesheets().add("/CSS/Estilo.css");
+
+        primaryStage.setScene(miScene);
         primaryStage.show();
     }
 
@@ -52,19 +54,21 @@ public class GUI extends Application {
 
     @FXML
     void initialize(){
-        initComponenteAlfabeto();
-        initComponenteAlgorimos();
+        miControlador = new Controlador();
+        CargarDatosDTO miDTO = miControlador.solicitarDatosVisuales();
+        initComponenteAlfabeto(miDTO.getNombresAlfabetos());
+        initComponenteAlgorimos(miDTO.getNombresAlgoritmos());
     }
 
-    private void initComponenteAlfabeto() // ComboBox
+    private void initComponenteAlfabeto(List<String> pAlfabetos) // ComboBox
     {
-        cb_alfabetos.getItems().addAll(miControlador.CargarAlfabetos());
-        Callback<ListView<Alfabeto>, ListCell<Alfabeto>> factory = lv -> new ListCell<Alfabeto>() {
+        cb_alfabetos.getItems().addAll(pAlfabetos);
+        Callback<ListView<String>, ListCell<String>> factory = lv -> new ListCell<String>() {
 
             @Override
-            protected void updateItem(Alfabeto item, boolean empty) {
+            protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
-                setText(empty ? "" : item.getSimbolos());
+                setText(empty ? "" : item);
             }
         };
 
@@ -72,10 +76,10 @@ public class GUI extends Application {
         cb_alfabetos.setButtonCell(factory.call(null));
     }
 
-    private void initComponenteAlgorimos() // ListView
+    private void initComponenteAlgorimos(List<String> pAlgoritmos) // ListView
     {
-        for(TipoAlgoritmo m : TipoAlgoritmo.values()) {
-            ol_algoritmos.add(m.getNombre());
+        for(int i = 0; i < pAlgoritmos.size(); i++) {
+            ol_algoritmos.add(pAlgoritmos.get(i));
         }
 
         lv_algoritmos.setItems(ol_algoritmos);
@@ -95,8 +99,7 @@ public class GUI extends Application {
                             cb_alfabetos.getSelectionModel().getSelectedItem(),
                             ObtenerAlgorimosMarcados(),
                             cb_codificar.isSelected());
-                    miControlador.ProcesarTexto(dto); //Sets resultado
-                    miControlador.EscribirArch(dto);
+
                     //Algun codigo para desplegarlo en pantalla
                 }
                 else
@@ -153,39 +156,13 @@ public class GUI extends Application {
         }
     }
 
-    public void bt_action_agregarNuevoAlfabeto()
+    private List<String> ObtenerAlgorimosMarcados()
     {
-        TextInputDialog dialog = new TextInputDialog();
-        dialog.setTitle("Agregar nuevo alfabeto");
-        dialog.setHeaderText("Ingrese los simbolos del alfabeto deseado");
-        dialog.setContentText("Símbolos:");
-
-        Optional<String> result = dialog.showAndWait();
-
-        if (result.isPresent())
-        {
-            if (miControlador.AgregarAlfabeto(new AlgoritmosDTO(new Alfabeto(0, result.get()))))
-            {
-                // cargar los alfabetos con el nuevo registrado
-
-                MostrarMensajeAlerta("Se ha registrado el alfabeto");
-            }
-        }
-    }
-
-    private List<TipoAlgoritmo> ObtenerAlgorimosMarcados()
-    {
-        List<TipoAlgoritmo> miLista = new ArrayList<TipoAlgoritmo>();
+        List<String> miLista = new ArrayList<String>();
 
         for (int i = 0; i < lv_algoritmos_deseados.getItems().size(); i++)
         {
-            for(TipoAlgoritmo m : TipoAlgoritmo.values())
-            {
-                if (m.getNombre().equals(lv_algoritmos_deseados.getItems().get(i)))
-                {
-                    miLista.add(m);
-                }
-            }
+            miLista.add(lv_algoritmos_deseados.getItems().get(i).toString());
         }
         return miLista;
     }

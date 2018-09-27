@@ -28,15 +28,14 @@ public class Servidor {
             Socket s = null;
 
             try {
-                EscritorXml x = new EscritorXml(); x.Escribir(null);
                 // socket object to receive incoming client requests
                 s = ss.accept();
 
-                System.out.println("- Un cliente se ha conectado: " + s);
+                System.out.println("- Un cliente se ha conectado: " + s.getLocalAddress() + ", " + s.getPort());
 
                 // obtaining input and out streams
-                DataInputStream dis = new DataInputStream(s.getInputStream());
-                DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+                ObjectOutputStream dos = new ObjectOutputStream(s.getOutputStream());
+                ObjectInputStream dis = new ObjectInputStream(s.getInputStream());
 
                 System.out.println("Creando un nuevo hilo para el cliente... ");
 

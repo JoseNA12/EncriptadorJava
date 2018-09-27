@@ -1,83 +1,81 @@
 package servidor;
 
+import controlador.CargarDatosDTO;
+import controlador.Controlador;
+import controlador.Funciones;
+
 import java.io.*;
 import java.text.*;
 import java.util.*;
 import java.net.*;
 
+import static controlador.Funciones.*;
+
 public class ClienteHandler extends Thread {
 
-    DateFormat fordate = new SimpleDateFormat("yyyy/MM/dd");
-    DateFormat fortime = new SimpleDateFormat("hh:mm:ss");
-    final DataInputStream dis;
-    final DataOutputStream dos;
+    final ObjectInputStream dis;
+    final ObjectOutputStream dos;
     final Socket s;
 
+    private Controlador miControlador;
 
     // Constructor
-    public ClienteHandler(Socket s, DataInputStream dis, DataOutputStream dos)
+    public ClienteHandler(Socket s, ObjectInputStream dis, ObjectOutputStream dos)
     {
         this.s = s;
-        this.dis = dis;
         this.dos = dos;
+        this.dis = dis;
+        this.miControlador = new Controlador();
     }
 
     @Override
     public void run()
     {
-        String received;
+        Object received; //String received;
         String toreturn;
-        while (true)
-        {
+        while (true) {
             try {
-
-                // Ask user what he wants
-                dos.writeUTF("What do you want?[Date | Time]..\n"+
-                        "Type Exit to terminate connection.");
-
                 // receive the answer from client
-                received = dis.readUTF();
+                received = dis.readObject();
 
-                if(received.equals("Exit"))
-                {
-                    System.out.println("Client " + this.s + " sends exit...");
-                    System.out.println("Closing this connection.");
-                    this.s.close();
-                    System.out.println("Connection closed");
-                    break;
-                }
+                // write on output stream based on the answer from the client
+                switch (Funciones.valueOf(received.toString())) {
 
-                // creating Date object
-                Date date = new Date();
-
-                // write on output stream based on the
-                // answer from the client
-                switch (received) {
-
-                    case "Date" :
-                        toreturn = fordate.format(date);
-                        dos.writeUTF(toreturn);
+                    case CARGAR_ALGORIT_ALFAB:
+                        dos.writeObject(new CargarDatosDTO(miControlador.CargarAlfabetos(), miControlador.CargarAlgoritmos()));
+                        dos.flush();
                         break;
 
-                    case "Time" :
-                        toreturn = fortime.format(date);
-                        dos.writeUTF(toreturn);
+                    case CERRAR_CONEXION:
                         break;
 
                     default:
                         dos.writeUTF("Invalid input");
+                        dos.flush();
                         break;
                 }
-            } catch (IOException e) {
+
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            catch (SocketException e){
+                // Connection reset, el cliente cierra directamente el programa
+                break;
+            }
+            catch (IOException e) {
                 e.printStackTrace();
             }
         }
+        cerrarRecursos();
+    }
 
+    private void cerrarRecursos(){
         try
         {
-            // closing resources
+            this.s.close(); // lo agregué yo
             this.dis.close();
             this.dos.close();
+            System.out.println("- Cliente desconectado: " + s.getLocalAddress() + ", " + s.getPort());
 
         }catch(IOException e){
             e.printStackTrace();

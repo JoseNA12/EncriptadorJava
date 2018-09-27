@@ -1,5 +1,5 @@
 package vista;
-
+/*
 import Controlador.Controlador;
 import Controlador.AlgoritmosDTO;
 import Modelo.Alfabeto;
@@ -190,4 +190,4 @@ public class Consola {
     private static void println(String s){
         System.out.println(s);
     }
-}
+}*/
