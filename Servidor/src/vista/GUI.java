@@ -1,5 +1,6 @@
 package vista;
 
+import controlador.Controlador;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,14 +8,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import modelo.Alfabeto;
 import servidor.Servidor;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class GUI extends Application {
 
     @FXML Button btn_algoritmos, btn_mecanismos, btn_bitacora;
     private static Servidor mServidor;
+
+    protected static GUI miInstancia;
+
+    protected Controlador miControlador = new Controlador();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -31,8 +38,11 @@ public class GUI extends Application {
         FXRouter.when("GUI", "GUI.fxml");
         FXRouter.when("GUIAlfabetos", "GUIAlfabetos.fxml");
         FXRouter.when("GUIAlgoritmos", "GUIAlgoritmos.fxml");
+        FXRouter.when("GUIDetalleAlfabeto", "GUIDetalleAlfabeto.fxml");
 
         FXRouter.goTo("GUI"); // pantalla inicial
+
+        miInstancia = GUI.this;
     }
 
     public static void main(String[] args) {

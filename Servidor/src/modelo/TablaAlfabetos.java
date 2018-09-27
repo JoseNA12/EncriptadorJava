@@ -1,5 +1,6 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -7,13 +8,11 @@ import java.util.Map;
 /**
  * Estructura que contiene todos los alfabetos leidos del disco.
  */
-public class TablaAlfabetos {
-    private HashMap<Integer, Alfabeto> tablaAlfabetos;
-    private int ultimoId;
+public class TablaAlfabetos implements Serializable {
+    private HashMap<String, Alfabeto> tablaAlfabetos;
 
     public TablaAlfabetos() {
         this.tablaAlfabetos = new HashMap<>();
-        this.ultimoId = -1;
     }
 
     //Creo que tal vez no es necesario.
@@ -30,28 +29,28 @@ public class TablaAlfabetos {
         }
     }*/
 
-    public void addAlfabeto(Alfabeto alfabeto){
-        this.ultimoId = this.ultimoId++;
-        alfabeto.setIdentificador(this.ultimoId);
-        tablaAlfabetos.put(this.ultimoId, alfabeto);
+    public void addAlfabeto(String identificador, String simbolos){
+        Alfabeto alfabeto = new Alfabeto(identificador, simbolos);
+        tablaAlfabetos.put(identificador, alfabeto);
     }
 
-    public Alfabeto getAlfabeto(Integer id){
+    public Alfabeto getAlfabeto(String id){
         return tablaAlfabetos.get(id);
     }
 
-    public void editarAlfabeto(Integer id, Alfabeto nuevoValor){
+    public void editarAlfabeto(String id, String identificador, String simbolos){
+        Alfabeto nuevoValor = new Alfabeto(identificador, simbolos);
         tablaAlfabetos.replace(id, nuevoValor);
     }
 
-    public void borrarAlfabeto(Integer id){
+    public void borrarAlfabeto(String id){
         tablaAlfabetos.remove(id);
     }
 
     public ArrayList<Alfabeto> toArrayList(){
         ArrayList<Alfabeto> alfabetos = new ArrayList<>();
 
-        for(Map.Entry<Integer, Alfabeto> alfabeto : tablaAlfabetos.entrySet()){
+        for(Map.Entry<String, Alfabeto> alfabeto : tablaAlfabetos.entrySet()){
             alfabetos.add(alfabeto.getValue());
         }
 

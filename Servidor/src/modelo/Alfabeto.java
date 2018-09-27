@@ -2,21 +2,23 @@ package modelo;
 
 import controlador.IValidable;
 
-public class Alfabeto implements IValidable {
+import java.io.Serializable;
 
-    private int identificador;
+public class Alfabeto implements IValidable, Serializable {
+
+    private String identificador;
     private String simbolos;
 
-    public Alfabeto(int identificador, String simbolos) {
+    public Alfabeto(String identificador, String simbolos) {
         this.identificador = identificador;
         this.simbolos = simbolos;
     }
 
-    public int getIdentificador() {
+    public String getIdentificador() {
         return identificador;
     }
 
-    public void setIdentificador(int identificador) {
+    public void setIdentificador(String identificador) {
         this.identificador = identificador;
     }
 

@@ -19,4 +19,9 @@ public class GUIAlfabetos {
     public void irPantallaInicial() throws IOException {
         FXRouter.goTo("GUI");
     }
+
+    @FXML
+    public void irPantallaAlfabeto() throws IOException{
+        FXRouter.goTo("GUIDetalleAlfabeto");
+    }
 }
