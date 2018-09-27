@@ -5,7 +5,6 @@ import modelo.Resultado;
 import modelo.TipoAlgoritmo;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Controlador implements IValidable {
@@ -70,14 +69,8 @@ public class Controlador implements IValidable {
         miDTO.setMiResultado(resultado);
     }
 
+    //TODO: creo que ya no es necesario debido a que la clase algoritmo define el parametro
     public void ProcesarTexto(AlgoritmosDTO miDTO, String pParametroArg) {}
-
-    // public void EstablecerAlfabeto(String pSimbolos) {} Eliminado del diagrama
-
-    public Boolean AgregarAlfabeto(IOServidorDTO miDTO)
-    {
-        return alfabetosDAO.crearAlfabeto(miDTO);
-    }
 
     public void EscribirArch(AlgoritmosDTO miDTO) {
         System.out.println("Controlador.EscribirArch(dto)");
@@ -98,12 +91,24 @@ public class Controlador implements IValidable {
         }
     }
 
-    public ArrayList<Alfabeto> CargarAlfabetos()
+    public Boolean AgregarAlfabeto(IOServidorDTO miDTO)
+    {
+        return alfabetosDAO.crearAlfabeto(miDTO);
+    }
+
+    public IOServidorDTO CargarAlfabetos()
     {
         System.out.println("Controlador.CargarAlfabetos()");
-        ArrayList<Alfabeto> lista = alfabetosDAO.getAlfabetos();
-        //lista.add(lista.size(), alfabetoDefault);
-
-        return lista;
+        return new IOServidorDTO(alfabetosDAO.recuperarAlfabetos());
     }
+
+    public Boolean ModificarAlfabeto(IOServidorDTO miDTO){
+        return alfabetosDAO.updateAlfabeto(miDTO);
+    }
+
+    public Boolean EliminarAlfabeto(IOServidorDTO miDTO){
+        return alfabetosDAO.removerAlfabeto(miDTO);
+    }
+
+
 }
