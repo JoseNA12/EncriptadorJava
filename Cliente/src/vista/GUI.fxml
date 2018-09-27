@@ -38,7 +38,7 @@
       <ListView fx:id="lv_algoritmos_deseados" layoutX="313.0" layoutY="66.0" prefHeight="200.0" prefWidth="190.0" />
       <Button fx:id="bt_agregar" layoutX="260.0" layoutY="119.0" mnemonicParsing="false" onAction="#bt_action_agregar" prefHeight="25.0" prefWidth="36.0" text="&gt;" />
       <Button fx:id="bt_quitar" layoutX="260.0" layoutY="189.0" mnemonicParsing="false" onAction="#bt_action_quitar" prefHeight="25.0" prefWidth="36.0" text="&lt;" />
-      <Separator layoutX="530.0" layoutY="61.0" orientation="VERTICAL" prefHeight="469.0" prefWidth="16.0" />
+      <Separator layoutX="523.0" layoutY="61.0" orientation="VERTICAL" prefHeight="469.0" prefWidth="25.0" />
       <Label layoutX="313.0" layoutY="40.0" text="Por aplicar:" textFill="WHITE" />
       <Label layoutX="571.0" layoutY="40.0" text="Resultado:" textFill="WHITE" />
       <Separator layoutX="571.0" layoutY="379.0" prefHeight="25.0" prefWidth="265.0" />

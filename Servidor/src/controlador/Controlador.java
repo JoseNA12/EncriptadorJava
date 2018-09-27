@@ -19,7 +19,7 @@ public class Controlador implements IValidable {
         return null;
     }
 
-    public void ProcesarTexto(AlgoritmosDTO miDTO)
+    /*public void ProcesarTexto(AlgoritmosDTO miDTO)
     {
         String textoOriginal = miDTO.getTextoOriginal();
         Alfabeto miAlfabeto = miDTO.getAlfabeto();
@@ -68,21 +68,21 @@ public class Controlador implements IValidable {
             }
         }
         miDTO.setMiResultado(resultado);
-    }
+    }*/
 
-    public void ProcesarTexto(AlgoritmosDTO miDTO, String pParametroArg) {}
+    /*public void ProcesarTexto(AlgoritmosDTO miDTO, String pParametroArg) {}
 
     // public void EstablecerAlfabeto(String pSimbolos) {} Eliminado del diagrama
 
     public Boolean AgregarAlfabeto(AlgoritmosDTO miDTO)
     {
         return misAlfabetos.CrearAlfabeto(miDTO);
-    }
+    }*/
 
     public void EscribirArch(AlgoritmosDTO miDTO) {
         System.out.println("Controlador.EscribirArch(dto)");
 
-        Resultado result = miDTO.getMiResultado();
+        //Resultado result = miDTO.getMiResultado();
 
         File f = new File("Resultados/");
 

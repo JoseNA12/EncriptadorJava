@@ -4,18 +4,20 @@ import modelo.Alfabeto;
 import modelo.Resultado;
 import modelo.TipoAlgoritmo;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class AlgoritmosDTO {
+public class AlgoritmosDTO implements Serializable {
 
     private String textoOriginal;
     private String parametroArg;
-    private Resultado miResultado;
-    private Alfabeto miAlfabeto;
-    private List<TipoAlgoritmo> algoritmos;
+    private String miResultado;
+    private String miAlfabeto;
+    private List<String> algoritmos;
     private Boolean modoCodificacion;
+    private static final long serialVersionUID = 1113799434508676095L;
 
-    public AlgoritmosDTO(String textoOriginal, Resultado miResultado, Alfabeto miAlfabeto, List<TipoAlgoritmo> algoritmos, Boolean modoCodificacion) {
+    public AlgoritmosDTO(String textoOriginal, String miResultado, String miAlfabeto, List<String> algoritmos, Boolean modoCodificacion) {
         System.out.println("new DTO(texto, alfabeto, algoritmos, modo)");
         this.textoOriginal = textoOriginal;
         this.miResultado = miResultado;
@@ -24,7 +26,7 @@ public class AlgoritmosDTO {
         this.modoCodificacion = modoCodificacion;
     }
 
-    public AlgoritmosDTO(Alfabeto miAlfabeto) {
+    public AlgoritmosDTO(String miAlfabeto) {
         System.out.println("new DTO(nuevoAlfabeto)");
         this.miAlfabeto = miAlfabeto;
     }
@@ -45,27 +47,27 @@ public class AlgoritmosDTO {
         this.parametroArg = parametroArg;
     }
 
-    public Resultado getMiResultado() {
+    public String getMiResultado() {
         return miResultado;
     }
 
-    public void setMiResultado(Resultado miResultado) {
+    public void setMiResultado(String miResultado) {
         this.miResultado = miResultado;
     }
 
-    public Alfabeto getAlfabeto() {
+    public String getAlfabeto() {
         return this.miAlfabeto;
     }
 
-    public void setIdAlfabeto(Alfabeto miAlfabeto) {
+    public void setIdAlfabeto(String miAlfabeto) {
         this.miAlfabeto = miAlfabeto;
     }
 
-    public List<TipoAlgoritmo> getAlgoritmos() {
+    public List<String> getAlgoritmos() {
         return algoritmos;
     }
 
-    public void setAlgoritmos(List<TipoAlgoritmo> algoritmos) {
+    public void setAlgoritmos(List<String> algoritmos) {
         this.algoritmos = algoritmos;
     }
 

@@ -1,15 +1,16 @@
 package controlador;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class AlgoritmosDTO {
+public class AlgoritmosDTO implements Serializable {
 
     private String textoOriginal;
-    private String parametroArg;
     private String miResultado;
     private String miAlfabeto;
     private List<String> algoritmos;
     private Boolean modoCodificacion;
+    private static final long serialVersionUID = 1113799434508676095L;
 
     public AlgoritmosDTO(String textoOriginal, String miResultado, String miAlfabeto, List<String> algoritmos, Boolean modoCodificacion) {
         this.textoOriginal = textoOriginal;
@@ -25,14 +26,6 @@ public class AlgoritmosDTO {
 
     public void setTextoOriginal(String textoOriginal) {
         this.textoOriginal = textoOriginal;
-    }
-
-    public String getParametroArg() {
-        return parametroArg;
-    }
-
-    public void setParametroArg(String parametroArg) {
-        this.parametroArg = parametroArg;
     }
 
     public Object getMiResultado() {

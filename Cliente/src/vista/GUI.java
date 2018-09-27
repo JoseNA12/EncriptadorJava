@@ -55,7 +55,7 @@ public class GUI extends Application {
     @FXML
     void initialize(){
         miControlador = new Controlador();
-        CargarDatosDTO miDTO = miControlador.solicitarDatosVisuales();
+        CargarDatosDTO miDTO = miControlador.SolicitarDatosVisuales();
         initComponenteAlfabeto(miDTO.getNombresAlfabetos());
         initComponenteAlgorimos(miDTO.getNombresAlgoritmos());
     }
@@ -93,12 +93,12 @@ public class GUI extends Application {
             {
                 if (!cb_alfabetos.getSelectionModel().isEmpty())
                 {
-                    AlgoritmosDTO dto = new AlgoritmosDTO(
+                    AlgoritmosDTO respuesta = miControlador.ProcesarTexto(new AlgoritmosDTO(
                             ta_textoEntrada.getText(),
-                            null,
-                            cb_alfabetos.getSelectionModel().getSelectedItem(),
-                            ObtenerAlgorimosMarcados(),
-                            cb_codificar.isSelected());
+                            "",
+                            cb_alfabetos.getSelectionModel().getSelectedItem(), // nombres
+                            ObtenerAlgorimosMarcados(), // Nombres
+                            cb_codificar.isSelected())); // true -> Codificar
 
                     //Algun codigo para desplegarlo en pantalla
                 }

@@ -2,14 +2,11 @@ package servidor;
 
 import controlador.CargarDatosDTO;
 import controlador.Controlador;
-import controlador.Funciones;
+import controlador.OpcionesCliente;
 
 import java.io.*;
-import java.text.*;
-import java.util.*;
 import java.net.*;
-
-import static controlador.Funciones.*;
+import java.util.List;
 
 public class ClienteHandler extends Thread {
 
@@ -36,14 +33,20 @@ public class ClienteHandler extends Thread {
         while (true) {
             try {
                 // receive the answer from client
-                received = dis.readObject();
+                received = (List<Object>) dis.readObject();
+                // 0 -> tipo de consulta
+                // 1 -> contenido enviado por el cliente
 
                 // write on output stream based on the answer from the client
-                switch (Funciones.valueOf(received.toString())) {
+                switch (OpcionesCliente.valueOf(((List) received).get(0).toString())) {
 
                     case CARGAR_ALGORIT_ALFAB:
                         dos.writeObject(new CargarDatosDTO(miControlador.CargarAlfabetos(), miControlador.CargarAlgoritmos()));
                         dos.flush();
+                        break;
+
+                    case PROCESAR_TEXTO:
+                        System.out.println(((List) received).get(1));
                         break;
 
                     case CERRAR_CONEXION:
@@ -72,10 +75,10 @@ public class ClienteHandler extends Thread {
     private void cerrarRecursos(){
         try
         {
-            this.s.close(); // lo agregué yo
+            System.out.println("- Cliente desconectado: " + s.getLocalAddress() + ", " + s.getPort());
+            this.s.close();
             this.dis.close();
             this.dos.close();
-            System.out.println("- Cliente desconectado: " + s.getLocalAddress() + ", " + s.getPort());
 
         }catch(IOException e){
             e.printStackTrace();

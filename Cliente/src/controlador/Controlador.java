@@ -10,13 +10,17 @@ public class Controlador {
         miClienteConexion = new Cliente();
     }
 
-    public CargarDatosDTO solicitarDatosVisuales(){
+    public CargarDatosDTO SolicitarDatosVisuales(){
 
         return miClienteConexion.solicitarDatosVisuales();
     }
 
+    public AlgoritmosDTO ProcesarTexto(AlgoritmosDTO miProcesadoDTO){
+        return miClienteConexion.ProcesarTexto(miProcesadoDTO);
+    }
 
-    public void cerrarConexionServidor(){
+
+    public void CerrarConexionServidor(){
         miClienteConexion.cerrarConexion();
     }
 }
