@@ -19,42 +19,7 @@ public class AlfabetosDAO implements IValidable {
         return null;
     }
 
-    public ArrayList<Alfabeto> getAlfabetos()
-    {
 
-        try {
-            FileInputStream fileInputStream = new FileInputStream(pathTabla);
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
-            ObjectInputStream objectInputStream = new ObjectInputStream(bufferedInputStream);
-            Object object = objectInputStream.readObject();
-            objectInputStream.close();
-            this.tablaAlfabetos = (TablaAlfabetos) object;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return tablaAlfabetos.toArrayList();
-
-        /*System.out.println("AlfabetosDAO.getAlfabetos()");
-        File directory = new File("/path");
-        File[] listOfFiles = directory.listFiles();
-
-        if (listOfFiles != null)
-        {
-            for (File file : listOfFiles)
-            {
-                // Aqui se obtienen los alfabetos, almacenandolos en una lista para ser retornada
-                // TODO: usar XStream para manejar la lista de alfabetos
-                // Es necesario utilizar una clase que albergue los alfabetos como una lista (TablaAlfabetos)
-            }
-        }
-
-        // Alfabeto de prueba
-        ArrayList<Alfabeto> miLista = new ArrayList<>();
-        //miLista.add(new Alfabeto(1, ".ñ{}vfsbhjSDVhjab"));
-
-        return miLista;*/
-    }
 
     public void guardarAlfabetos(){
         try {
@@ -68,24 +33,44 @@ public class AlfabetosDAO implements IValidable {
         }
     }
 
-    //TODO: implementar metodos del CRUD
     public Boolean crearAlfabeto(IOServidorDTO miDTO)
     {
-        tablaAlfabetos.addAlfabeto(miDTO.getIdentificadorAlfabeto(), miDTO.getSimbolosAlfabeto());
+        try {
+            tablaAlfabetos.addAlfabeto(miDTO.getIdentificadorAlfabeto(), miDTO.getSimbolosAlfabeto());
+            guardarAlfabetos();
+            System.out.println("AlfabetosDAO.crearAlfabeto(dto)");
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public ArrayList<Alfabeto> recuperarAlfabetos()
+    {
+        try {
+            FileInputStream fileInputStream = new FileInputStream(pathTabla);
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+            ObjectInputStream objectInputStream = new ObjectInputStream(bufferedInputStream);
+            Object object = objectInputStream.readObject();
+            objectInputStream.close();
+            this.tablaAlfabetos = (TablaAlfabetos) object;
+        } catch (Exception e) {
+            return null;
+        }
+
+        return tablaAlfabetos.toArrayList();
+    }
+
+    public Boolean updateAlfabeto(IOServidorDTO miDTO){
+        tablaAlfabetos.editarAlfabeto(miDTO.getIdentificadorAlfabeto(), miDTO.getSimbolosAlfabeto());
         guardarAlfabetos();
-        System.out.println("AlfabetosDAO.crearAlfabeto(dto)");
         return true;
     }
 
-    public Boolean recuperarAlfabeto(){
-        return true;
-    }
-
-    public Boolean updateAlfabeto(){
-        return true;
-    }
-
-    public Boolean removerAlfabeto(){
+    public Boolean removerAlfabeto(IOServidorDTO miDTO){
+        tablaAlfabetos.borrarAlfabeto(miDTO.getIdentificadorAlfabeto());
+        guardarAlfabetos();
+        System.out.println("AlfabetosDAO.removerAlfabeto(dto)");
         return true;
     }
 }

@@ -32,6 +32,7 @@ public class Alfabeto implements IValidable, Serializable {
 
     @Override
     public Boolean Validar(String pEntrada) {
-        return null;
+        //TODO: implementar metodo de validacion
+        return true;
     }
 }

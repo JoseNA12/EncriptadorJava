@@ -29,8 +29,12 @@ public class TablaAlfabetos implements Serializable {
         }
     }*/
 
-    public void addAlfabeto(String identificador, String simbolos){
+    public void addAlfabeto(String identificador, String simbolos) throws Exception{
         Alfabeto alfabeto = new Alfabeto(identificador, simbolos);
+
+        if (tablaAlfabetos.containsKey(identificador) | !alfabeto.Validar(""))
+            throw new Exception("Identificador de alfabeto repetido o alfabeto invalido.");
+
         tablaAlfabetos.put(identificador, alfabeto);
     }
 
@@ -38,9 +42,9 @@ public class TablaAlfabetos implements Serializable {
         return tablaAlfabetos.get(id);
     }
 
-    public void editarAlfabeto(String id, String identificador, String simbolos){
+    public void editarAlfabeto(String identificador, String simbolos){
         Alfabeto nuevoValor = new Alfabeto(identificador, simbolos);
-        tablaAlfabetos.replace(id, nuevoValor);
+        tablaAlfabetos.replace(identificador, nuevoValor);
     }
 
     public void borrarAlfabeto(String id){
