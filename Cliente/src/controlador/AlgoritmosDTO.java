@@ -28,7 +28,7 @@ public class AlgoritmosDTO implements Serializable {
         this.textoOriginal = textoOriginal;
     }
 
-    public Object getMiResultado() {
+    public String getMiResultado() {
         return miResultado;
     }
 
@@ -36,7 +36,7 @@ public class AlgoritmosDTO implements Serializable {
         this.miResultado = miResultado;
     }
 
-    public Object getAlfabeto() {
+    public String getAlfabeto() {
         return this.miAlfabeto;
     }
 

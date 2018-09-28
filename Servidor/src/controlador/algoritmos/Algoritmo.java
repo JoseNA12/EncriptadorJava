@@ -1,4 +1,4 @@
-package controlador;
+package controlador.algoritmos;
 
 import modelo.LineaResultado;
 import modelo.Resultado;

@@ -1,11 +1,13 @@
 package controlador;
 
+import controlador.algoritmos.Algoritmo;
 import modelo.Alfabeto;
 import modelo.Resultado;
 import modelo.TipoAlgoritmo;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Controlador implements IValidable {
@@ -36,15 +38,15 @@ public class Controlador implements IValidable {
                 switch (algoritmos.get(i))
                 {
                     case TRASLETRALETRA:
-                        resultado.agregarLineaResultado(TrasLetraLetra.Codificar(textoOriginal));
+                        resultado.agregarLineaResultado(TrasposicionLetraLetra.Codificar(textoOriginal));
                         break;
 
                     case CODTELEFONICO:
-                        resultado.agregarLineaResultado(CodTelefonico.Codificar(textoOriginal));
+                        resultado.agregarLineaResultado(CodigoTelefonico.Codificar(textoOriginal));
                         break;
 
                     case SUSTVIGENERE:
-                        resultado.agregarLineaResultado(SustVigenere.Codificar(textoOriginal, "", miAlfabeto.getSimbolos()));
+                        resultado.agregarLineaResultado(SustitucionVigenere.Codificar(textoOriginal, "", miAlfabeto.getSimbolos()));
                         break;
                 }
             }
@@ -53,15 +55,15 @@ public class Controlador implements IValidable {
                 switch (algoritmos.get(i))
                 {
                     case TRASLETRALETRA:
-                        resultado.agregarLineaResultado(TrasLetraLetra.Decodificar(textoOriginal));
+                        resultado.agregarLineaResultado(TrasposicionLetraLetra.Decodificar(textoOriginal));
                         break;
 
                     case CODTELEFONICO:
-                        resultado.agregarLineaResultado(CodTelefonico.Decodificar(textoOriginal));
+                        resultado.agregarLineaResultado(CodigoTelefonico.Decodificar(textoOriginal));
                         break;
 
                     case SUSTVIGENERE:
-                        resultado.agregarLineaResultado(SustVigenere.Decodificar(textoOriginal));
+                        resultado.agregarLineaResultado(SustitucionVigenere.Decodificar(textoOriginal));
                         break;
 
                 }
@@ -110,6 +112,9 @@ public class Controlador implements IValidable {
 
     public List<String> CargarAlgoritmos() // Llamar al DAO (misAlfabetos.getAlfabetos();) y obtener el nombre los alfabetos
     {
+        String paquete = Algoritmo.class.getPackage().getName();
+
+
         List<String> lista = new ArrayList<String>();
         lista.add("Algoritmo 1");
         lista.add("Algoritmo 2");

@@ -66,7 +66,7 @@ public class Cliente {
             dos.flush();
             dos.reset();
 
-            //miDTO = (AlgoritmosDTO) dis.readObject();
+            miDTO = (AlgoritmosDTO) dis.readObject();
         }
         catch (Exception e) {}
 

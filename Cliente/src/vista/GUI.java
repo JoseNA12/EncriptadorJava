@@ -96,10 +96,11 @@ public class GUI extends Application {
                     AlgoritmosDTO respuesta = miControlador.ProcesarTexto(new AlgoritmosDTO(
                             ta_textoEntrada.getText(),
                             "",
-                            cb_alfabetos.getSelectionModel().getSelectedItem(), // nombres
+                            cb_alfabetos.getSelectionModel().getSelectedItem(), // nombre
                             ObtenerAlgorimosMarcados(), // Nombres
                             cb_codificar.isSelected())); // true -> Codificar
 
+                    ta_textoProcesado.setText(respuesta.getMiResultado());
                     //Algun codigo para desplegarlo en pantalla
                 }
                 else

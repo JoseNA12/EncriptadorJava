@@ -1,5 +1,6 @@
 package servidor;
 
+import controlador.AlgoritmosDTO;
 import controlador.CargarDatosDTO;
 import controlador.Controlador;
 import controlador.OpcionesCliente;
@@ -46,7 +47,10 @@ public class ClienteHandler extends Thread {
                         break;
 
                     case PROCESAR_TEXTO:
-                        System.out.println(((List) received).get(1));
+                        //System.out.println(((List) received).get(1));
+                        AlgoritmosDTO prueba = new AlgoritmosDTO("", "el servidor envió esto", "", null, true);
+                        dos.writeObject(prueba);
+                        dos.flush();
                         break;
 
                     case CERRAR_CONEXION:

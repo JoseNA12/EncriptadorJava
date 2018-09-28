@@ -1,13 +1,13 @@
-package controlador;
+package controlador.algoritmos;
 
 import modelo.LineaResultado;
-import modelo.Resultado;
-import modelo.TipoAlgoritmo;
 
-public class SustVigenere extends Algoritmo{
+public class SustitucionVigenere extends Algoritmo {
 
-    public static LineaResultado Codificar(String pFrase, String pClave, String pAlfabeto) {
-        String nuevaClave = ObtenerNuevaClave(pClave, pFrase.length());
+    private static final String clave = "23";
+
+    public static LineaResultado Codificar(String pFrase, String pAlfabeto) {
+        String nuevaClave = ObtenerNuevaClave(clave, pFrase.length());
         String fraseCifrada = "";
 
         for (int i = 0; i < pFrase.length(); i++) {
@@ -30,11 +30,12 @@ public class SustVigenere extends Algoritmo{
                 }
             }
         }
-        return new LineaResultado(TipoAlgoritmo.SUSTVIGENERE, fraseCifrada, true);
+        // fraseDescrifrada // <- CONTIENE EL RESULTADO!!
+        return null;
     }
 
-    public static LineaResultado Descodificar(String pFrase, String pClave, String pAlfabeto) {
-        String nuevaClave = ObtenerNuevaClave(pClave, pFrase.length());
+    public static LineaResultado Descodificar(String pFrase, String pAlfabeto) {
+        String nuevaClave = ObtenerNuevaClave(clave, pFrase.length());
         String fraseDescifrada = "";
 
         for (int i = 0; i < pFrase.length(); i++) {
@@ -57,7 +58,8 @@ public class SustVigenere extends Algoritmo{
                 }
             }
         }
-        return new LineaResultado(TipoAlgoritmo.SUSTVIGENERE, fraseDescifrada, false);
+        // fraseDescrifrada // <- CONTIENE EL RESULTADO!!
+        return null;
     }
 
     /**
