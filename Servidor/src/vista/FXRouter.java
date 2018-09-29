@@ -222,7 +222,7 @@ public final class FXRouter {
         // set new route scene
 
         Scene miScene = new Scene(resource);
-        miScene.getStylesheets().add("/CSS/Estilo.css");
+        miScene.getStylesheets().add("/vista/CSS/Estilo.css");
 
         window.setScene(miScene);
 

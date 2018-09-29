@@ -25,7 +25,7 @@ public class GUI extends Application {
         primaryStage.setTitle("Administrador");
 
         Scene miScene = new Scene(root);
-        miScene.getStylesheets().add(getClass().getResource("/CSS/Estilo.css").toExternalForm());
+        miScene.getStylesheets().add(getClass().getResource("/vista.CSS/Estilo.css").toExternalForm());
 
         primaryStage.setScene(miScene);
         primaryStage.show();*/

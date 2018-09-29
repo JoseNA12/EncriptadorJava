@@ -1,8 +1,9 @@
 package vista;
 
-import controlador.CargarDatosDTO;
+import accionesCliente.TipoAcciones;
 import controlador.Controlador;
-import controlador.AlgoritmosDTO;
+import datosDTO.AlgoritmosDTO;
+import datosDTO.CargarDatosDTO;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,13 +12,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class GUI extends Application {
 
@@ -94,10 +93,11 @@ public class GUI extends Application {
                 if (!cb_alfabetos.getSelectionModel().isEmpty())
                 {
                     AlgoritmosDTO respuesta = miControlador.ProcesarTexto(new AlgoritmosDTO(
+                            ObtenerAlgorimosMarcados(),
+                            TipoAcciones.PROCESAR_TEXTO,
                             ta_textoEntrada.getText(),
                             "",
                             cb_alfabetos.getSelectionModel().getSelectedItem(), // nombre
-                            ObtenerAlgorimosMarcados(), // Nombres
                             cb_codificar.isSelected())); // true -> Codificar
 
                     ta_textoProcesado.setText(respuesta.getMiResultado());

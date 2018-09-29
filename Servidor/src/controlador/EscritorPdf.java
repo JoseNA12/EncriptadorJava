@@ -1,5 +1,7 @@
 package controlador;
 
+import datosDTO.AlgoritmosDTO;
+
 public class EscritorPdf implements IEscritura {
 
     String ruta = "src/bitacoras/filename.txt";

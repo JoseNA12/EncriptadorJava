@@ -1,5 +1,6 @@
 package controlador;
 
+import datosDTO.AlgoritmosDTO;
 import modelo.Alfabeto;
 
 import java.io.File;

@@ -1,13 +1,17 @@
 package servidor;
 
-import controlador.AlgoritmosDTO;
-import controlador.CargarDatosDTO;
+import accionesCliente.TipoAcciones;
 import controlador.Controlador;
-import controlador.OpcionesCliente;
+import datosDTO.AlgoritmosDTO;
+import datosDTO.CargarDatosDTO;
+import datosDTO.DatosDTO;
 
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
 import java.util.List;
+
+import static accionesCliente.TipoAcciones.*;
 
 public class ClienteHandler extends Thread {
 
@@ -29,26 +33,22 @@ public class ClienteHandler extends Thread {
     @Override
     public void run()
     {
-        Object received; //String received;
-        String toreturn;
+        DatosDTO dtoRecibido; //String received;
+
         while (true) {
             try {
-                // receive the answer from client
-                received = (List<Object>) dis.readObject();
-                // 0 -> tipo de consulta
-                // 1 -> contenido enviado por el cliente
 
-                // write on output stream based on the answer from the client
-                switch (OpcionesCliente.valueOf(((List) received).get(0).toString())) {
+                dtoRecibido = (DatosDTO) dis.readObject();
+
+                switch (dtoRecibido.getAccion()) {
 
                     case CARGAR_ALGORIT_ALFAB:
-                        dos.writeObject(new CargarDatosDTO(miControlador.CargarAlfabetos(), miControlador.CargarAlgoritmos()));
+                        dos.writeObject(new CargarDatosDTO(miControlador.CargarAlgoritmos(), CARGAR_ALGORIT_ALFAB, miControlador.CargarAlfabetos()));
                         dos.flush();
                         break;
 
                     case PROCESAR_TEXTO:
-                        //System.out.println(((List) received).get(1));
-                        AlgoritmosDTO prueba = new AlgoritmosDTO("", "el servidor envió esto", "", null, true);
+                        AlgoritmosDTO prueba = new AlgoritmosDTO(new ArrayList<String>(), PROCESAR_TEXTO, "el servidor envió esto", "", null, true);
                         dos.writeObject(prueba);
                         dos.flush();
                         break;

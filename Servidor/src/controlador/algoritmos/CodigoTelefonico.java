@@ -1,5 +1,6 @@
 package controlador.algoritmos;
 
+import controlador.Algoritmo;
 import modelo.LineaResultado;
 
 import java.util.HashMap;

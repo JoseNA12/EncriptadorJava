@@ -1,14 +1,10 @@
 package controlador;
 
-import controlador.algoritmos.Algoritmo;
 import modelo.Alfabeto;
-import modelo.Resultado;
-import modelo.TipoAlgoritmo;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.net.URL;
+import java.util.*;
 
 public class Controlador implements IValidable {
 
@@ -79,7 +75,7 @@ public class Controlador implements IValidable {
     public Boolean AgregarAlfabeto(AlgoritmosDTO miDTO)
     {
         return misAlfabetos.CrearAlfabeto(miDTO);
-    }*/
+    }
 
     public void EscribirArch(AlgoritmosDTO miDTO) {
         System.out.println("Controlador.EscribirArch(dto)");
@@ -98,7 +94,7 @@ public class Controlador implements IValidable {
         catch(IOException e){
             e.printStackTrace();
         }
-    }
+    }*/
 
     public List<String> CargarAlfabetos() // Llamar al DAO (misAlfabetos.getAlfabetos();) y obtener el nombre los alfabetos
     {
@@ -110,16 +106,68 @@ public class Controlador implements IValidable {
         return lista;
     }
 
-    public List<String> CargarAlgoritmos() // Llamar al DAO (misAlfabetos.getAlfabetos();) y obtener el nombre los alfabetos
+    public List<String> CargarAlgoritmos()
     {
-        String paquete = Algoritmo.class.getPackage().getName();
+        String paquete = "controlador.algoritmos";
+        List<String> algoritmosActuales;
 
+        try {
+            algoritmosActuales = ObtenerClases(paquete);
+        }
+        catch (ClassNotFoundException e) {
+            algoritmosActuales = new ArrayList<String>();
+            // e.printStackTrace();
+        }
+        catch (IOException e) {
+            algoritmosActuales = new ArrayList<String>();
+            // e.printStackTrace();
+        }
+        return algoritmosActuales;
+    }
 
-        List<String> lista = new ArrayList<String>();
-        lista.add("Algoritmo 1");
-        lista.add("Algoritmo 2");
-        lista.add("Algoritmo 3");
+    private List<String> ObtenerClases(String pNombrePaquete) throws ClassNotFoundException, IOException { // Class[]
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        assert classLoader != null;
+        String path = pNombrePaquete.replace('.', '/');
+        Enumeration<URL> resources = classLoader.getResources(path);
+        List<File> dirs = new ArrayList<File>();
 
-        return lista;
+        while (resources.hasMoreElements()) {
+            URL resource = resources.nextElement();
+            dirs.add(new File(resource.getFile()));
+        }
+        ArrayList<Class> classes = new ArrayList<Class>();
+
+        for (File directory : dirs) {
+            classes.addAll(EncontrarClases(directory, pNombrePaquete));
+        }
+
+        List<String> miClases = new ArrayList<String>();
+
+        for(int i = 0; i < classes.size(); i++){
+            miClases.add(classes.get(i).getSimpleName());
+        }
+
+        return miClases;
+        // return classes.toArray(new Class[classes.size()]);
+    }
+
+    private List<Class> EncontrarClases(File directory, String packageName) throws ClassNotFoundException {
+        List<Class> classes = new ArrayList<Class>();
+        if (!directory.exists()) {
+            return classes;
+        }
+        File[] files = directory.listFiles();
+
+        for (File file : files) {
+            if (file.isDirectory()) {
+                assert !file.getName().contains(".");
+                classes.addAll(EncontrarClases(file, packageName + "." + file.getName()));
+            }
+            else if (file.getName().endsWith(".class")) {
+                classes.add(Class.forName(packageName + '.' + file.getName().substring(0, file.getName().length() - 6)));
+            }
+        }
+        return classes;
     }
 }

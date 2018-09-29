@@ -1,4 +1,4 @@
-package controlador.algoritmos;
+package controlador;
 
 import modelo.LineaResultado;
 import modelo.Resultado;
@@ -6,7 +6,6 @@ import modelo.Resultado;
 public class Algoritmo {
 
     private LineaResultado miResultado;
-
 
     static Boolean Validar(String pEntrada) {return false;}
 

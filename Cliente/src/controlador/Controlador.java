@@ -1,5 +1,8 @@
 package controlador;
 
+import datosDTO.AlgoritmosDTO;
+import datosDTO.CargarDatosDTO;
+
 import java.util.List;
 
 public class Controlador {

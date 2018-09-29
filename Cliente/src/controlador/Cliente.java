@@ -1,5 +1,10 @@
 package controlador;
 
+import accionesCliente.TipoAcciones;
+import datosDTO.AlgoritmosDTO;
+import datosDTO.CargarDatosDTO;
+import datosDTO.DatosDTO;
+
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
@@ -38,10 +43,7 @@ public class Cliente {
     public CargarDatosDTO solicitarDatosVisuales(){
         CargarDatosDTO miDTO = null;
         try{
-            List<Object> miPedido = new ArrayList<>();
-            miPedido.add(OpcionesCliente.CARGAR_ALGORIT_ALFAB);
-
-            dos.writeObject(miPedido);
+            dos.writeObject(new DatosDTO(null, TipoAcciones.CARGAR_ALGORIT_ALFAB));
             dos.flush();
             dos.reset();
 
@@ -59,7 +61,7 @@ public class Cliente {
         AlgoritmosDTO miDTO = null;
         try{
             List<Object> miPedido = new ArrayList<>();
-            miPedido.add(OpcionesCliente.PROCESAR_TEXTO);
+            miPedido.add(TipoAcciones.PROCESAR_TEXTO);
             miPedido.add(pDTO);
 
             dos.writeObject(miPedido);
