@@ -1,7 +1,7 @@
 package controlador;
 
 import modelo.Alfabeto;
-import modelo.TablaAlfabetos;
+import modelo.estructuras.TablaAlfabetos;
 
 import java.io.*;
 import java.util.ArrayList;

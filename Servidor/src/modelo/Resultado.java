@@ -17,9 +17,6 @@ public class Resultado {
         this.fraseOriginal = fraseOriginal;
         lineasResultados = new ArrayList<>();
         this.fecha = Calendar.getInstance().getTime();
-
-        //this.fecha = METODO PARA OBTENER FECHA
-        //this.hora = METODO PARA OBTENER HORA
     }
 
     public void agregarLineaResultado(LineaResultado linea){

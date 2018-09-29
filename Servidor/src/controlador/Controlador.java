@@ -1,5 +1,6 @@
 package controlador;
 
+import controlador.escritores.IEscritura;
 import modelo.Alfabeto;
 import modelo.Resultado;
 import modelo.TipoAlgoritmo;
@@ -11,7 +12,7 @@ public class Controlador implements IValidable {
 
     //public Alfabeto alfabetoDefault = new Alfabeto(0, "abcdefghijklmnñopqrstuvwxyz"); // default
     private AlfabetosDAO alfabetosDAO = new AlfabetosDAO();
-    private IEscritura miEscritura;
+    private IEscritura miEscritor;
 
     @Override
     public Boolean Validar(String pEntrada) {
@@ -72,8 +73,9 @@ public class Controlador implements IValidable {
     //TODO: creo que ya no es necesario debido a que la clase algoritmo define el parametro
     public void ProcesarTexto(AlgoritmosDTO miDTO, String pParametroArg) {}
 
+    //TODO: eliminar codigo, se debe ejecutar en el escritor
     public void EscribirArch(AlgoritmosDTO miDTO) {
-        System.out.println("Controlador.EscribirArch(dto)");
+        /*System.out.println("Controlador.EscribirArch(dto)");
 
         Resultado result = miDTO.getMiResultado();
 
@@ -88,7 +90,7 @@ public class Controlador implements IValidable {
         }
         catch(IOException e){
             e.printStackTrace();
-        }
+        }*/
     }
 
     public Boolean AgregarAlfabeto(IOServidorDTO miDTO)

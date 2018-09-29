@@ -1,4 +1,6 @@
-package modelo;
+package modelo.estructuras;
+
+import modelo.Alfabeto;
 
 import java.io.Serializable;
 import java.util.ArrayList;

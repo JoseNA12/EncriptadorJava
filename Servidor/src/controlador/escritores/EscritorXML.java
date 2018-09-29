@@ -1,26 +1,42 @@
-package controlador;
+package controlador.escritores;
 
-import java.io.File;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
+import controlador.AlgoritmosDTO;
+import modelo.Resultado;
+import modelo.estructuras.Resultados;
 
-public class EscritorXml implements IEscritura {
+public class EscritorXML implements IEscritura {
 
     String ruta = "src/bitacoras/filename.xml";
 
     @Override
     public Boolean Escribir(AlgoritmosDTO miDTO) {
-        boolean escribio = false;
+        try {
+            JAXBContext jaxbContext = JAXBContext.newInstance(Resultados.class);
+            // Leer XML
+            Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+            //Resultados resultados = (Resultados) unmarshaller.unmarshal(DIRECTORIO);
+            //Servers servers = (Servers) unmarshaller.unmarshal(configFile);
+
+            //Server server = new Server("abv", "1.9.3.5", 8080);
+
+            //List<Server> serversList = servers.getServers();
+            //serversList.add(server);
+
+            //servers.setServers(serversList);
+
+            Marshaller marshaller = jaxbContext.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            //marshaller.marshal(servers, configFile);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+            return false;
+        }
+        /*boolean escribio = false;
         try {
 
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -79,6 +95,7 @@ public class EscritorXml implements IEscritura {
         } catch (ParserConfigurationException | TransformerException pce) {
             pce.printStackTrace();
         }
-        return escribio;
+        return escribio;*/
+        return true;
     }
 }

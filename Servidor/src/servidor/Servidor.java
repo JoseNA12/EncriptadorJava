@@ -1,8 +1,7 @@
 package servidor;
 
 
-import controlador.EscritorTxt;
-import controlador.EscritorXml;
+import controlador.escritores.EscritorXML;
 
 import java.io.*;
 import java.net.*;
@@ -28,7 +27,7 @@ public class Servidor {
             Socket s = null;
 
             try {
-                EscritorXml x = new EscritorXml(); x.Escribir(null);
+                EscritorXML x = new EscritorXML(); x.Escribir(null);
                 // socket object to receive incoming client requests
                 s = ss.accept();
 
