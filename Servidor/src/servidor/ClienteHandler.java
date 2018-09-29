@@ -2,6 +2,7 @@ package servidor;
 
 import accionesCliente.TipoAcciones;
 import controlador.Controlador;
+import controlador.ControladorCliente;
 import datosDTO.AlgoritmosDTO;
 import datosDTO.CargarDatosDTO;
 import datosDTO.DatosDTO;
@@ -19,7 +20,7 @@ public class ClienteHandler extends Thread {
     final ObjectOutputStream dos;
     final Socket s;
 
-    private Controlador miControlador;
+    private ControladorCliente miControlador;
 
     // Constructor
     public ClienteHandler(Socket s, ObjectInputStream dis, ObjectOutputStream dos)
@@ -27,13 +28,13 @@ public class ClienteHandler extends Thread {
         this.s = s;
         this.dos = dos;
         this.dis = dis;
-        this.miControlador = new Controlador();
+        this.miControlador = new ControladorCliente();
     }
 
     @Override
     public void run()
     {
-        DatosDTO dtoRecibido; //String received;
+        DatosDTO dtoRecibido;
 
         while (true) {
             try {
@@ -43,13 +44,16 @@ public class ClienteHandler extends Thread {
                 switch (dtoRecibido.getAccion()) {
 
                     case CARGAR_ALGORIT_ALFAB:
-                        dos.writeObject(new CargarDatosDTO(miControlador.CargarAlgoritmos(), CARGAR_ALGORIT_ALFAB, miControlador.CargarAlfabetos()));
+
+                        dos.writeObject(new CargarDatosDTO(
+                                miControlador.CargarAlgoritmos(),
+                                CARGAR_ALGORIT_ALFAB, miControlador.CargarAlfabetos()));
                         dos.flush();
                         break;
 
                     case PROCESAR_TEXTO:
-                        AlgoritmosDTO prueba = new AlgoritmosDTO(new ArrayList<String>(), PROCESAR_TEXTO, "el servidor envió esto", "", null, true);
-                        dos.writeObject(prueba);
+
+                        dos.writeObject(miControlador.ProcesarTexto((AlgoritmosDTO) dtoRecibido));
                         dos.flush();
                         break;
 

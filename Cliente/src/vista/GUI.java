@@ -4,6 +4,7 @@ import accionesCliente.TipoAcciones;
 import controlador.Controlador;
 import datosDTO.AlgoritmosDTO;
 import datosDTO.CargarDatosDTO;
+import datosDTO.DatosDTO;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -41,7 +42,7 @@ public class GUI extends Application {
         primaryStage.setTitle("Procesamiento textual");
 
         Scene miScene = new Scene(root);
-        miScene.getStylesheets().add("/CSS/Estilo.css");
+        miScene.getStylesheets().add("/vista/CSS/Estilo.css");
 
         primaryStage.setScene(miScene);
         primaryStage.show();
@@ -54,7 +55,7 @@ public class GUI extends Application {
     @FXML
     void initialize(){
         miControlador = new Controlador();
-        CargarDatosDTO miDTO = miControlador.SolicitarDatosVisuales();
+        CargarDatosDTO miDTO = miControlador.SolicitarDatosVisuales(new DatosDTO(null, TipoAcciones.CARGAR_ALGORIT_ALFAB));
         initComponenteAlfabeto(miDTO.getNombresAlfabetos());
         initComponenteAlgorimos(miDTO.getNombresAlgoritmos());
     }
@@ -100,7 +101,7 @@ public class GUI extends Application {
                             cb_alfabetos.getSelectionModel().getSelectedItem(), // nombre
                             cb_codificar.isSelected())); // true -> Codificar
 
-                    ta_textoProcesado.setText(respuesta.getMiResultado());
+                    //ta_textoProcesado.setText(respuesta.getMiResultado());
                     //Algun codigo para desplegarlo en pantalla
                 }
                 else

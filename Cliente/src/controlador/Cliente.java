@@ -40,17 +40,15 @@ public class Cliente {
         catch (Exception e) {}
     }
 
-    public CargarDatosDTO solicitarDatosVisuales(){
+    public CargarDatosDTO solicitarDatosVisuales(DatosDTO pDTO){
         CargarDatosDTO miDTO = null;
         try{
-            dos.writeObject(new DatosDTO(null, TipoAcciones.CARGAR_ALGORIT_ALFAB));
+            dos.writeObject(pDTO);
             dos.flush();
             dos.reset();
 
+            // respuesta del servidor
             miDTO = (CargarDatosDTO) dis.readObject();
-
-            // String received = dis.readUTF();
-            // System.out.println(received);
         }
         catch (Exception e) {}
 
@@ -60,14 +58,11 @@ public class Cliente {
     public AlgoritmosDTO ProcesarTexto(AlgoritmosDTO pDTO){
         AlgoritmosDTO miDTO = null;
         try{
-            List<Object> miPedido = new ArrayList<>();
-            miPedido.add(TipoAcciones.PROCESAR_TEXTO);
-            miPedido.add(pDTO);
-
-            dos.writeObject(miPedido);
+            dos.writeObject(pDTO);
             dos.flush();
             dos.reset();
 
+            // respuesta del servidor
             miDTO = (AlgoritmosDTO) dis.readObject();
         }
         catch (Exception e) {}

@@ -9,8 +9,8 @@ public class Algoritmo {
 
     static Boolean Validar(String pEntrada) {return false;}
 
-    static LineaResultado Codificar(String pEntrada) {return null;}
-    static LineaResultado Decodificar(String pEntrada) {return null;}
+    public LineaResultado Codificar(String pEntrada) {return null;}
+    public LineaResultado Decodificar(String pEntrada) {return null;}
 
     public LineaResultado getMiResultado()
     {

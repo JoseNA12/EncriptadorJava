@@ -2,6 +2,7 @@ package controlador;
 
 import datosDTO.AlgoritmosDTO;
 import datosDTO.CargarDatosDTO;
+import datosDTO.DatosDTO;
 
 import java.util.List;
 
@@ -13,9 +14,9 @@ public class Controlador {
         miClienteConexion = new Cliente();
     }
 
-    public CargarDatosDTO SolicitarDatosVisuales(){
+    public CargarDatosDTO SolicitarDatosVisuales(DatosDTO pDTO){
 
-        return miClienteConexion.solicitarDatosVisuales();
+        return miClienteConexion.solicitarDatosVisuales(pDTO);
     }
 
     public AlgoritmosDTO ProcesarTexto(AlgoritmosDTO miProcesadoDTO){
