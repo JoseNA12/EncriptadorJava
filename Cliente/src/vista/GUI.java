@@ -101,7 +101,7 @@ public class GUI extends Application {
                             cb_alfabetos.getSelectionModel().getSelectedItem(), // nombre
                             cb_codificar.isSelected())); // true -> Codificar
 
-                    //ta_textoProcesado.setText(respuesta.getMiResultado());
+                    ta_textoProcesado.setText(respuesta.getMiResultado());
                     //Algun codigo para desplegarlo en pantalla
                 }
                 else

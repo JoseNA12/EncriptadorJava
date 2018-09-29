@@ -28,21 +28,14 @@ public class ControladorCliente {
         for (int i = 0; i < algoritmos.size(); i++)
         {
             try {
-                Algoritmo algoritmo = null;
+                String miInstancia = paqueteAlgoritmos + "." + algoritmos.get(i);
+                Algoritmo algoritmo = (Algoritmo) Class.forName(miInstancia).newInstance();
 
                 if (modoCodificacion) {
-
-                    String miInstancia = paqueteAlgoritmos + "." + algoritmos.get(i);
-
-                    algoritmo = (Algoritmo) Class.forName(miInstancia).newInstance();
-
-                    System.out.println(algoritmo.Codificar(textoOriginal));
-                    System.out.println(((Algoritmo) Class.forName(miInstancia).newInstance()).toString());
-
-                        //resultado.agregarLineaResultado(c);
+                    resultado.agregarLineaResultado(algoritmo.Codificar(textoOriginal));
                 }
                 else {
-
+                    resultado.agregarLineaResultado(algoritmo.Descodificar(textoOriginal));
                 }
             }
             catch(ClassNotFoundException e) {} catch (IllegalAccessException e) {
@@ -51,8 +44,8 @@ public class ControladorCliente {
                 e.printStackTrace();
             }
         }
-        // miDTO.setMiResultado(resultado);
-        return null;
+        miDTO.setMiResultado(resultado.toString());
+        return miDTO;
     }
 
     public List<String> CargarAlfabetos() // Llamar al DAO (misAlfabetos.getAlfabetos();) y obtener el nombre los alfabetos

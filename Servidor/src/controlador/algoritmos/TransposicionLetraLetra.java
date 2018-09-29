@@ -3,10 +3,9 @@ package controlador.algoritmos;
 import controlador.Algoritmo;
 import modelo.LineaResultado;
 
-public class TrasposicionLetraLetra extends Algoritmo {
+public class TransposicionLetraLetra extends Algoritmo {
 
-
-    public static LineaResultado Codificar(String pEntrada) {
+    public LineaResultado Codificar(String pEntrada) {
         String temp = "";
         String fraseCifrada = "";
 
@@ -23,8 +22,14 @@ public class TrasposicionLetraLetra extends Algoritmo {
                 temp = "";
             }
         }
-        // fraseCifrada.trim(); // <- CONTIENE EL RESULTADO!!
-        return null;
+        return new LineaResultado(this.getClass().getSimpleName(), fraseCifrada.trim(), true);
+    }
+
+    public LineaResultado Descodificar(String pEntrada){
+        LineaResultado lineaResultado = Codificar(pEntrada);
+        lineaResultado.setModoCodificacion(false);
+
+        return lineaResultado;
     }
 
 

@@ -1,22 +1,22 @@
 package modelo;
 
 public class LineaResultado {
-    private TipoAlgoritmo tipoAlgoritmo;
+    private String nombreAlgoritmo;
     private String textoProcesado;
-    private boolean modoCodificacion;
+    private String modoCodificacion;
 
-    public LineaResultado(TipoAlgoritmo tipoAlgoritmo, String textoProcesado, boolean modoCodificacion) {
-        this.tipoAlgoritmo = tipoAlgoritmo;
+    public LineaResultado(String nombreAlgoritmo, String textoProcesado, boolean modoCodificacion) {
+        this.nombreAlgoritmo = nombreAlgoritmo;
         this.textoProcesado = textoProcesado;
-        this.modoCodificacion = modoCodificacion;
+        setModoCodificacion(modoCodificacion);
     }
 
-    public TipoAlgoritmo getTipoAlgoritmo() {
-        return tipoAlgoritmo;
+    public String getTipoAlgoritmo() {
+        return nombreAlgoritmo;
     }
 
-    public void setTipoAlgoritmo(TipoAlgoritmo tipoAlgoritmo) {
-        this.tipoAlgoritmo = tipoAlgoritmo;
+    public void setTipoAlgoritmo(String nombreAlgoritmo) {
+        this.nombreAlgoritmo = nombreAlgoritmo;
     }
 
     public String getTextoProcesado() {
@@ -27,22 +27,21 @@ public class LineaResultado {
         this.textoProcesado = textoProcesado;
     }
 
-    public boolean isModoCodificacion() {
+    public String getModoCodificacion() {
         return modoCodificacion;
     }
 
     public void setModoCodificacion(boolean modoCodificacion) {
-        this.modoCodificacion = modoCodificacion;
+        if (modoCodificacion) { this.modoCodificacion = "Codificación"; }
+        else { this.modoCodificacion = "Descodificación"; }
     }
 
     public String toString(){
         String str = "";
-        str += "Tipo de algoritmo: " + this.tipoAlgoritmo.toString() + "\t";
-        if(this.modoCodificacion){
-            str += "Modo: Codificacion\t";
-        } else {
-            str += "Modo: Descodificacion\t";
-        }
+        str += "\n- Tipo de algoritmo: " + this.nombreAlgoritmo + "\n";
+
+        str += "Modo: " + this.modoCodificacion + "\n";
+
         str += "Salida: " + this.textoProcesado + "\n";
 
         return str;

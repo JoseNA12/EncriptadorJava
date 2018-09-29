@@ -8,16 +8,13 @@ import java.util.Map;
 
 public class CodigoTelefonico extends Algoritmo {
 
-    // QUITAR LUEGO
-    private static String Alfabeto = "abcdefghijklmnñopqrstuvwxyz";
-
     // Forma del diccionario: <Llave, <Digito, Posicion>>
     // -> Llave: caracter del alfabeto
     // -> Digito: numero del teclado telefónico
     // -> Posicion: posicion del digito acorde al teclado telefónico, 2-abc: a tiene posicion 1, b tiene posicion 2, y así
     static Map<String, Map<Integer, Integer>> distTecladoMap = new HashMap<String, Map<Integer, Integer>>();
 
-    public static LineaResultado Codificar(String pFrase){
+    public LineaResultado Codificar(String pFrase){
         CrearDiccionario();
         String fraseCifrada = "";
         String simboloEspacio = "* ";
@@ -34,11 +31,10 @@ public class CodigoTelefonico extends Algoritmo {
                 }
             }
         }
-        // fraseCifrada
-        return null;
+        return new LineaResultado(this.getClass().getSimpleName(), fraseCifrada, true);
     }
 
-    public static LineaResultado Descodificar(String pFrase){
+    public LineaResultado Descodificar(String pFrase){
         CrearDiccionario();
         String fraseDescifrada = "";
         String simboloEspacio = "* ";
@@ -56,19 +52,19 @@ public class CodigoTelefonico extends Algoritmo {
             }
             if (String.valueOf(pFrase.charAt(i)).equals("*")) { fraseDescifrada += " "; }
         }
-        // fraseDescifrada
-        return null;
+        return new LineaResultado(this.getClass().getSimpleName(), fraseDescifrada, false);
     }
 
-    private static void CrearDiccionario(){ // <Simbolo, digito>
+    private void CrearDiccionario(){ // <Simbolo, digito>
+        String alfabeto = super.getSimbolosAlfabetos();
         int contador = 0;
         Integer numeroTeclado = 2;
         // 8 por: 2, 3, 4, 5, 6, 7, 8, 9 (los digitos del teclado telefónico)
-        int cantCarecteresPorDigito = Alfabeto.length() / 8;
+        int cantCarecteresPorDigito = alfabeto.length() / 8;
 
-        if (Alfabeto.length() >= 8){
-            for (int i = 0; i < Alfabeto.length(); i++){
-                AgregarItemDiccionario(String.valueOf(Alfabeto.charAt(i)), numeroTeclado, contador);
+        if (alfabeto.length() >= 8){
+            for (int i = 0; i < alfabeto.length(); i++){
+                AgregarItemDiccionario(String.valueOf(alfabeto.charAt(i)), numeroTeclado, contador);
                 contador += 1;
 
                 if (contador >= cantCarecteresPorDigito && numeroTeclado != 9){

@@ -7,7 +7,8 @@ public class SustitucionVigenere extends Algoritmo {
 
     private static final String clave = "23";
 
-    public static LineaResultado Codificar(String pFrase, String pAlfabeto) {
+    public LineaResultado Codificar(String pFrase) {
+        String alfabeto = super.getSimbolosAlfabetos();
         String nuevaClave = ObtenerNuevaClave(clave, pFrase.length());
         String fraseCifrada = "";
 
@@ -17,25 +18,25 @@ public class SustitucionVigenere extends Algoritmo {
                 fraseCifrada += " ";
             }
             else {
-                for (int y = 0; y < pAlfabeto.length(); y++) {
-                    if (pFrase.charAt(i) == pAlfabeto.charAt(y)) {
+                for (int y = 0; y < alfabeto.length(); y++) {
+                    if (pFrase.charAt(i) == alfabeto.charAt(y)) {
                         int proximoCaracter = Integer.parseInt(String.valueOf(nuevaClave.charAt(i))) + y;
 
-                        if (proximoCaracter >= pAlfabeto.length()){
-                            proximoCaracter -= pAlfabeto.length();
+                        if (proximoCaracter >= alfabeto.length()){
+                            proximoCaracter -= alfabeto.length();
                         }
 
-                        fraseCifrada += pAlfabeto.charAt(proximoCaracter);
+                        fraseCifrada += alfabeto.charAt(proximoCaracter);
                         break;
                     }
                 }
             }
         }
-        // fraseDescrifrada // <- CONTIENE EL RESULTADO!!
-        return null;
+        return new LineaResultado(this.getClass().getSimpleName(), fraseCifrada, true);
     }
 
-    public static LineaResultado Descodificar(String pFrase, String pAlfabeto) {
+    public LineaResultado Descodificar(String pFrase) {
+        String alfabeto = super.getSimbolosAlfabetos();
         String nuevaClave = ObtenerNuevaClave(clave, pFrase.length());
         String fraseDescifrada = "";
 
@@ -45,22 +46,21 @@ public class SustitucionVigenere extends Algoritmo {
                 fraseDescifrada += " ";
             }
             else {
-                for (int y = 0; y < pAlfabeto.length(); y++) {
-                    if (pFrase.charAt(i) == pAlfabeto.charAt(y)) {
+                for (int y = 0; y < alfabeto.length(); y++) {
+                    if (pFrase.charAt(i) == alfabeto.charAt(y)) {
                         int proximoCaracter = y - Integer.parseInt(String.valueOf(nuevaClave.charAt(i)));
 
                         if (proximoCaracter < 0){
-                            proximoCaracter += pAlfabeto.length();
+                            proximoCaracter += alfabeto.length();
                         }
 
-                        fraseDescifrada += pAlfabeto.charAt(proximoCaracter);
+                        fraseDescifrada += alfabeto.charAt(proximoCaracter);
                         break;
                     }
                 }
             }
         }
-        // fraseDescrifrada // <- CONTIENE EL RESULTADO!!
-        return null;
+        return new LineaResultado(this.getClass().getSimpleName(), fraseDescifrada, false);
     }
 
     /**
@@ -70,7 +70,7 @@ public class SustitucionVigenere extends Algoritmo {
      * @param pLongitudFrase
      * @return
      */
-    private static String ObtenerNuevaClave(String pClave, int pLongitudFrase) {
+    private String ObtenerNuevaClave(String pClave, int pLongitudFrase) {
         String nuevaClave = "";
 
         if (pLongitudFrase > pClave.length()) {
