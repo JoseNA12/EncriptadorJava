@@ -13,7 +13,7 @@ public class EscritorTXT implements IEscritura {
 
     @Override
     public Boolean Escribir(AlgoritmosDTO miDTO) {
-        String resultado = miDTO.getMiResultado().toString();
+        String resultado = miDTO.getMiResultado();
 
         try {
             File file = new File(DIRECTORIO + "bitacora.txt");
