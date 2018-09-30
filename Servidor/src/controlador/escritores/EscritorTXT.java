@@ -7,7 +7,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 
-public class EscritorTxt implements IEscritura {
+public class EscritorTXT implements IEscritura {
 
     String ruta = "src/bitacoras/filename.txt";
 

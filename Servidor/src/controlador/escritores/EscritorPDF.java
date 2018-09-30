@@ -3,7 +3,7 @@ package controlador.escritores;
 import controlador.IEscritura;
 import datosDTO.AlgoritmosDTO;
 
-public class EscritorPdf implements IEscritura {
+public class EscritorPDF implements IEscritura {
 
     String ruta = "src/bitacoras/filename.txt";
 
