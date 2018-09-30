@@ -15,9 +15,11 @@ import java.io.IOException;
 public class GUI extends Application {
 
     @FXML Button btn_algoritmos, btn_mecanismos, btn_bitacora;
+
     private static Servidor mServidor;
 
     protected static GUI miInstancia = null;
+    protected static Controlador miControlador = new Controlador();
 
     @Override
     public void start(Stage primaryStage) throws Exception{

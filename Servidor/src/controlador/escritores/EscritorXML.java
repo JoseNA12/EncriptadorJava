@@ -5,8 +5,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import controlador.AlgoritmosDTO;
 import controlador.IEscritura;
+import datosDTO.AlgoritmosDTO;
 import modelo.estructuras.Resultados;
 
 public class EscritorXML implements IEscritura {
