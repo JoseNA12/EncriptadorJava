@@ -3,7 +3,7 @@ package controlador;
 import modelo.LineaResultado;
 import modelo.Resultado;
 
-public class Algoritmo {
+public class Algoritmo { //TODO: cambiar por una interfaz para implementar el strategy
 
     private LineaResultado miResultado;
     private String simbolosAlfabetos = "abcdefghijklmnñopqrstuvwxyz";
