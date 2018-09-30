@@ -19,7 +19,7 @@ public class GUI extends Application {
     private static Servidor mServidor;
 
     protected static GUI miInstancia = null;
-    protected static Controlador miControlador = new Controlador();
+    protected Controlador miControlador = new Controlador();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
