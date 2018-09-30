@@ -1,11 +1,9 @@
 package controlador;
 
-import controlador.escritores.IEscritura;
 import modelo.Alfabeto;
 import modelo.Resultado;
 import modelo.TipoAlgoritmo;
 
-import java.io.*;
 import java.util.List;
 
 public class Controlador implements IValidable {

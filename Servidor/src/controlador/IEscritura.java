@@ -1,4 +1,4 @@
-package controlador.escritores;
+package controlador;
 
 import controlador.AlgoritmosDTO;
 

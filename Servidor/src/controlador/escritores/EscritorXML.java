@@ -6,7 +6,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import controlador.AlgoritmosDTO;
-import modelo.Resultado;
+import controlador.IEscritura;
 import modelo.estructuras.Resultados;
 
 public class EscritorXML implements IEscritura {
