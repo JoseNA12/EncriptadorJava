@@ -1,6 +1,11 @@
 package vista;
 
 import controlador.Controlador;
+import controlador.IEscritura;
+import controlador.escritores.EscritorPDF;
+import controlador.escritores.EscritorTXT;
+import controlador.escritores.EscritorXML;
+import datosDTO.AlgoritmosDTO;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +13,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import modelo.LineaResultado;
+import modelo.Resultado;
 import servidor.Servidor;
 
 import java.io.IOException;
@@ -43,6 +50,35 @@ public class GUI extends Application {
     }
 
     public static void main(String[] args) {
+        /*IEscritura escritorTXT = new EscritorTXT();
+        IEscritura escritorXML = new EscritorXML();
+        IEscritura escritorPDF = new EscritorPDF();
+
+        Resultado resultado = new Resultado("Hola mundo");
+        resultado.agregarLineaResultado(
+                new LineaResultado("SustVigenere", "jojojojo", true)
+        );
+        resultado.agregarLineaResultado(
+                new LineaResultado("TrasLetra", "uiel uenco", false)
+        );
+        resultado.agregarLineaResultado(
+                new LineaResultado("Telefonico", "uiel uenco", true)
+        );
+
+        String str = resultado.toString();
+
+        AlgoritmosDTO algoritmosDTO = new AlgoritmosDTO(
+                null,
+                null,
+                null,
+                str,
+                null,
+                null,
+                null);
+        escritorTXT.Escribir(algoritmosDTO);
+        escritorXML.Escribir(algoritmosDTO);
+        escritorPDF.Escribir(algoritmosDTO);*/
+
         new Thread(()->{iniciarServidor(5056);}).start();
         launch(args);
     }

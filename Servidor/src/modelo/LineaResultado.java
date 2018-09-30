@@ -38,11 +38,11 @@ public class LineaResultado {
 
     public String toString(){
         String str = "";
-        str += "\n- Tipo de algoritmo: " + this.nombreAlgoritmo + "\n";
+        str += "\r\n\tTipo de algoritmo: " + this.nombreAlgoritmo + "\r\n";
 
-        str += "Modo: " + this.modoCodificacion + "\n";
+        str += "\tModo: " + this.modoCodificacion + "\r\n";
 
-        str += "Salida: " + this.textoProcesado + "\n";
+        str += "\tSalida: " + this.textoProcesado + "\r\n";
 
         return str;
     }

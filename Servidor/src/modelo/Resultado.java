@@ -49,8 +49,8 @@ public class Resultado {
 
     @Override
     public String toString() {
-        String str = "Frase original: " + this.fraseOriginal + "\n";
-        str += "Fecha: " + this.fecha.toString() + "\n";
+        String str = "Frase original: " + this.fraseOriginal + "\r\n";
+        str += "Fecha: " + this.fecha.toString() + "\r\n";
         for(LineaResultado linea : this.lineasResultados){
             str += linea.toString();
         }

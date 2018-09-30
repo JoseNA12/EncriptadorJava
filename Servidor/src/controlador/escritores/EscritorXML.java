@@ -15,18 +15,18 @@ public class EscritorXML implements IEscritura {
         String resultado = miDTO.getMiResultado();
 
         try {
-            File file = new File(DIRECTORIO + "bitacora.txt");
+            File file = new File(DIRECTORIO + "bitacora.xml");
 
             // Si el archivo no existe es creado
             if (!file.exists()) {
                 file.createNewFile();
             }
 
-            FileWriter fw = new FileWriter(file);
+            FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter out = new PrintWriter(bw);
 
-            out.println("<resultado>\n" + resultado + "\n</resultado>");
+            out.println("<resultado>\r\n" + resultado + "\r\n</resultado>");
 
             out.close();
             bw.close();

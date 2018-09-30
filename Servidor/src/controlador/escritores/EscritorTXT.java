@@ -23,11 +23,12 @@ public class EscritorTXT implements IEscritura {
                 file.createNewFile();
             }
 
-            FileWriter fw = new FileWriter(file);
+            FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter out = new PrintWriter(bw);
 
             out.println(resultado);
+            out.println("-----------------------------------------------------------------");
 
             out.close();
             bw.close();
