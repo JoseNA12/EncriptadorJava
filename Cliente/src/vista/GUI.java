@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -26,8 +27,10 @@ public class GUI extends Application {
     @FXML private ListView lv_algoritmos, lv_algoritmos_deseados;
     @FXML private ComboBox<String> cb_alfabetos, cb_formatosEscritura;
     @FXML private TextArea ta_textoEntrada, ta_textoProcesado;
-    @FXML private CheckBox cb_codificar, cb_generarTexto;
+    @FXML private CheckBox cb_codificar, cb_generarTexto, cb_noConsecuNoDuplica, cb_consecuNoDuplica, cb_consecuDuplica;
     @FXML private Button bt_procesar;
+    @FXML private Pane pane_generarTexto;
+    @FXML private TextField tf_longitudTexto;
 
     private Controlador miControlador;
 
@@ -61,6 +64,7 @@ public class GUI extends Application {
         initComponenteAlfabeto(miDTO.getNombresAlfabetos());
         initComponenteAlgoritmos(miDTO.getNombresAlgoritmos());
         initComponenteEscritores(miDTO.getFormatosEscritura());
+        cb_action_checkBoxsGenerarTexto();
     }
 
     private void initComponenteAlfabeto(List<String> pAlfabetos) // ComboBox
@@ -103,8 +107,29 @@ public class GUI extends Application {
         cb_formatosEscritura.setButtonCell(factory.call(null));
     }
 
-    public void cb_action_generarTexto(){
-        ta_textoEntrada.setVisible(!cb_generarTexto.isSelected());
+    public void cb_action_checkBoxsGenerarTexto(){
+        cb_generarTexto.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                pane_generarTexto.setVisible(newValue);
+                ta_textoEntrada.setVisible(!newValue);
+            }
+        });
+    }
+
+    public void cb_action_noConsecuNoDuplica(){
+        cb_consecuNoDuplica.setSelected(false);
+        cb_consecuDuplica.setSelected(false);
+    }
+
+    public void cb_action_consecuNoDuplica(){
+        cb_noConsecuNoDuplica.setSelected(false);
+        cb_consecuDuplica.setSelected(false);
+    }
+
+    public void cb_action_consecuDuplica(){
+        cb_noConsecuNoDuplica.setSelected(false);
+        cb_consecuNoDuplica.setSelected(false);
     }
 
     public void bt_action_procesar()
