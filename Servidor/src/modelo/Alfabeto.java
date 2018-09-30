@@ -3,6 +3,10 @@ package modelo;
 import controlador.IValidable;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Alfabeto implements IValidable, Serializable {
 
@@ -32,7 +36,14 @@ public class Alfabeto implements IValidable, Serializable {
 
     @Override
     public Boolean Validar(String pEntrada) {
-        //TODO: implementar metodo de validacion
+        List<Character> chars = simbolos.chars().mapToObj(e->(char)e).collect(Collectors.toList());
+        final Set<Character> conjunto = new HashSet<>();
+
+        for(Character simbolo : chars){
+            if(!conjunto.add(simbolo))
+                return false;
+        }
+
         return true;
     }
 }

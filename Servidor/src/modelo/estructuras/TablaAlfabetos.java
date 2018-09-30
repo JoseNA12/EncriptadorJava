@@ -17,20 +17,6 @@ public class TablaAlfabetos implements Serializable {
         this.tablaAlfabetos = new HashMap<>();
     }
 
-    //Creo que tal vez no es necesario.
-    /*public TablaAlfabetos(ArrayList<Alfabeto> alfabetos){
-        this.tablaAlfabetos = new HashMap<>();
-        this.ultimoId = -1;
-
-        for (Alfabeto alfabeto : alfabetos) {
-            Integer idActual = alfabeto.getIdentificador();
-
-            if(idActual > this.ultimoId)
-                this.ultimoId = idActual;
-            tablaAlfabetos.put(idActual, alfabeto);
-        }
-    }*/
-
     public void addAlfabeto(String identificador, String simbolos) throws Exception{
         Alfabeto alfabeto = new Alfabeto(identificador, simbolos);
 

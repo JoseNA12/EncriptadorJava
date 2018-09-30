@@ -66,7 +66,7 @@ public class GUIAlfabetos {
             alerta.setHeaderText("ERROR DE ALFABETO");
             alerta.setContentText("Ha ocurrido un error al agregar el alfabeto ingresado.\n\n" +
                     "Esto puede ocurrir debido al ingreso de un identificador duplicado o un conjunto de simbolos " +
-                    "invalidos. Por favor intente de nuevo.");
+                    "invalidos (i.e. duplicados). Por favor intente de nuevo.");
             alerta.showAndWait();
         }
         cargarListaAlfabetos();
@@ -82,7 +82,6 @@ public class GUIAlfabetos {
 
     @FXML
     public void modificarAlfabeto(){
-        //TODO
         String identificador = tf_identificador.getText();
         String simbolos = tf_simbolos.getText();
 
