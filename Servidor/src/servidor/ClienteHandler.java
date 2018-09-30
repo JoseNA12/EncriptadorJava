@@ -47,7 +47,8 @@ public class ClienteHandler extends Thread {
 
                         dos.writeObject(new CargarDatosDTO(
                                 miControlador.CargarAlgoritmos(),
-                                CARGAR_ALGORIT_ALFAB, miControlador.CargarAlfabetos()));
+                                CARGAR_ALGORIT_ALFAB, miControlador.CargarAlfabetos(),
+                                miControlador.CargarFormatosEscritura()));
                         dos.flush();
                         break;
 

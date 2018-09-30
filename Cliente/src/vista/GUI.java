@@ -6,6 +6,8 @@ import datosDTO.AlgoritmosDTO;
 import datosDTO.CargarDatosDTO;
 import datosDTO.DatosDTO;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -22,9 +24,9 @@ import java.util.List;
 public class GUI extends Application {
 
     @FXML private ListView lv_algoritmos, lv_algoritmos_deseados;
-    @FXML private ComboBox<String> cb_alfabetos;
+    @FXML private ComboBox<String> cb_alfabetos, cb_formatosEscritura;
     @FXML private TextArea ta_textoEntrada, ta_textoProcesado;
-    @FXML private CheckBox cb_codificar;
+    @FXML private CheckBox cb_codificar, cb_generarTexto;
     @FXML private Button bt_procesar;
 
     private Controlador miControlador;
@@ -57,7 +59,8 @@ public class GUI extends Application {
         miControlador = new Controlador();
         CargarDatosDTO miDTO = miControlador.SolicitarDatosVisuales(new DatosDTO(null, TipoAcciones.CARGAR_ALGORIT_ALFAB));
         initComponenteAlfabeto(miDTO.getNombresAlfabetos());
-        initComponenteAlgorimos(miDTO.getNombresAlgoritmos());
+        initComponenteAlgoritmos(miDTO.getNombresAlgoritmos());
+        initComponenteEscritores(miDTO.getFormatosEscritura());
     }
 
     private void initComponenteAlfabeto(List<String> pAlfabetos) // ComboBox
@@ -76,13 +79,32 @@ public class GUI extends Application {
         cb_alfabetos.setButtonCell(factory.call(null));
     }
 
-    private void initComponenteAlgorimos(List<String> pAlgoritmos) // ListView
+    private void initComponenteAlgoritmos(List<String> pAlgoritmos) // ListView
     {
         for(int i = 0; i < pAlgoritmos.size(); i++) {
             ol_algoritmos.add(pAlgoritmos.get(i));
         }
 
         lv_algoritmos.setItems(ol_algoritmos);
+    }
+
+    private void initComponenteEscritores(List<String> pEscritores){
+        cb_formatosEscritura.getItems().addAll(pEscritores);
+        Callback<ListView<String>, ListCell<String>> factory = lv -> new ListCell<String>() {
+
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty ? "" : item);
+            }
+        };
+
+        cb_formatosEscritura.setCellFactory(factory);
+        cb_formatosEscritura.setButtonCell(factory.call(null));
+    }
+
+    public void cb_action_generarTexto(){
+        ta_textoEntrada.setVisible(!cb_generarTexto.isSelected());
     }
 
     public void bt_action_procesar()
@@ -99,7 +121,8 @@ public class GUI extends Application {
                             ta_textoEntrada.getText(),
                             "",
                             cb_alfabetos.getSelectionModel().getSelectedItem(), // nombre
-                            cb_codificar.isSelected())); // true -> Codificar
+                            cb_codificar.isSelected(),
+                            cb_formatosEscritura.getSelectionModel().getSelectedItem())); // true -> Codificar
 
                     ta_textoProcesado.setText(respuesta.getMiResultado());
                     //Algun codigo para desplegarlo en pantalla

@@ -7,22 +7,22 @@ import accionesCliente.TipoAcciones;
  * Clase DTO encargada de transportar los datos requeridos para el
  * procesamiento de información
  */
-public class AlgoritmosDTO extends DatosDTO { // implements Serializable {
+public class AlgoritmosDTO extends DatosDTO {
 
     private String textoOriginal;
     private String miResultado;
     private String miAlfabeto;
-    //private List<String> algoritmos;
     private Boolean modoCodificacion;
-    // private static final long serialVersionUID = 1113799434508676095L;
+    private String formatoEscritura;
 
 
-    public AlgoritmosDTO(List<String> nombresAlgoritmos, TipoAcciones accion, String textoOriginal, String miResultado, String miAlfabeto, Boolean modoCodificacion) {
+    public AlgoritmosDTO(List<String> nombresAlgoritmos, TipoAcciones accion, String textoOriginal, String miResultado, String miAlfabeto, Boolean modoCodificacion, String formatoEscritura) {
         super(nombresAlgoritmos, accion);
         this.textoOriginal = textoOriginal;
         this.miResultado = miResultado;
         this.miAlfabeto = miAlfabeto;
         this.modoCodificacion = modoCodificacion;
+        this.formatoEscritura = formatoEscritura;
     }
 
     public String getTextoOriginal() {
@@ -41,11 +41,11 @@ public class AlgoritmosDTO extends DatosDTO { // implements Serializable {
         this.miResultado = miResultado;
     }
 
-    public String getAlfabeto() {
-        return this.miAlfabeto;
+    public String getMiAlfabeto() {
+        return miAlfabeto;
     }
 
-    public void setIdAlfabeto(String miAlfabeto) {
+    public void setMiAlfabeto(String miAlfabeto) {
         this.miAlfabeto = miAlfabeto;
     }
 
@@ -56,4 +56,14 @@ public class AlgoritmosDTO extends DatosDTO { // implements Serializable {
     public void setModoCodificacion(Boolean modoCodificacion) {
         this.modoCodificacion = modoCodificacion;
     }
+
+    public String getFormatoEscritura() {
+        return formatoEscritura;
+    }
+
+    public void setFormatoEscritura(String formatoEscritura) {
+        this.formatoEscritura = formatoEscritura;
+    }
+    
+    
 }

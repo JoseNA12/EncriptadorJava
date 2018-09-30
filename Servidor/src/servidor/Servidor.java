@@ -1,9 +1,6 @@
 package servidor;
 
 
-import controlador.EscritorTxt;
-import controlador.EscritorXml;
-
 import java.io.*;
 import java.net.*;
 

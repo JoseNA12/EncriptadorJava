@@ -1,5 +1,6 @@
-package controlador;
+package controlador.escritores;
 
+import controlador.IEscritura;
 import datosDTO.AlgoritmosDTO;
 
 import java.io.BufferedWriter;

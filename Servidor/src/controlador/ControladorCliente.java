@@ -13,13 +13,14 @@ import java.util.List;
 
 public class ControladorCliente {
 
-    private final String paqueteAlgoritmos = "controlador.algoritmos";
+    private final String dirPaqueteAlgoritmos = "controlador.algoritmos";
+    private final String dirPaqueteEscritores = "controlador.escritores";
 
 
     public AlgoritmosDTO ProcesarTexto(AlgoritmosDTO miDTO)
     {
         String textoOriginal = miDTO.getTextoOriginal();
-        String miAlfabeto = miDTO.getAlfabeto();
+        String miAlfabeto = miDTO.getMiAlfabeto();
         List<String> algoritmos = miDTO.getNombresAlgoritmos();
         Boolean modoCodificacion = miDTO.getModoCodificacion();
 
@@ -28,7 +29,7 @@ public class ControladorCliente {
         for (int i = 0; i < algoritmos.size(); i++)
         {
             try {
-                String miInstancia = paqueteAlgoritmos + "." + algoritmos.get(i);
+                String miInstancia = dirPaqueteAlgoritmos + "." + algoritmos.get(i);
                 Algoritmo algoritmo = (Algoritmo) Class.forName(miInstancia).newInstance();
 
                 if (modoCodificacion) {
@@ -58,12 +59,29 @@ public class ControladorCliente {
         return lista;
     }
 
+    public List<String> CargarFormatosEscritura(){
+        List<String> escritoresActuales;
+
+        try {
+            escritoresActuales = ObtenerClases(dirPaqueteEscritores);
+        }
+        catch (ClassNotFoundException e) {
+            escritoresActuales = new ArrayList<String>();
+            // e.printStackTrace();
+        }
+        catch (IOException e) {
+            escritoresActuales = new ArrayList<String>();
+            // e.printStackTrace();
+        }
+        return escritoresActuales;
+    }
+
     public List<String> CargarAlgoritmos()
     {
         List<String> algoritmosActuales;
 
         try {
-            algoritmosActuales = ObtenerClases(paqueteAlgoritmos);
+            algoritmosActuales = ObtenerClases(dirPaqueteAlgoritmos);
         }
         catch (ClassNotFoundException e) {
             algoritmosActuales = new ArrayList<String>();
@@ -76,6 +94,14 @@ public class ControladorCliente {
         return algoritmosActuales;
     }
 
+    /**
+     * Dada la dirección de un paquete, encuentra todas las clases contenidas en dicho paquete,
+     * retornando una lista con los nombres propiamentes de las clases.
+     * @param pNombrePaquete
+     * @return
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     private List<String> ObtenerClases(String pNombrePaquete) throws ClassNotFoundException, IOException { // Class[]
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         assert classLoader != null;
@@ -95,6 +121,7 @@ public class ControladorCliente {
 
         List<String> miClases = new ArrayList<String>();
 
+        // obtener los nom,bres de las clases
         for(int i = 0; i < classes.size(); i++){
             miClases.add(classes.get(i).getSimpleName());
         }
@@ -103,20 +130,20 @@ public class ControladorCliente {
         // return classes.toArray(new Class[classes.size()]);
     }
 
-    private List<Class> EncontrarClases(File directory, String packageName) throws ClassNotFoundException {
+    private List<Class> EncontrarClases(File pDirectorio, String pNombrePaquete) throws ClassNotFoundException {
         List<Class> classes = new ArrayList<Class>();
-        if (!directory.exists()) {
+        if (!pDirectorio.exists()) {
             return classes;
         }
-        File[] files = directory.listFiles();
+        File[] files = pDirectorio.listFiles();
 
         for (File file : files) {
             if (file.isDirectory()) {
                 assert !file.getName().contains(".");
-                classes.addAll(EncontrarClases(file, packageName + "." + file.getName()));
+                classes.addAll(EncontrarClases(file, pNombrePaquete + "." + file.getName()));
             }
             else if (file.getName().endsWith(".class")) {
-                classes.add(Class.forName(packageName + '.' + file.getName().substring(0, file.getName().length() - 6)));
+                classes.add(Class.forName(pNombrePaquete + '.' + file.getName().substring(0, file.getName().length() - 6)));
             }
         }
         return classes;

@@ -10,12 +10,13 @@ import accionesCliente.TipoAcciones;
 public class CargarDatosDTO extends DatosDTO { //implements Serializable {
 
     private List<String> nombresAlfabetos;
-    //private List<String> nombresAlgoritmos;
+    private List<String> formatosEscritura;
 
 
-    public CargarDatosDTO(List<String> nombresAlgoritmos, TipoAcciones accion, List<String> nombresAlfabetos) {
+    public CargarDatosDTO(List<String> nombresAlgoritmos, TipoAcciones accion, List<String> nombresAlfabetos, List<String> formatosEscritura) {
         super(nombresAlgoritmos, accion);
         this.nombresAlfabetos = nombresAlfabetos;
+        this.formatosEscritura = formatosEscritura;
     }
 
     public List<String> getNombresAlfabetos() {
@@ -26,4 +27,11 @@ public class CargarDatosDTO extends DatosDTO { //implements Serializable {
         this.nombresAlfabetos = nombresAlfabetos;
     }
 
+    public List<String> getFormatosEscritura() {
+        return formatosEscritura;
+    }
+
+    public void setFormatosEscritura(List<String> formatosEscritura) {
+        this.formatosEscritura = formatosEscritura;
+    }
 }

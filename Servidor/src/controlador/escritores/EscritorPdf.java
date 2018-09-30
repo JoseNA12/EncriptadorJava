@@ -1,5 +1,6 @@
-package controlador;
+package controlador.escritores;
 
+import controlador.IEscritura;
 import datosDTO.AlgoritmosDTO;
 
 public class EscritorPdf implements IEscritura {
