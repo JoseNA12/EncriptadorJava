@@ -17,60 +17,6 @@ public class Controlador implements IValidable {
         return null;
     }
 
-    public void ProcesarTexto(AlgoritmosDTO miDTO)
-    {
-        String textoOriginal = miDTO.getTextoOriginal();
-        Alfabeto miAlfabeto = miDTO.getAlfabeto();
-        List<TipoAlgoritmo> algoritmos = miDTO.getAlgoritmos();
-        Boolean modoCodificacion = miDTO.getModoCodificacion();
-
-
-        Resultado resultado = new Resultado(textoOriginal);
-
-        for (int i = 0; i < algoritmos.size(); i++)
-        {
-            if (modoCodificacion)
-            {
-                switch (algoritmos.get(i))
-                {
-                    case TRASLETRALETRA:
-                        resultado.agregarLineaResultado(TrasLetraLetra.Codificar(textoOriginal));
-                        break;
-
-                    case CODTELEFONICO:
-                        resultado.agregarLineaResultado(CodTelefonico.Codificar(textoOriginal));
-                        break;
-
-                    case SUSTVIGENERE:
-                        resultado.agregarLineaResultado(SustVigenere.Codificar(textoOriginal, "", miAlfabeto.getSimbolos()));
-                        break;
-                }
-            }
-            else
-            {
-                switch (algoritmos.get(i))
-                {
-                    case TRASLETRALETRA:
-                        resultado.agregarLineaResultado(TrasLetraLetra.Decodificar(textoOriginal));
-                        break;
-
-                    case CODTELEFONICO:
-                        resultado.agregarLineaResultado(CodTelefonico.Decodificar(textoOriginal));
-                        break;
-
-                    case SUSTVIGENERE:
-                        resultado.agregarLineaResultado(SustVigenere.Decodificar(textoOriginal));
-                        break;
-
-                }
-            }
-        }
-        miDTO.setMiResultado(resultado);
-    }
-
-    //TODO: creo que ya no es necesario debido a que la clase algoritmo define el parametro
-    public void ProcesarTexto(AlgoritmosDTO miDTO, String pParametroArg) {}
-
     //TODO: eliminar codigo, se debe ejecutar en el escritor
     public void EscribirArch(AlgoritmosDTO miDTO) {
         /*System.out.println("Controlador.EscribirArch(dto)");
