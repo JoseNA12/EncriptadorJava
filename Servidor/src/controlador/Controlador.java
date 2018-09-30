@@ -22,24 +22,7 @@ public class Controlador implements IValidable {
 
 
     //TODO: eliminar codigo, se debe ejecutar en el escritor
-    public void EscribirArch(AlgoritmosDTO miDTO) {
-        /*System.out.println("Controlador.EscribirArch(dto)");
 
-        Resultado result = miDTO.getMiResultado();
-
-        File f = new File("Resultados/");
-
-        try {
-            FileWriter w = new FileWriter(f);
-            BufferedWriter bw = new BufferedWriter(w);
-            PrintWriter wr = new PrintWriter(bw);
-
-            //wr.write(result.toString()); Escribir a un archivo,
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }*/
-    }
 
     public Boolean AgregarAlfabeto(IOServidorDTO miDTO)
     {

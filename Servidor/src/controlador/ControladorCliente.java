@@ -46,7 +46,19 @@ public class ControladorCliente {
             }
         }
         miDTO.setMiResultado(resultado.toString());
+        EscribirBitacora(miDTO);
         return miDTO;
+    }
+
+    public boolean EscribirBitacora(AlgoritmosDTO miDTO) {
+        try {
+            String miInstancia = dirPaqueteEscritores + "." + miDTO.getFormatoEscritura();
+            IEscritura escritor = (IEscritura) Class.forName(miInstancia).newInstance();
+            return escritor.Escribir(miDTO);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public List<String> CargarAlfabetos() // Llamar al DAO (misAlfabetos.getAlfabetos();) y obtener el nombre los alfabetos

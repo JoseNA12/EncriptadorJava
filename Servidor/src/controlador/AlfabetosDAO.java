@@ -1,15 +1,15 @@
 package controlador;
 
-import datosDTO.AlgoritmosDTO;
 import modelo.Alfabeto;
 import modelo.estructuras.TablaAlfabetos;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 
 public class AlfabetosDAO implements IValidable {
     private TablaAlfabetos tablaAlfabetos;
-    private String pathTabla = "C:\\Users\\davva\\Desktop\\alfabetos.alf";
+    private String pathTabla = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "/alfabetos.abc";
 
     public AlfabetosDAO(){
         tablaAlfabetos = new TablaAlfabetos();
