@@ -10,7 +10,7 @@ import java.util.*;
 
 public class Controlador implements IValidable {
 
-    public Alfabeto alfabetoDefault = new Alfabeto(0, "abcdefghijklmnñopqrstuvwxyz"); // default
+    //public Alfabeto alfabetoDefault = new Alfabeto(0, "abcdefghijklmnñopqrstuvwxyz"); // default
     private AlfabetosDAO misAlfabetos = new AlfabetosDAO();
     private IEscritura miEscritura;
 
