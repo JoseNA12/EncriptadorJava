@@ -48,7 +48,7 @@ public class ClienteHandler extends Thread {
 
                         dos.writeObject(new CargarDatosDTO(
                                 miControlador.CargarAlgoritmos(),
-                                CARGAR_ALGORIT_ALFAB, miControlador.CargarAlfabetos(),
+                                CARGAR_ALGORIT_ALFAB, miControlador.CargarIDsAlfabetos(),
                                 miControlador.CargarFormatosEscritura()));
                         dos.flush();
                         break;
@@ -61,9 +61,8 @@ public class ClienteHandler extends Thread {
 
                     case PROCESAR_TEXTO_GENERAR_FRASE:
 
-                        GenerarFraseDTO generarFraseDTO = (GenerarFraseDTO) dtoRecibido;
-                        // Llamar Algoritmo método
-
+                        dos.writeObject(miControlador.GenerarFrase((GenerarFraseDTO) dtoRecibido));
+                        dos.flush();
                         break;
 
                     case CERRAR_CONEXION:

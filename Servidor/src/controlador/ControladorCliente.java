@@ -1,11 +1,20 @@
 package controlador;
 
+import accionesCliente.TiposGenerarFrase;
+import controlador.frase.MezclaConsecuDuplica;
+import controlador.frase.MezclaConsecuNoDuplica;
+import controlador.frase.MezclaNoConsecuNoDuplica;
+import controlador.frase.Mezclar;
 import datosDTO.AlgoritmosDTO;
+import datosDTO.CargarDatosDTO;
+import datosDTO.DatosDTO;
+import datosDTO.GenerarFraseDTO;
 import modelo.Resultado;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class ControladorCliente {
 
@@ -16,7 +25,7 @@ public class ControladorCliente {
     public AlgoritmosDTO ProcesarTexto(AlgoritmosDTO miDTO)
     {
         String textoOriginal = miDTO.getTextoOriginal();
-        String miAlfabeto = miDTO.getMiAlfabeto();
+        String miAlfabeto = ObtenerSimbolosAlgabeto(miDTO.getMiAlfabeto());
         List<String> algoritmos = miDTO.getNombresAlgoritmos();
         Boolean modoCodificacion = miDTO.getModoCodificacion();
 
@@ -27,12 +36,66 @@ public class ControladorCliente {
             try {
                 String miInstancia = dirPaqueteAlgoritmos + "." + algoritmos.get(i);
                 Algoritmo algoritmo = (Algoritmo) Class.forName(miInstancia).newInstance();
+                algoritmo.setSimbolosAlfabetos(miAlfabeto);
 
                 if (modoCodificacion) {
                     resultado.agregarLineaResultado(algoritmo.Codificar(textoOriginal));
                 }
                 else {
                     resultado.agregarLineaResultado(algoritmo.Descodificar(textoOriginal));
+                }
+            }
+            catch(ClassNotFoundException e) {} catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            }
+        }
+        miDTO.setMiResultado(resultado.toString());
+        EscribirBitacora(miDTO);
+        return miDTO;
+    }
+
+    public AlgoritmosDTO GenerarFrase(GenerarFraseDTO miDTO)
+    {
+        String miAlfabeto = ObtenerSimbolosAlgabeto(miDTO.getMiAlfabeto());
+        List<String> algoritmos = miDTO.getNombresAlgoritmos();
+        Boolean modoCodificacion = miDTO.getModoCodificacion();
+        TiposGenerarFrase tipoGenerarFrase = miDTO.getTipo();
+        int longitudFrase = miDTO.getLongitud();
+
+        Mezclar mezcla = new Mezclar();
+
+        switch (tipoGenerarFrase){
+            case NO_CONSECUTIVOS_Y_NO_DUPLICADOS:
+                mezcla.setMezclaSimbolosBuilder(new MezclaNoConsecuNoDuplica());
+                break;
+
+            case CONSECUTIVOS_Y_NO_DUPLICADOS:
+                mezcla.setMezclaSimbolosBuilder(new MezclaConsecuNoDuplica());
+                break;
+
+            case CONSECUTIVOS_Y_DUPLICADOS:
+                mezcla.setMezclaSimbolosBuilder(new MezclaConsecuDuplica());
+                break;
+        }
+
+        mezcla.construirMezcla(miAlfabeto, longitudFrase);
+        String resultadoMezcla = mezcla.getMezclaSimbolos().getSimbolos();
+        Resultado resultado = new Resultado(resultadoMezcla);
+
+        for (int i = 0; i < algoritmos.size(); i++)
+        {
+            try {
+                String miInstancia = dirPaqueteAlgoritmos + "." + algoritmos.get(i);
+                Algoritmo algoritmo = (Algoritmo) Class.forName(miInstancia).newInstance();
+                algoritmo.setSimbolosAlfabetos(miAlfabeto);
+
+                if (modoCodificacion) {
+                    resultado.agregarLineaResultado(algoritmo.Codificar(resultadoMezcla));
+                }
+                else {
+                    resultado.agregarLineaResultado(algoritmo.Descodificar(resultadoMezcla));
                 }
             }
             catch(ClassNotFoundException e) {} catch (IllegalAccessException e) {
@@ -57,9 +120,13 @@ public class ControladorCliente {
         }
     }
 
-    public List<String> CargarAlfabetos() {
+    public List<String> CargarIDsAlfabetos() {
         List<String> lista = alfabetosDAO.recuperarIDsAlfabetos();
         return lista;
+    }
+
+    private String ObtenerSimbolosAlgabeto(String pAlfabetoSeleccionado){
+        return alfabetosDAO.getTablaAlfabetos().getAlfabeto(pAlfabetoSeleccionado).getSimbolos();
     }
 
     public List<String> CargarFormatosEscritura(){
