@@ -1,10 +1,12 @@
 package vista;
 
 import accionesCliente.TipoAcciones;
+import accionesCliente.TiposGenerarFrase;
 import controlador.Controlador;
 import datosDTO.AlgoritmosDTO;
 import datosDTO.CargarDatosDTO;
 import datosDTO.DatosDTO;
+import datosDTO.GenerarFraseDTO;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -136,30 +138,93 @@ public class GUI extends Application {
     {
         if (!ol_algoritmos_deseados.isEmpty())
         {
-            if (!ta_textoEntrada.getText().equals(""))
+            if (!cb_alfabetos.getSelectionModel().isEmpty())
             {
-                if (!cb_alfabetos.getSelectionModel().isEmpty())
+                if (!cb_formatosEscritura.getSelectionModel().isEmpty())
                 {
-                    AlgoritmosDTO respuesta = miControlador.ProcesarTexto(new AlgoritmosDTO(
-                            ObtenerAlgorimosMarcados(),
-                            TipoAcciones.PROCESAR_TEXTO,
-                            ta_textoEntrada.getText(),
-                            "",
-                            cb_alfabetos.getSelectionModel().getSelectedItem(), // nombre
-                            cb_codificar.isSelected(),
-                            cb_formatosEscritura.getSelectionModel().getSelectedItem())); // true -> Codificar
+                    if (cb_generarTexto.isSelected())
+                    {
+                        TiposGenerarFrase tiposGenerarFrase = null;
 
-                    ta_textoProcesado.setText(respuesta.getMiResultado());
-                    //Algun codigo para desplegarlo en pantalla
+                        if (cb_noConsecuNoDuplica.isSelected())
+                        {
+                            tiposGenerarFrase = TiposGenerarFrase.NO_CONSECUTIVOS_Y_NO_DUPLICADOS;
+                        }
+                        else if (cb_consecuNoDuplica.isSelected())
+                        {
+                            tiposGenerarFrase = TiposGenerarFrase.CONSECUTIVOS_Y_NO_DUPLICADOS;
+                        }
+                        else if (cb_consecuDuplica.isSelected())
+                        {
+                            tiposGenerarFrase = TiposGenerarFrase.CONSECUTIVOS_Y_DUPLICADOS;
+                        }
+                        else
+                        {
+                            MostrarMensajeAlerta( "Debe seleccionar un tipo de generación de texto!");
+                            tiposGenerarFrase = null;
+                        }
+
+                        if (tiposGenerarFrase != null)
+                        {
+                            if (!tf_longitudTexto.getText().trim().equals(""))
+                            {
+                                try
+                                {
+                                    int longitudFrase = Integer.valueOf(tf_longitudTexto.getText());
+
+                                    AlgoritmosDTO respuesta = miControlador.ProcesarTexto(new GenerarFraseDTO(
+                                            longitudFrase,
+                                            tiposGenerarFrase,
+                                            ObtenerAlgorimosMarcados(),
+                                            TipoAcciones.PROCESAR_TEXTO,
+                                            ta_textoEntrada.getText(),
+                                            "",
+                                            cb_alfabetos.getSelectionModel().getSelectedItem(), // nombre
+                                            cb_codificar.isSelected(),
+                                            cb_formatosEscritura.getSelectionModel().getSelectedItem())); // true -> Codificar
+
+                                    ta_textoProcesado.setText(respuesta.getMiResultado());
+                                }
+                                catch(NumberFormatException e)
+                                {
+                                    MostrarMensajeAlerta( "Debe ingresar valores enteros para la longitud de la frase!");
+                                }
+                            }
+                            else
+                            {
+                                MostrarMensajeAlerta( "Debe ingresar un largo para la frase!");
+                            }
+                        }
+                        else {/* pos naahh */ }
+                    }
+                    else{
+                        if (!ta_textoEntrada.getText().trim().equals(""))
+                        {
+                            AlgoritmosDTO respuesta = miControlador.ProcesarTexto(new AlgoritmosDTO(
+                                    ObtenerAlgorimosMarcados(),
+                                    TipoAcciones.PROCESAR_TEXTO,
+                                    ta_textoEntrada.getText(),
+                                    "",
+                                    cb_alfabetos.getSelectionModel().getSelectedItem(), // nombre
+                                    cb_codificar.isSelected(),
+                                    cb_formatosEscritura.getSelectionModel().getSelectedItem())); // true -> Codificar
+
+                            ta_textoProcesado.setText(respuesta.getMiResultado());
+                        }
+                        else
+                        {
+                            MostrarMensajeAlerta( "Debe insertar una frase para procesar!");
+                        }
+                    }
                 }
                 else
                 {
-                    MostrarMensajeAlerta( "Debe seleccionar un alfabeto!");
+                    MostrarMensajeAlerta( "Debe seleccionar un tipo de formato de escritura!");
                 }
             }
             else
             {
-                MostrarMensajeAlerta( "Debe insertar una frase para procesar!");
+                MostrarMensajeAlerta( "Debe seleccionar un alfabeto!");
             }
         }
         else
@@ -225,7 +290,7 @@ public class GUI extends Application {
         alert.setContentText(pContenido);
         alert.showAndWait().ifPresent(rs -> {
             if (rs == ButtonType.OK) {
-                System.out.println("Aceptar");
+                // System.out.println("Aceptar");
             }
         });
     }

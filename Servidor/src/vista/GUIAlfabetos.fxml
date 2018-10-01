@@ -6,12 +6,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="389.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.GUIAlfabetos">
+<AnchorPane prefHeight="410.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.GUIAlfabetos">
    <children>
       <Button fx:id="btn_atras" layoutX="41.0" layoutY="346.0" mnemonicParsing="false" onAction="#irPantallaInicial" text="Atras" />
       <ListView fx:id="lview_alfabetos" layoutX="41.0" layoutY="78.0" prefHeight="257.0" prefWidth="518.0" />
       <Label layoutX="41.0" layoutY="38.0" text="Alfabetos:" textFill="WHITE" />
-      <Button fx:id="btn_modificar" layoutX="468.0" layoutY="346.0" mnemonicParsing="false" onAction="#modificarAlfabeto" text="Modfificar" />
+      <Button fx:id="btn_modificar" layoutX="468.0" layoutY="346.0" mnemonicParsing="false" onAction="#modificarAlfabeto" text="Modificar" />
       <Button fx:id="btn_eliminar" layoutX="373.0" layoutY="346.0" mnemonicParsing="false" onAction="#eliminarAlfabeto" text="Eliminar" />
       <TextField fx:id="tf_identificador" layoutX="41.0" layoutY="43.0" prefHeight="25.0" prefWidth="173.0" />
       <TextField fx:id="tf_simbolos" layoutX="226.0" layoutY="43.0" prefHeight="25.0" prefWidth="294.0" />
