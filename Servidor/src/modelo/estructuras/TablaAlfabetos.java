@@ -48,4 +48,14 @@ public class TablaAlfabetos implements Serializable {
 
         return alfabetos;
     }
+
+    public ArrayList<String> getIDs(){
+        ArrayList<String> ids = new ArrayList<>();
+
+        for(Map.Entry<String, Alfabeto> alfabeto : tablaAlfabetos.entrySet()){
+            ids.add(alfabeto.getKey());
+        }
+
+        return ids;
+    }
 }

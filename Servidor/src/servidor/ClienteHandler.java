@@ -6,6 +6,7 @@ import controlador.ControladorCliente;
 import datosDTO.AlgoritmosDTO;
 import datosDTO.CargarDatosDTO;
 import datosDTO.DatosDTO;
+import datosDTO.GenerarFraseDTO;
 
 import java.io.*;
 import java.net.*;
@@ -22,7 +23,7 @@ public class ClienteHandler extends Thread {
 
     private ControladorCliente miControlador;
 
-    // Constructor
+
     public ClienteHandler(Socket s, ObjectInputStream dis, ObjectOutputStream dos)
     {
         this.s = s;
@@ -56,6 +57,13 @@ public class ClienteHandler extends Thread {
 
                         dos.writeObject(miControlador.ProcesarTexto((AlgoritmosDTO) dtoRecibido));
                         dos.flush();
+                        break;
+
+                    case PROCESAR_TEXTO_GENERAR_FRASE:
+
+                        GenerarFraseDTO generarFraseDTO = (GenerarFraseDTO) dtoRecibido;
+                        // Llamar Algoritmo método
+
                         break;
 
                     case CERRAR_CONEXION:

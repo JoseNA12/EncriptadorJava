@@ -11,7 +11,7 @@ public class CodigoTelefonico extends Algoritmo {
     // Forma del diccionario: <Llave, <Digito, Posicion>>
     // -> Llave: caracter del alfabeto
     // -> Digito: numero del teclado telefónico
-    // -> Posicion: posicion del digito acorde al teclado telefónico, 2-abc: a tiene posicion 1, b tiene posicion 2, y así
+    // -> Posicion: posicion del digito acorde Algoritmo teclado telefónico, 2-abc: a tiene posicion 1, b tiene posicion 2, y así
     static Map<String, Map<Integer, Integer>> distTecladoMap = new HashMap<String, Map<Integer, Integer>>();
 
     public LineaResultado Codificar(String pFrase){

@@ -1,8 +1,12 @@
 package controlador;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Controlador implements IValidable {
 
-    //public Alfabeto alfabetoDefault = new Alfabeto(0, "abcdefghijklmnñopqrstuvwxyz"); // default
+    private final String dirPaqueteAlgoritmos = "controlador.algoritmos";
     private AlfabetosDAO alfabetosDAO = new AlfabetosDAO();
     private IEscritura miEscritor;
 
@@ -18,7 +22,6 @@ public class Controlador implements IValidable {
 
     public IOServidorDTO CargarAlfabetos()
     {
-        System.out.println("Controlador.CargarAlfabetos()");
         return new IOServidorDTO(alfabetosDAO.recuperarAlfabetos());
     }
 
@@ -30,5 +33,20 @@ public class Controlador implements IValidable {
         return alfabetosDAO.removerAlfabeto(miDTO);
     }
 
+    public List<String> CargarAlgoritmos(){
+        List<String> algoritmosActuales;
 
+        try {
+            algoritmosActuales = Introspeccion.ObtenerClases(dirPaqueteAlgoritmos);
+        }
+        catch (ClassNotFoundException e) {
+            algoritmosActuales = new ArrayList<String>();
+            // e.printStackTrace();
+        }
+        catch (IOException e) {
+            algoritmosActuales = new ArrayList<String>();
+            // e.printStackTrace();
+        }
+        return algoritmosActuales;
+    }
 }

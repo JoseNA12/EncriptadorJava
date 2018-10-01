@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class AlfabetosDAO implements IValidable {
     private TablaAlfabetos tablaAlfabetos;
-    private String pathTabla = "Servidor/alfabetos.abc";
+    private String pathTabla = "alfabetos.abc";
     //private String pathTabla = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "/alfabetos.abc";
 
     public AlfabetosDAO(){
@@ -40,7 +40,7 @@ public class AlfabetosDAO implements IValidable {
         try {
             tablaAlfabetos.addAlfabeto(miDTO.getIdentificadorAlfabeto(), miDTO.getSimbolosAlfabeto());
             guardarAlfabetos();
-            System.out.println("AlfabetosDAO.crearAlfabeto(dto)");
+            // System.out.println("AlfabetosDAO.crearAlfabeto(dto)");
             return true;
         } catch (Exception e) {
             return false;
@@ -72,7 +72,12 @@ public class AlfabetosDAO implements IValidable {
     public Boolean removerAlfabeto(IOServidorDTO miDTO){
         tablaAlfabetos.borrarAlfabeto(miDTO.getIdentificadorAlfabeto());
         guardarAlfabetos();
-        System.out.println("AlfabetosDAO.removerAlfabeto(dto)");
+        // System.out.println("AlfabetosDAO.removerAlfabeto(dto)");
         return true;
+    }
+
+    public ArrayList<String> recuperarIDsAlfabetos(){
+        recuperarAlfabetos();
+        return tablaAlfabetos.getIDs();
     }
 }
