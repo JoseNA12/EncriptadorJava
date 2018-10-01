@@ -9,7 +9,8 @@ import java.util.ArrayList;
 
 public class AlfabetosDAO implements IValidable {
     private TablaAlfabetos tablaAlfabetos;
-    private String pathTabla = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "/alfabetos.abc";
+    private String pathTabla = "Servidor/alfabetos.abc";
+    //private String pathTabla = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "/alfabetos.abc";
 
     public AlfabetosDAO(){
         tablaAlfabetos = new TablaAlfabetos();

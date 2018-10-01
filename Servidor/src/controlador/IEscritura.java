@@ -5,7 +5,7 @@ import datosDTO.AlgoritmosDTO;
 import javax.swing.*;
 
 public interface IEscritura {
-    String DIRECTORIO = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "/bitacoras/";
+    String DIRECTORIO = "Servidor/bitacoras/";
 
     Boolean Escribir(AlgoritmosDTO miDTO);
 }
