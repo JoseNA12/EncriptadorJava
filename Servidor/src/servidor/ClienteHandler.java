@@ -38,8 +38,8 @@ public class ClienteHandler extends Thread {
         DatosDTO dtoRecibido;
 
         while (true) {
-            try {
-
+            try
+            {
                 dtoRecibido = (DatosDTO) dis.readObject();
 
                 switch (dtoRecibido.getAccion()) {

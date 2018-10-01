@@ -29,56 +29,21 @@ public class GUI extends Application {
     protected Controlador miControlador = new Controlador();
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        /*Parent root = FXMLLoader.load(getClass().getResource("GUI.fxml"));
-        primaryStage.setTitle("Administrador");
-
-        Scene miScene = new Scene(root);
-        miScene.getStylesheets().add(getClass().getResource("/vista.CSS/Estilo.css").toExternalForm());
-
-        primaryStage.setScene(miScene);
-        primaryStage.show();*/
-
+    public void start(Stage primaryStage) throws Exception
+    {
         FXRouter.bind(this, primaryStage, "Administrador");
         FXRouter.when("GUI", "GUI.fxml");
         FXRouter.when("GUIAlfabetos", "GUIAlfabetos.fxml");
         FXRouter.when("GUIAlgoritmos", "GUIAlgoritmos.fxml");
+        FXRouter.when("GUIBitacoras", "GUIBitacoras.fxml");
 
         FXRouter.goTo("GUI"); // pantalla inicial
 
         miInstancia = GUI.this;
     }
 
-    public static void main(String[] args) {
-        /*IEscritura escritorTXT = new EscritorTXT();
-        IEscritura escritorXML = new EscritorXML();
-        IEscritura escritorPDF = new EscritorPDF();
-
-        Resultado resultado = new Resultado("Hola mundo");
-        resultado.agregarLineaResultado(
-                new LineaResultado("SustVigenere", "jojojojo", true)
-        );
-        resultado.agregarLineaResultado(
-                new LineaResultado("TrasLetra", "uiel uenco", false)
-        );
-        resultado.agregarLineaResultado(
-                new LineaResultado("Telefonico", "uiel uenco", true)
-        );
-
-        String str = resultado.toString();
-
-        AlgoritmosDTO algoritmosDTO = new AlgoritmosDTO(
-                null,
-                null,
-                null,
-                str,
-                null,
-                null,
-                null);
-        escritorTXT.Escribir(algoritmosDTO);
-        escritorXML.Escribir(algoritmosDTO);
-        escritorPDF.Escribir(algoritmosDTO);*/
-
+    public static void main(String[] args)
+    {
         new Thread(()->{iniciarServidor(5056);}).start();
         launch(args);
     }
@@ -98,7 +63,8 @@ public class GUI extends Application {
         FXRouter.goTo("GUIAlgoritmos");
     }
 
-    public void prueba(){
-        System.out.println("Siiiiiii");
+    @FXML
+    public void irPantallaBitacoras() throws IOException {
+        FXRouter.goTo("GUIBitacoras");
     }
 }
