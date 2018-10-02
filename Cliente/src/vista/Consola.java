@@ -1,11 +1,13 @@
 package vista;
-/*
-import Controlador.Controlador;
-import Controlador.AlgoritmosDTO;
-import Modelo.Alfabeto;
-import Modelo.TipoAlgoritmo;
 
-import java.util.*;
+
+import accionesCliente.TipoAcciones;
+import controlador.Controlador;
+import datosDTO.CargarDatosDTO;
+import datosDTO.DatosDTO;
+
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Consola {
 
@@ -13,14 +15,15 @@ public class Consola {
     private static final int OPCIONES_ALGORITMOS_INICIALES = 1; // 0 - Confirmar
     private static Controlador miControlador;
 
-    private static List<TipoAlgoritmo> algoritmos;
-    private static ArrayList<Alfabeto> alfabetos;
+    private static ArrayList<String> alfabetos;
+    private static ArrayList<String> algoritmos;
+    private static ArrayList<String> escritores;
 
-    private static List<TipoAlgoritmo> algoritmos_seleccionados;
+    private static ArrayList<String> algoritmos_seleccionados;
     private static boolean modoCodificacion;
-    private static Alfabeto alfabetoActual;
+
+    private static String alfabetoActual;
     private static String entradaActual;
-    private static Alfabeto nuevoAlfabeto;
 
     //private static List
 
@@ -31,10 +34,19 @@ public class Consola {
 
     private static void inicializar(){
         miControlador = new Controlador();
-        algoritmos = Arrays.asList(TipoAlgoritmo.values());
+        CargarDatosDTO miDTO = miControlador.SolicitarDatosVisuales(
+                new DatosDTO(
+                        null,
+                        TipoAcciones.CARGAR_ALGORIT_ALFAB)
+        );
+        alfabetos = (ArrayList<String>) miDTO.getNombresAlfabetos();
+        algoritmos = (ArrayList<String>) miDTO.getNombresAlfabetos();
+        escritores = (ArrayList<String>) miDTO.getFormatosEscritura();
+
+        //algoritmos = Arrays.asList(TipoAlgoritmo.values());
         algoritmos_seleccionados = new ArrayList<>();
-        alfabetos = miControlador.CargarAlfabetos();
-        modoCodificacion = false;
+        modoCodificacion = false; //true = codificar; false = descodificar (default)
+
         in = new Scanner(System.in);
     }
 
@@ -55,19 +67,19 @@ public class Consola {
                 desplegarPantallaAlfabetos();
                 desplegarPantallaEntrada();
                 //Llamar a crear DTO
-                AlgoritmosDTO dto = new AlgoritmosDTO(
+                /*AlgoritmosDTO dto = new AlgoritmosDTO(
                         entradaActual,
                         null,
                         alfabetoActual,
                         algoritmos_seleccionados,
-                        modoCodificacion);
-                miControlador.ProcesarTexto(dto); //Sets resultado
-                miControlador.EscribirArch(dto);
+                        modoCodificacion);*/
+                //miControlador.ProcesarTexto(dto); //Sets resultado
+                //miControlador.EscribirArch(dto);
                 //Algun metodo para desplegarlo en pantalla
                 break;
-            case 2:
+            /*case 2:
                 desplegarPantallaAgregarAlfabeto();
-                miControlador.AgregarAlfabeto(new AlgoritmosDTO(nuevoAlfabeto));
+                miControlador.AgregarAlfabeto(new AlgoritmosDTO(nuevoAlfabeto));*/
             case 3: //Salir
                 break;
             default:
@@ -120,7 +132,7 @@ public class Consola {
         println(Consola_Display.SELECCION_ALFABETO.getValor());
         imprimirListaAlfabetos();
         int seleccion = obtener_Seleccion();
-        alfabetoActual = obtenerAlfabetoSeleccionado(seleccion);
+        //alfabetoActual = obtenerAlfabetoSeleccionado(seleccion);
     }
 
     private static void desplegarPantallaEntrada(){
@@ -132,7 +144,7 @@ public class Consola {
         entradaActual = entrada;
     }
 
-    private static void desplegarPantallaAgregarAlfabeto(){
+    /*private static void desplegarPantallaAgregarAlfabeto(){
         System.out.println("Consola.desplegarPantallaAgregarAlfabeto()");
         println(Consola_Display.ENTRADA_SIMBOLOS_ALFABETO.getValor());
         in.nextLine(); //Necesario debido a una pulga con nextLine()
@@ -140,12 +152,12 @@ public class Consola {
         println(Consola_Display.ENTRADA_ID_ALFABETO.getValor());
         int idAlfabeto = in.nextInt();
         nuevoAlfabeto = new Alfabeto(idAlfabeto, simbolos);
-    }
+    }*/
 
     private static void imprimirListaAlgoritmos(){
         int numOpcion = OPCIONES_ALGORITMOS_INICIALES;
-        for (TipoAlgoritmo algoritmo : algoritmos) {
-            print(numOpcion + " - " + algoritmo.getNombre() + " ");
+        for (String algoritmo : algoritmos) {
+            print(numOpcion + " - " + algoritmo + " ");
 
             if(algoritmos_seleccionados.contains(algoritmo)){
                 println("[X]");
@@ -157,8 +169,8 @@ public class Consola {
     }
 
     private static void imprimirListaAlfabetos(){
-        for (Alfabeto alfabeto : alfabetos){
-            println(alfabeto.getIdentificador() + " - " + alfabeto.getSimbolos());
+        for (String alfabeto : alfabetos){
+            println("* " + alfabeto);
         }
     }
 
@@ -166,16 +178,16 @@ public class Consola {
         return in.nextInt();
     }
 
-    private static Alfabeto obtenerAlfabetoSeleccionado(int identificador){
+    /*private static Alfabeto obtenerAlfabetoSeleccionado(int identificador){
         for(Alfabeto alfabeto : alfabetos){
             if(alfabeto.getIdentificador() == identificador)
                 return alfabeto;
         }
 
         return null;
-    }
+    }*/
 
-    private static void toggle_Seleccion_Algoritmo(TipoAlgoritmo algoritmo){
+    private static void toggle_Seleccion_Algoritmo(String algoritmo){
         if(algoritmos_seleccionados.contains(algoritmo)){
             algoritmos_seleccionados.remove(algoritmo);
         }else{
@@ -190,4 +202,12 @@ public class Consola {
     private static void println(String s){
         System.out.println(s);
     }
-}*/
+
+    public static Boolean validarEntrada(String entrada, int min, int max){
+        return null;
+    }
+
+    public static Boolean validarEntrada(String entrada, ArrayList<String> conjuntoValido){
+        return null;
+    }
+}

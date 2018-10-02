@@ -4,7 +4,7 @@ public enum Consola_Display {
     MENU_PRINCIPAL(
             "Menú principal:\n" +
             "1 - Herramienta de cifrado\n" +
-            "2 - Agregar alfabeto\n" +
+            "2 - Opciones de generación\n" +
             "3 - Salir"
     ),
     SELECCION_ALGORITMO_HEADER(
@@ -34,7 +34,6 @@ public enum Consola_Display {
     ENTRADA_ID_ALFABETO(
             "Ingrese el nombre (identificador) del alfabeto:"
     );
-
 
     String valor;
     Consola_Display(String p_valor){
