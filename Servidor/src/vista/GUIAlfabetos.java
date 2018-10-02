@@ -1,6 +1,6 @@
 package vista;
 
-import controlador.Controlador;
+import controlador.ControladorAdministrador;
 import controlador.IOServidorDTO;
 import javafx.collections.FXCollections;
 import javafx.event.EventHandler;
@@ -16,16 +16,13 @@ import java.util.ArrayList;
 
 public class GUIAlfabetos {
 
-    @FXML
-    Button btn_atras, btn_eliminar, btn_modificar, btn_agregar;
+    @FXML Button btn_atras, btn_eliminar, btn_modificar, btn_agregar;
 
-    @FXML
-    TextField tf_identificador, tf_simbolos;
+    @FXML TextField tf_identificador, tf_simbolos;
 
-    @FXML
-    ListView<Alfabeto> lview_alfabetos;
+    @FXML ListView<Alfabeto> lview_alfabetos;
 
-    private Controlador miControlador;
+    private ControladorAdministrador miControlador;
 
     @FXML
     public void initialize(){

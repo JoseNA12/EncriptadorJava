@@ -1,20 +1,10 @@
 package vista;
 
-import controlador.Controlador;
-import controlador.IEscritura;
-import controlador.escritores.EscritorPDF;
-import controlador.escritores.EscritorTXT;
-import controlador.escritores.EscritorXML;
-import datosDTO.AlgoritmosDTO;
+import controlador.ControladorAdministrador;
 import javafx.application.Application;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import modelo.LineaResultado;
-import modelo.Resultado;
 import servidor.Servidor;
 
 import java.io.IOException;
@@ -26,59 +16,24 @@ public class GUI extends Application {
     private static Servidor mServidor;
 
     protected static GUI miInstancia = null;
-    protected Controlador miControlador = new Controlador();
+    protected ControladorAdministrador miControlador = new ControladorAdministrador();
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        /*Parent root = FXMLLoader.load(getClass().getResource("GUI.fxml"));
-        primaryStage.setTitle("Administrador");
-
-        Scene miScene = new Scene(root);
-        miScene.getStylesheets().add(getClass().getResource("/vista.CSS/Estilo.css").toExternalForm());
-
-        primaryStage.setScene(miScene);
-        primaryStage.show();*/
-
-        FXRouter.bind(this, primaryStage, "Administrador");
+    public void start(Stage primaryStage) throws Exception
+    {
+        FXRouter.bind(this, primaryStage, "ControladorAdministrador");
         FXRouter.when("GUI", "GUI.fxml");
         FXRouter.when("GUIAlfabetos", "GUIAlfabetos.fxml");
         FXRouter.when("GUIAlgoritmos", "GUIAlgoritmos.fxml");
+        FXRouter.when("GUIBitacoras", "GUIBitacoras.fxml");
 
         FXRouter.goTo("GUI"); // pantalla inicial
 
         miInstancia = GUI.this;
     }
 
-    public static void main(String[] args) {
-        /*IEscritura escritorTXT = new EscritorTXT();
-        IEscritura escritorXML = new EscritorXML();
-        IEscritura escritorPDF = new EscritorPDF();
-
-        Resultado resultado = new Resultado("Hola mundo");
-        resultado.agregarLineaResultado(
-                new LineaResultado("SustVigenere", "jojojojo", true)
-        );
-        resultado.agregarLineaResultado(
-                new LineaResultado("TrasLetra", "uiel uenco", false)
-        );
-        resultado.agregarLineaResultado(
-                new LineaResultado("Telefonico", "uiel uenco", true)
-        );
-
-        String str = resultado.toString();
-
-        AlgoritmosDTO algoritmosDTO = new AlgoritmosDTO(
-                null,
-                null,
-                null,
-                str,
-                null,
-                null,
-                null);
-        escritorTXT.Escribir(algoritmosDTO);
-        escritorXML.Escribir(algoritmosDTO);
-        escritorPDF.Escribir(algoritmosDTO);*/
-
+    public static void main(String[] args)
+    {
         new Thread(()->{iniciarServidor(5056);}).start();
         launch(args);
     }
@@ -98,7 +53,8 @@ public class GUI extends Application {
         FXRouter.goTo("GUIAlgoritmos");
     }
 
-    public void prueba(){
-        System.out.println("Siiiiiii");
+    @FXML
+    public void irPantallaBitacoras() throws IOException {
+        FXRouter.goTo("GUIBitacoras");
     }
 }

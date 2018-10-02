@@ -63,10 +63,18 @@ public class GUI extends Application {
     void initialize(){
         miControlador = new Controlador();
         CargarDatosDTO miDTO = miControlador.SolicitarDatosVisuales(new DatosDTO(null, TipoAcciones.CARGAR_ALGORIT_ALFAB));
-        initComponenteAlfabeto(miDTO.getNombresAlfabetos());
-        initComponenteAlgoritmos(miDTO.getNombresAlgoritmos());
-        initComponenteEscritores(miDTO.getFormatosEscritura());
-        cb_action_checkBoxsGenerarTexto();
+
+        try{
+            initComponenteAlfabeto(miDTO.getNombresAlfabetos());
+            initComponenteAlgoritmos(miDTO.getNombresAlgoritmos());
+            initComponenteEscritores(miDTO.getFormatosEscritura());
+            cb_action_checkBoxsGenerarTexto();
+        }
+        catch(NullPointerException e){
+            MostrarMensajeAlerta("Al parecer el servidor no se encuentra en linea. " +
+                    "Por favor, intente más tarde!.");
+        }
+
     }
 
     private void initComponenteAlfabeto(List<String> pAlfabetos) // ComboBox
@@ -176,7 +184,7 @@ public class GUI extends Application {
                                             longitudFrase,
                                             tiposGenerarFrase,
                                             ObtenerAlgorimosMarcados(),
-                                            TipoAcciones.PROCESAR_TEXTO,
+                                            TipoAcciones.PROCESAR_TEXTO_GENERAR_FRASE,
                                             ta_textoEntrada.getText(),
                                             "",
                                             cb_alfabetos.getSelectionModel().getSelectedItem(), // nombre
@@ -286,7 +294,7 @@ public class GUI extends Application {
     {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Atención");
-        // alert.setHeaderText("Look, an Information Dialog");
+        alert.setHeaderText("Atención!");
         alert.setContentText(pContenido);
         alert.showAndWait().ifPresent(rs -> {
             if (rs == ButtonType.OK) {

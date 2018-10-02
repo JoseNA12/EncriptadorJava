@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Controlador implements IValidable {
+public class ControladorAdministrador implements IValidable {
 
     private final String dirPaqueteAlgoritmos = "controlador.algoritmos";
     private AlfabetosDAO alfabetosDAO = new AlfabetosDAO();

@@ -22,7 +22,6 @@ public class AlfabetosDAO implements IValidable {
     }
 
 
-
     public void guardarAlfabetos(){
         try {
             FileOutputStream fos = new FileOutputStream(pathTabla);
@@ -79,5 +78,10 @@ public class AlfabetosDAO implements IValidable {
     public ArrayList<String> recuperarIDsAlfabetos(){
         recuperarAlfabetos();
         return tablaAlfabetos.getIDs();
+    }
+
+    public TablaAlfabetos getTablaAlfabetos() {
+        recuperarAlfabetos();
+        return tablaAlfabetos;
     }
 }

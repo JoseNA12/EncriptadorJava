@@ -1,7 +1,5 @@
 package servidor;
 
-import accionesCliente.TipoAcciones;
-import controlador.Controlador;
 import controlador.ControladorCliente;
 import datosDTO.AlgoritmosDTO;
 import datosDTO.CargarDatosDTO;
@@ -10,8 +8,6 @@ import datosDTO.GenerarFraseDTO;
 
 import java.io.*;
 import java.net.*;
-import java.util.ArrayList;
-import java.util.List;
 
 import static accionesCliente.TipoAcciones.*;
 
@@ -38,8 +34,8 @@ public class ClienteHandler extends Thread {
         DatosDTO dtoRecibido;
 
         while (true) {
-            try {
-
+            try
+            {
                 dtoRecibido = (DatosDTO) dis.readObject();
 
                 switch (dtoRecibido.getAccion()) {
@@ -48,7 +44,7 @@ public class ClienteHandler extends Thread {
 
                         dos.writeObject(new CargarDatosDTO(
                                 miControlador.CargarAlgoritmos(),
-                                CARGAR_ALGORIT_ALFAB, miControlador.CargarAlfabetos(),
+                                CARGAR_ALGORIT_ALFAB, miControlador.CargarIDsAlfabetos(),
                                 miControlador.CargarFormatosEscritura()));
                         dos.flush();
                         break;
@@ -61,9 +57,8 @@ public class ClienteHandler extends Thread {
 
                     case PROCESAR_TEXTO_GENERAR_FRASE:
 
-                        GenerarFraseDTO generarFraseDTO = (GenerarFraseDTO) dtoRecibido;
-                        // Llamar Algoritmo método
-
+                        dos.writeObject(miControlador.GenerarFrase((GenerarFraseDTO) dtoRecibido));
+                        dos.flush();
                         break;
 
                     case CERRAR_CONEXION:

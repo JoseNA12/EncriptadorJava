@@ -6,7 +6,7 @@ import modelo.Resultado;
 public class Algoritmo { //TODO: cambiar por una interfaz para implementar el strategy
 
     private LineaResultado miResultado;
-    private String simbolosAlfabetos = "abcdefghijklmnñopqrstuvwxyz";
+    private String simbolosAlfabetos = ""; // abcdefghijklmnñopqrstuvwxyz
 
     static Boolean Validar(String pEntrada) {return false;}
 
