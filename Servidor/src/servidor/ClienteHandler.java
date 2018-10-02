@@ -1,7 +1,5 @@
 package servidor;
 
-import accionesCliente.TipoAcciones;
-import controlador.Controlador;
 import controlador.ControladorCliente;
 import datosDTO.AlgoritmosDTO;
 import datosDTO.CargarDatosDTO;
@@ -10,8 +8,6 @@ import datosDTO.GenerarFraseDTO;
 
 import java.io.*;
 import java.net.*;
-import java.util.ArrayList;
-import java.util.List;
 
 import static accionesCliente.TipoAcciones.*;
 

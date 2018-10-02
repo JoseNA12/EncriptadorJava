@@ -1,20 +1,10 @@
 package vista;
 
-import controlador.Controlador;
-import controlador.IEscritura;
-import controlador.escritores.EscritorPDF;
-import controlador.escritores.EscritorTXT;
-import controlador.escritores.EscritorXML;
-import datosDTO.AlgoritmosDTO;
+import controlador.ControladorAdministrador;
 import javafx.application.Application;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import modelo.LineaResultado;
-import modelo.Resultado;
 import servidor.Servidor;
 
 import java.io.IOException;
@@ -26,12 +16,12 @@ public class GUI extends Application {
     private static Servidor mServidor;
 
     protected static GUI miInstancia = null;
-    protected Controlador miControlador = new Controlador();
+    protected ControladorAdministrador miControlador = new ControladorAdministrador();
 
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-        FXRouter.bind(this, primaryStage, "Administrador");
+        FXRouter.bind(this, primaryStage, "ControladorAdministrador");
         FXRouter.when("GUI", "GUI.fxml");
         FXRouter.when("GUIAlfabetos", "GUIAlfabetos.fxml");
         FXRouter.when("GUIAlgoritmos", "GUIAlgoritmos.fxml");

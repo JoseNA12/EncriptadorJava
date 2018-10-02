@@ -24,7 +24,7 @@ public class ControladorCliente {
 
     public AlgoritmosDTO ProcesarTexto(AlgoritmosDTO miDTO)
     {
-        String textoOriginal = miDTO.getTextoOriginal();
+        String textoOriginal = miDTO.getTextoOriginal().trim();
         String miAlfabeto = ObtenerSimbolosAlgabeto(miDTO.getMiAlfabeto());
         List<String> algoritmos = miDTO.getNombresAlgoritmos();
         Boolean modoCodificacion = miDTO.getModoCodificacion();

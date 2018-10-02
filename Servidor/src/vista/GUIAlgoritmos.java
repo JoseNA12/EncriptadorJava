@@ -1,18 +1,14 @@
 package vista;
 
-import controlador.Algoritmo;
-import controlador.Controlador;
+import controlador.ControladorAdministrador;
 import javafx.collections.FXCollections;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
-import javafx.util.Callback;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class GUIAlgoritmos {
@@ -21,7 +17,7 @@ public class GUIAlgoritmos {
 
     @FXML ListView<String> lview_algoritmos;
 
-    private Controlador miControlador;
+    private ControladorAdministrador miControlador;
 
     @FXML
     public void initialize(){
