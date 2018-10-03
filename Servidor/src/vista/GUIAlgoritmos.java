@@ -9,8 +9,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.*;
 import java.util.List;
 
@@ -40,16 +39,22 @@ public class GUIAlgoritmos {
         });
 
         btn_agregar.setOnAction(e -> {
-            Path miArchivo = fileChooser.showOpenDialog(GUI.miPrimaryStage).toPath();
-            Path path = Paths.get(System.getProperty("user.dir") + "/src/controlador/algoritmos/");
+
+            File miArchivo = fileChooser.showOpenDialog(GUI.miPrimaryStage);
+            File fileDestino = new File((Paths.get(System.getProperty("user.dir") + "/src/controlador/algoritmos/" + miArchivo.getName())).toString());
+
+            try {
+                Files.copy(miArchivo.toPath(), fileDestino.toPath());
+                cargarListaAlfabetos();
+
+                GUI.miInstancia.MostrarMensajeAlerta("Se ha agregado correctamente el método al servidor!\n" +
+                        "Reinicie el servidor para aplicar los cambios.");
+
+            }
+            catch(IOException ee){
+
+            }
             // Files.delete(origPath);
-            try
-            {
-                Files.copy(miArchivo, path, StandardCopyOption.REPLACE_EXISTING);
-            }
-            catch (IOException e1) {
-                e1.printStackTrace();
-            }
         });
 
         cargarListaAlfabetos();

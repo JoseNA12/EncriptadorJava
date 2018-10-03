@@ -3,7 +3,9 @@ package vista;
 import controlador.ControladorAdministrador;
 import javafx.application.Application;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 import servidor.Servidor;
 
@@ -59,5 +61,18 @@ public class GUI extends Application {
     public void irPantallaBitacoras() throws IOException {
         miControlador.AbrirDirectorioBitacoras();
         //FXRouter.goTo("GUIBitacoras");
+    }
+
+    public void MostrarMensajeAlerta(String pContenido)
+    {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Atención");
+        alert.setHeaderText("Atención!");
+        alert.setContentText(pContenido);
+        alert.showAndWait().ifPresent(rs -> {
+            if (rs == ButtonType.OK) {
+                // System.out.println("Aceptar");
+            }
+        });
     }
 }
