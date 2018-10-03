@@ -16,6 +16,7 @@ public class GUI extends Application {
     private static Servidor mServidor;
 
     protected static GUI miInstancia = null;
+    protected static Stage miPrimaryStage = null;
     protected ControladorAdministrador miControlador = new ControladorAdministrador();
 
     @Override
@@ -30,6 +31,7 @@ public class GUI extends Application {
         FXRouter.goTo("GUI"); // pantalla inicial
 
         miInstancia = GUI.this;
+        miPrimaryStage = primaryStage;
     }
 
     public static void main(String[] args)

@@ -7,8 +7,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.*;
 import java.util.List;
 
 public class GUIAlgoritmos {
@@ -17,11 +20,17 @@ public class GUIAlgoritmos {
 
     @FXML ListView<String> lview_algoritmos;
 
+    private FileChooser fileChooser = new FileChooser();
+
     private ControladorAdministrador miControlador;
 
     @FXML
     public void initialize(){
         this.miControlador = GUI.miInstancia.miControlador;
+
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Archivos .java", "*.java")
+        );
 
         lview_algoritmos.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -29,6 +38,20 @@ public class GUIAlgoritmos {
                 // recuperarAlfabeto();
             }
         });
+
+        btn_agregar.setOnAction(e -> {
+            Path miArchivo = fileChooser.showOpenDialog(GUI.miPrimaryStage).toPath();
+            Path path = Paths.get(System.getProperty("user.dir") + "/src/controlador/algoritmos/");
+            // Files.delete(origPath);
+            try
+            {
+                Files.copy(miArchivo, path, StandardCopyOption.REPLACE_EXISTING);
+            }
+            catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        });
+
         cargarListaAlfabetos();
     }
 
