@@ -57,6 +57,7 @@ public class GUI extends Application {
 
     @FXML
     public void irPantallaBitacoras() throws IOException {
-        FXRouter.goTo("GUIBitacoras");
+        miControlador.AbrirDirectorioBitacoras();
+        //FXRouter.goTo("GUIBitacoras");
     }
 }

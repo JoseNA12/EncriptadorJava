@@ -191,7 +191,8 @@ public class GUI extends Application {
                                             cb_codificar.isSelected(),
                                             cb_formatosEscritura.getSelectionModel().getSelectedItem())); // true -> Codificar
 
-                                    ta_textoProcesado.setText(respuesta.getMiResultado());
+                                    //ta_textoProcesado.setText(respuesta.getMiResultado());
+                                    MostrarResultado(respuesta);
                                 }
                                 catch(NumberFormatException e)
                                 {
@@ -217,7 +218,8 @@ public class GUI extends Application {
                                     cb_codificar.isSelected(),
                                     cb_formatosEscritura.getSelectionModel().getSelectedItem())); // true -> Codificar
 
-                            ta_textoProcesado.setText(respuesta.getMiResultado());
+                            //ta_textoProcesado.setText(respuesta.getMiResultado());
+                            MostrarResultado(respuesta);
                         }
                         else
                         {
@@ -288,6 +290,17 @@ public class GUI extends Application {
             miLista.add(lv_algoritmos_deseados.getItems().get(i).toString());
         }
         return miLista;
+    }
+
+    private void MostrarResultado(AlgoritmosDTO respuesta){
+        String resultado = respuesta.getMiResultado();
+        if(resultado.equals("$ERROR$")){
+            MostrarMensajeAlerta(
+                    "El mensaje de entrada contiene caracteres que no pertenecen al alfabeto seleccionado!"
+            );
+        } else {
+            ta_textoProcesado.setText(resultado);
+        }
     }
 
     private void MostrarMensajeAlerta(String pContenido)

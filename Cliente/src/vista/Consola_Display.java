@@ -4,8 +4,19 @@ public enum Consola_Display {
     MENU_PRINCIPAL(
             "Menú principal:\n" +
             "1 - Herramienta de cifrado\n" +
-            "2 - Agregar alfabeto\n" +
+            "2 - Opciones de generación\n" +
             "3 - Salir"
+    ),
+    MENU_GENERACION(
+            "Menú de configuración de frases generadas:\n" +
+            "1 - Configurar\n" +
+            "2 - Volver"
+    ),
+    SELECCION_GENERACION_HEADER(
+            "Seleccione el tipo de generación de frase:"
+    ),
+    SELECCION_GENERACION_OPCIONES(
+            "0 - No aplicar generación."
     ),
     SELECCION_ALGORITMO_HEADER(
             "Seleccione los algoritmos de cifrado deseados:"
@@ -21,27 +32,28 @@ public enum Consola_Display {
     SELECCION_ALFABETO(
             "Seleccione el alfabeto:"
     ),
+    SELECCION_ESCRITOR(
+            "Seleccione el formato de escritura en bitacora:"
+    ),
     SELECCION_OPCION(
             "Seleccione una opción:"
     ),
     ENTRADA_TEXTO(
             "Ingrese el texto a ser procesado:"
     ),
-    ENTRADA_SIMBOLOS_ALFABETO(
-            "Agregar un alfabeto\n" +
-            "Ingrese los simbolos (abcedfg...) que contiene el alfabeto:"
+    ENTRADA_LONGITUD_GENERACION(
+            "Ingrese la longitud en caracteres de la frase:"
     ),
-    ENTRADA_ID_ALFABETO(
-            "Ingrese el nombre (identificador) del alfabeto:"
+    ERROR_ALFABETO(
+            "\nERROR: el mensaje de entrada contiene caracteres que no pertenecen al alfabeto seleccionado!\n"
     );
 
-
-    String valor;
+    String value;
     Consola_Display(String p_valor){
-        this.valor = p_valor;
+        this.value = p_valor;
     }
 
-    public String getValor() {
-        return valor;
+    public String getValue() {
+        return value;
     }
 }

@@ -49,4 +49,9 @@ public class ControladorAdministrador implements IValidable {
         }
         return algoritmosActuales;
     }
+
+    public void AbrirDirectorioBitacoras() throws IOException {
+        final String dir = System.getProperty("user.dir") + "\\bitacoras"; //Obtiene el path del folder de bitacoras
+        Runtime.getRuntime().exec("explorer.exe /open," + dir);
+    }
 }
