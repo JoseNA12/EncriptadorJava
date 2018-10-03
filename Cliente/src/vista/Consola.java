@@ -88,7 +88,7 @@ public class Consola {
                     )
             );
         }
-        println(respuesta.getMiResultado());
+        imprimirResultado(respuesta);
     }
 
     private static void desplegarMenuInicio(){
@@ -260,6 +260,15 @@ public class Consola {
         for(TiposGenerarFrase tipo : tiposGeneracion){
             println(i + " - " + tipo.toString());
             i++;
+        }
+    }
+
+    private static void imprimirResultado(AlgoritmosDTO respuesta){
+        String resultado = respuesta.getMiResultado();
+        if(resultado.equals("$ERROR$")){
+            println(Consola_Display.ERROR_ALFABETO.getValue());
+        }else {
+            println(resultado);
         }
     }
 

@@ -9,6 +9,7 @@ import datosDTO.AlgoritmosDTO;
 import datosDTO.CargarDatosDTO;
 import datosDTO.DatosDTO;
 import datosDTO.GenerarFraseDTO;
+import modelo.Alfabeto;
 import modelo.Resultado;
 
 import java.io.IOException;
@@ -28,6 +29,11 @@ public class ControladorCliente {
         String miAlfabeto = ObtenerSimbolosAlgabeto(miDTO.getMiAlfabeto());
         List<String> algoritmos = miDTO.getNombresAlgoritmos();
         Boolean modoCodificacion = miDTO.getModoCodificacion();
+
+        if(!Alfabeto.esSubconjunto(textoOriginal, miAlfabeto)){
+            miDTO.setMiResultado("$ERROR$");
+            return miDTO;
+        }
 
         Resultado resultado = new Resultado(textoOriginal);
 

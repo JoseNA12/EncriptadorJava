@@ -34,6 +34,22 @@ public class Alfabeto implements IValidable, Serializable {
         this.simbolos = simbolos;
     }
 
+    public static Boolean esSubconjunto(String simbolosEntrada, String simbolosAlfabeto){
+        List<Character> charsAlfabeto =
+                simbolosAlfabeto.toUpperCase().chars().mapToObj(e->(char)e).collect(Collectors.toList());
+        final Set<Character> conjunto = new HashSet<>(charsAlfabeto);
+
+        List<Character> charsEntrada =
+                simbolosEntrada.toUpperCase().chars().mapToObj(e->(char)e).collect(Collectors.toList());
+
+        for(Character c : charsEntrada){
+            if(!conjunto.contains(c) && !c.toString().equals(" ")){
+                return false;
+            }
+        }
+        return true;
+    }
+
     @Override
     public Boolean Validar(String pEntrada) {
         List<Character> chars = simbolos.chars().mapToObj(e->(char)e).collect(Collectors.toList());

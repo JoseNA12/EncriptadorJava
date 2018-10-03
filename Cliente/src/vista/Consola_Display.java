@@ -43,6 +43,9 @@ public enum Consola_Display {
     ),
     ENTRADA_LONGITUD_GENERACION(
             "Ingrese la longitud en caracteres de la frase:"
+    ),
+    ERROR_ALFABETO(
+            "\nERROR: el mensaje de entrada contiene caracteres que no pertenecen al alfabeto seleccionado!\n"
     );
 
     String value;
