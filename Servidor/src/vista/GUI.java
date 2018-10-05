@@ -28,7 +28,6 @@ public class GUI extends Application {
         FXRouter.when("GUI", "GUI.fxml");
         FXRouter.when("GUIAlfabetos", "GUIAlfabetos.fxml");
         FXRouter.when("GUIAlgoritmos", "GUIAlgoritmos.fxml");
-        FXRouter.when("GUIBitacoras", "GUIBitacoras.fxml");
 
         FXRouter.goTo("GUI"); // pantalla inicial
 
@@ -60,7 +59,6 @@ public class GUI extends Application {
     @FXML
     public void irPantallaBitacoras() throws IOException {
         miControlador.AbrirDirectorioBitacoras();
-        //FXRouter.goTo("GUIBitacoras");
     }
 
     public void MostrarMensajeAlerta(String pContenido)

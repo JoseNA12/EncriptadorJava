@@ -8,7 +8,6 @@ public class Algoritmo { //TODO: cambiar por una interfaz para implementar el st
     private LineaResultado miResultado;
     private String simbolosAlfabetos = ""; // abcdefghijklmnñopqrstuvwxyz
 
-    static Boolean Validar(String pEntrada) {return false;}
 
     public LineaResultado Codificar(String pEntrada) {return null;}
     public LineaResultado Descodificar(String pEntrada) {return null;}

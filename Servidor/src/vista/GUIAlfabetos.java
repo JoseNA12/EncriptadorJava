@@ -88,12 +88,18 @@ public class GUIAlfabetos {
 
     @FXML
     public void eliminarAlfabeto(){
-        String identificador = lview_alfabetos.getSelectionModel().getSelectedItem().getIdentificador();
+        if (lview_alfabetos.getSelectionModel().getSelectedItem() != null){
+            String identificador = lview_alfabetos.getSelectionModel().getSelectedItem().getIdentificador();
 
-        this.miControlador.EliminarAlfabeto(new IOServidorDTO(identificador));
+            this.miControlador.EliminarAlfabeto(new IOServidorDTO(identificador));
 
-        setListCellFactory();
-        cargarListaAlfabetos();
+            setListCellFactory();
+            cargarListaAlfabetos();
+        }
+        else{
+            GUI.miInstancia.MostrarMensajeAlerta("Por favor, seleccione un alfabeto!");
+        }
+
     }
 
     private void setListCellFactory(){

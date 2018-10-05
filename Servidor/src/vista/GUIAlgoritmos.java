@@ -23,6 +23,8 @@ public class GUIAlgoritmos {
 
     private ControladorAdministrador miControlador;
 
+    private String algoritmoActual = "";
+
     @FXML
     public void initialize(){
         this.miControlador = GUI.miInstancia.miControlador;
@@ -34,7 +36,7 @@ public class GUIAlgoritmos {
         lview_algoritmos.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                // recuperarAlfabeto();
+                algoritmoActual = lview_algoritmos.getSelectionModel().getSelectedItem();
             }
         });
 
@@ -43,18 +45,34 @@ public class GUIAlgoritmos {
             File miArchivo = fileChooser.showOpenDialog(GUI.miPrimaryStage);
             File fileDestino = new File((Paths.get(System.getProperty("user.dir") + "/src/controlador/algoritmos/" + miArchivo.getName())).toString());
 
-            try {
-                Files.copy(miArchivo.toPath(), fileDestino.toPath());
-                cargarListaAlfabetos();
+            boolean agrego = miControlador.AgregarClaseAlgoritmo(miArchivo, fileDestino);
 
-                GUI.miInstancia.MostrarMensajeAlerta("Se ha agregado correctamente el método al servidor!\n" +
+            if (agrego){
+                GUI.miInstancia.MostrarMensajeAlerta("Se ha agregado correctamente el algoritmo al servidor!\n" +
                         "Reinicie el servidor para aplicar los cambios.");
-
             }
-            catch(IOException ee){
-
+            else{
+                GUI.miInstancia.MostrarMensajeAlerta("Ha sucedido un error al intentar agregar el algoritmo!");
             }
-            // Files.delete(origPath);
+        });
+
+        btn_eliminar.setOnAction(e -> {
+
+            if (!algoritmoActual.equals("")){
+                boolean elimino = miControlador.EliminarClaseAlgoritmo(algoritmoActual);
+
+                if (elimino) {
+                    GUI.miInstancia.MostrarMensajeAlerta("Se ha eliminado el algoritmo " + algoritmoActual + ".\n" +
+                            "Reinicie el servidor para aplicar los cambios.");
+                    algoritmoActual = "";
+                }
+                else {
+                    GUI.miInstancia.MostrarMensajeAlerta("Ha sucedido un error el intentar eliminar el algoritmo!");
+                }
+            }
+            else{
+                GUI.miInstancia.MostrarMensajeAlerta("Por favor, seleccione un algoritmo!");
+            }
         });
 
         cargarListaAlfabetos();

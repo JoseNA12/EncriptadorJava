@@ -1,19 +1,18 @@
 package controlador;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ControladorAdministrador implements IValidable {
+public class ControladorAdministrador {
 
     private final String dirPaqueteAlgoritmos = "controlador.algoritmos";
     private AlfabetosDAO alfabetosDAO = new AlfabetosDAO();
-    private IEscritura miEscritor;
 
-    @Override
-    public Boolean Validar(String pEntrada) {
-        return null;
-    }
 
     public Boolean AgregarAlfabeto(IOServidorDTO miDTO)
     {
@@ -26,7 +25,7 @@ public class ControladorAdministrador implements IValidable {
     }
 
     public Boolean ModificarAlfabeto(IOServidorDTO miDTO){
-        return alfabetosDAO.updateAlfabeto(miDTO);
+        return alfabetosDAO.modificarAlfabeto(miDTO);
     }
 
     public Boolean EliminarAlfabeto(IOServidorDTO miDTO){
@@ -48,6 +47,23 @@ public class ControladorAdministrador implements IValidable {
             // e.printStackTrace();
         }
         return algoritmosActuales;
+    }
+
+    public boolean AgregarClaseAlgoritmo(File miArch, File miArchDestino){
+        try {
+            Files.copy(miArch.toPath(), miArchDestino.toPath());
+            return true;
+
+        } catch (IOException e) {
+            return false;
+        }
+    }
+
+    public boolean EliminarClaseAlgoritmo(String pNombreClase){
+        File fileDestino = new File((Paths.get(System.getProperty("user.dir") + "/src/controlador/algoritmos/" + pNombreClase + ".java")).toString());
+
+        if(fileDestino.delete()) { return true; }
+        else { return false; }
     }
 
     public void AbrirDirectorioBitacoras() throws IOException {

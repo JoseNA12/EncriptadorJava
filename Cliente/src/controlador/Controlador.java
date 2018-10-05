@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Controlador {
 
-    public Cliente miClienteConexion;
+    private Cliente miClienteConexion;
 
     public Controlador() {
         miClienteConexion = new Cliente();
