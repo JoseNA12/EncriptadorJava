@@ -22,6 +22,7 @@ public class ControladorCliente {
     private final String dirPaqueteAlgoritmos = "controlador.algoritmos";
     private final String dirPaqueteEscritores = "controlador.escritores";
     private AlfabetosDAO alfabetosDAO = new AlfabetosDAO();
+    Algoritmo algoritmo;
 
     public AlgoritmosDTO ProcesarTexto(AlgoritmosDTO miDTO)
     {
@@ -94,7 +95,7 @@ public class ControladorCliente {
         {
             try {
                 String miInstancia = dirPaqueteAlgoritmos + "." + algoritmos.get(i);
-                Algoritmo algoritmo = (Algoritmo) Class.forName(miInstancia).newInstance();
+                algoritmo = (Algoritmo) Class.forName(miInstancia).newInstance();
                 algoritmo.setSimbolosAlfabetos(miAlfabeto);
 
                 if (modoCodificacion) {

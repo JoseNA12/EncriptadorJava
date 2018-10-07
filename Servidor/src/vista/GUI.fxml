@@ -25,7 +25,7 @@
             <Button fx:id="btn_bitacora" mnemonicParsing="false" onAction="#irPantallaBitacoras" prefHeight="30.0" prefWidth="170.0" text="Bitácora" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Label layoutX="135.0" layoutY="40.0" text="Mantenimiento">
+      <Label layoutX="135.0" layoutY="40.0" text="Mantenimiento" textFill="#bfbfbf">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>

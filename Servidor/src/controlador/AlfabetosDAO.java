@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 
-public class AlfabetosDAO implements IValidable {
+public class AlfabetosDAO {
     private TablaAlfabetos tablaAlfabetos;
     private String pathTabla = "alfabetos.abc";
     //private String pathTabla = new JFileChooser().getFileSystemView().getDefaultDirectory().toString() + "/alfabetos.abc";
@@ -15,12 +15,6 @@ public class AlfabetosDAO implements IValidable {
     public AlfabetosDAO(){
         tablaAlfabetos = new TablaAlfabetos();
     }
-
-    @Override
-    public Boolean Validar(String pEntrada) {
-        return null;
-    }
-
 
     public void guardarAlfabetos(){
         try {
@@ -62,7 +56,7 @@ public class AlfabetosDAO implements IValidable {
         return tablaAlfabetos.toArrayList();
     }
 
-    public Boolean updateAlfabeto(IOServidorDTO miDTO){
+    public Boolean modificarAlfabeto(IOServidorDTO miDTO){
         tablaAlfabetos.editarAlfabeto(miDTO.getIdentificadorAlfabeto(), miDTO.getSimbolosAlfabeto());
         guardarAlfabetos();
         return true;
