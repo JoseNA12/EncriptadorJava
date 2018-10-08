@@ -43,7 +43,10 @@ public class Alfabeto implements IValidable, Serializable {
                 simbolosEntrada.chars().mapToObj(e->(char)e).collect(Collectors.toList());
 
         for(Character c : charsEntrada){
-            if(!conjunto.contains(c) && !c.toString().equals(" ")){
+            if(!conjunto.contains(c) &&
+                    !c.toString().equals(" ") &&
+                    !c.toString().equals("*") &&
+                    !(c >= 48 & c <= 57)){
                 return false;
             }
         }
