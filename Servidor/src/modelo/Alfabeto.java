@@ -36,11 +36,11 @@ public class Alfabeto implements IValidable, Serializable {
 
     public static Boolean esSubconjunto(String simbolosEntrada, String simbolosAlfabeto){
         List<Character> charsAlfabeto =
-                simbolosAlfabeto.toUpperCase().chars().mapToObj(e->(char)e).collect(Collectors.toList());
+                simbolosAlfabeto.chars().mapToObj(e->(char)e).collect(Collectors.toList());
         final Set<Character> conjunto = new HashSet<>(charsAlfabeto);
 
         List<Character> charsEntrada =
-                simbolosEntrada.toUpperCase().chars().mapToObj(e->(char)e).collect(Collectors.toList());
+                simbolosEntrada.chars().mapToObj(e->(char)e).collect(Collectors.toList());
 
         for(Character c : charsEntrada){
             if(!conjunto.contains(c) && !c.toString().equals(" ")){

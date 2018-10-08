@@ -39,7 +39,7 @@ public class EscritorPDF implements IEscritura {
             contentStream.beginText();
 
             contentStream.newLineAtOffset(25, 700);
-            contentStream.setFont(PDType1Font.COURIER, 12);
+            contentStream.setFont(PDType1Font.COURIER, 9);
             contentStream.setLeading(14.5f);
 
             for (String linea: lineas) {
