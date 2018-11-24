@@ -1,0 +1,53 @@
+<resultado>
+Frase original: Hola mundo
+Fecha: Mon Oct 01 02:09:30 CST 2018
+
+	Tipo de algoritmo: SustitucionVigenere
+	Modo: Descodificación
+	Salida: mjx jskbm
+
+</resultado>
+<resultado>
+Frase original: melabessa
+Fecha: Tue Oct 02 00:20:03 CST 2018
+
+	Tipo de algoritmo: CodigoTelefonico
+	Modo: Codificación
+	Salida: 60 31 52 20 21 31 81 81 20 
+
+	Tipo de algoritmo: CodificacionBinaria
+	Modo: Codificación
+	Salida: 01101 00101 01100 00001 00010 00101 10100 10100 00001 
+
+</resultado>
+<resultado>
+Frase original: malavassi gay
+Fecha: Tue Oct 02 00:20:18 CST 2018
+
+	Tipo de algoritmo: CodificacionBinaria
+	Modo: Codificación
+	Salida: 01101 00001 01100 00001 10111 00001 10100 10100 01001 * 00111 00001 11010 
+
+	Tipo de algoritmo: PalabraClave
+	Modo: Codificación
+	Salida: gbyhlutgo abm
+
+</resultado>
+<resultado>
+Frase original: 01101 00001 01100 00001 10111 00001 10100 10100 01001 * 00111 00001 11010
+Fecha: Tue Oct 02 00:21:57 CST 2018
+
+	Tipo de algoritmo: CodificacionBinaria
+	Modo: Descodificación
+	Salida: malavassi ga
+
+</resultado>
+<resultado>
+Frase original: kjbad
+Fecha: Mon Oct 15 13:54:37 CST 2018
+
+	Tipo de algoritmo: PalabraClave
+	Modo: Descodificación
+	Salida: kibhd
+
+</resultado>

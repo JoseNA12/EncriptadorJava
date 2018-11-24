@@ -1,0 +1,260 @@
+Frase original: hola mundo
+Fecha: Sun Sep 30 20:25:20 CST 2018
+
+	Tipo de algoritmo: CodigoTelefonico
+	Modo: Codificación
+	Salida: 41 70 52 20 * 60 90 61 30 70 
+
+-----------------------------------------------------------------
+Frase original: 
+Fecha: Mon Oct 01 14:49:37 CST 2018
+
+	Tipo de algoritmo: TransposicionLetraLetra
+	Modo: Descodificación
+	Salida: 
+
+-----------------------------------------------------------------
+Frase original: 
+Fecha: Mon Oct 01 14:59:09 CST 2018
+
+	Tipo de algoritmo: SustitucionVigenere
+	Modo: Descodificación
+	Salida: 
+
+-----------------------------------------------------------------
+Frase original: 
+Fecha: Mon Oct 01 15:06:43 CST 2018
+
+	Tipo de algoritmo: SustitucionVigenere
+	Modo: Codificación
+	Salida: 
+
+-----------------------------------------------------------------
+Frase original: kñgtan
+Fecha: Mon Oct 01 15:15:36 CST 2018
+
+	Tipo de algoritmo: TransposicionLetraLetra
+	Modo: Descodificación
+	Salida: natgñk
+
+-----------------------------------------------------------------
+Frase original: emqzbn
+Fecha: Mon Oct 01 15:15:48 CST 2018
+
+	Tipo de algoritmo: TransposicionLetraLetra
+	Modo: Descodificación
+	Salida: nbzqme
+
+-----------------------------------------------------------------
+Frase original: fdzqhh
+Fecha: Mon Oct 01 15:15:52 CST 2018
+
+	Tipo de algoritmo: TransposicionLetraLetra
+	Modo: Descodificación
+	Salida: hhqzdf
+
+-----------------------------------------------------------------
+Frase original: riofrr
+Fecha: Mon Oct 01 15:15:58 CST 2018
+
+	Tipo de algoritmo: TransposicionLetraLetra
+	Modo: Descodificación
+	Salida: rrfoir
+
+	Tipo de algoritmo: CodigoTelefonico
+	Modo: Descodificación
+	Salida: 
+
+-----------------------------------------------------------------
+Frase original: ouwiñd
+Fecha: Mon Oct 01 15:16:09 CST 2018
+
+	Tipo de algoritmo: TransposicionLetraLetra
+	Modo: Descodificación
+	Salida: dñiwuo
+
+	Tipo de algoritmo: CodigoTelefonico
+	Modo: Descodificación
+	Salida: 
+
+	Tipo de algoritmo: SustitucionVigenere
+	Modo: Descodificación
+	Salida: nrufma
+
+-----------------------------------------------------------------
+Frase original: apntye
+Fecha: Mon Oct 01 15:16:26 CST 2018
+
+	Tipo de algoritmo: TransposicionLetraLetra
+	Modo: Codificación
+	Salida: eytnpa
+
+	Tipo de algoritmo: CodigoTelefonico
+	Modo: Codificación
+	Salida: 20 71 61 82 94 31 
+
+	Tipo de algoritmo: SustitucionVigenere
+	Modo: Codificación
+	Salida: csowah
+
+-----------------------------------------------------------------
+Frase original: wasd
+Fecha: Mon Oct 01 15:17:13 CST 2018
+
+	Tipo de algoritmo: TransposicionLetraLetra
+	Modo: Codificación
+	Salida: dsaw
+
+	Tipo de algoritmo: CodigoTelefonico
+	Modo: Codificación
+	Salida: 92 20 81 30 
+
+	Tipo de algoritmo: SustitucionVigenere
+	Modo: Codificación
+	Salida: ydug
+
+-----------------------------------------------------------------
+Frase original: 92 20 81 30
+Fecha: Mon Oct 01 15:17:31 CST 2018
+
+	Tipo de algoritmo: CodigoTelefonico
+	Modo: Descodificación
+	Salida: wasd
+
+-----------------------------------------------------------------
+Frase original: hola mundo
+Fecha: Tue Oct 02 00:24:42 CST 2018
+
+	Tipo de algoritmo: CodificacionBinaria
+	Modo: Codificación
+	Salida: 01000 10000 01100 00001 * 01101 10110 01110 00100 10000 
+
+-----------------------------------------------------------------
+Frase original: 01000 10000 01100 00001 * 01101 10110 01110 00100 10000 
+Fecha: Tue Oct 02 00:24:48 CST 2018
+
+	Tipo de algoritmo: CodificacionBinaria
+	Modo: Descodificación
+	Salida: hola mundo
+
+-----------------------------------------------------------------
+Frase original: abcdefghijklmnñopqrstuvwxyz
+Fecha: Tue Oct 02 00:25:26 CST 2018
+
+	Tipo de algoritmo: CodificacionBinaria
+	Modo: Codificación
+	Salida: 00001 00010 00011 00100 00101 00110 00111 01000 01001 01010 01011 01100 01101 01110 01111 10000 10001 10010 10011 10100 10101 10110 10111 11000 11001 11010 11011 
+
+-----------------------------------------------------------------
+Frase original: 00001 00010 00011 00100 00101 00110 00111 01000 01001 01010 01011 01100 01101 01110 01111 10000 10001 10010 10011 10100 10101 10110 10111 11000 11001 11010 11011 
+Fecha: Tue Oct 02 00:25:31 CST 2018
+
+	Tipo de algoritmo: CodificacionBinaria
+	Modo: Descodificación
+	Salida: abcdefghijklmnñopqrstuvwxyz
+
+-----------------------------------------------------------------
+Frase original: abcdefghijklmnñopqrstuvwxyz
+Fecha: Tue Oct 02 00:25:51 CST 2018
+
+	Tipo de algoritmo: CodigoTelefonico
+	Modo: Codificación
+	Salida: 20 21 22 30 31 32 40 41 42 50 51 52 60 61 62 70 71 72 80 81 82 90 91 92 93 94 95 
+
+-----------------------------------------------------------------
+Frase original: 20 21 22 30 31 32 40 41 42 50 51 52 60 61 62 70 71 72 80 81 82 90 91 92 93 94 95 
+Fecha: Tue Oct 02 00:25:56 CST 2018
+
+	Tipo de algoritmo: CodigoTelefonico
+	Modo: Descodificación
+	Salida: abcdefghijklmnñopqrstuvwxyz
+
+-----------------------------------------------------------------
+Frase original: abcdefghijklmnñopqrstuvwxyz
+Fecha: Tue Oct 02 00:26:11 CST 2018
+
+	Tipo de algoritmo: PalabraClave
+	Modo: Codificación
+	Salida: ucpktzhuoyemztdjqeyiñvjdnsa
+
+-----------------------------------------------------------------
+Frase original: ucpktzhuoyemztdjqeyiñvjdnsa
+Fecha: Tue Oct 02 00:26:17 CST 2018
+
+	Tipo de algoritmo: PalabraClave
+	Modo: Descodificación
+	Salida: abcdefghijklmnñopqrstuvwxyz
+
+-----------------------------------------------------------------
+Frase original: abcdefghijklmnñopqrstuvwxyz
+Fecha: Tue Oct 02 00:26:29 CST 2018
+
+	Tipo de algoritmo: SustitucionVigenere
+	Modo: Codificación
+	Salida: ceeggiikkmmññpprrttvvxxzzbb
+
+-----------------------------------------------------------------
+Frase original: ceeggiikkmmññpprrttvvxxzzbb
+Fecha: Tue Oct 02 00:26:38 CST 2018
+
+	Tipo de algoritmo: SustitucionVigenere
+	Modo: Descodificación
+	Salida: abcdefghijklmnñopqrstuvwxyz
+
+-----------------------------------------------------------------
+Frase original: abcdefghijklmnñopqrstuvwxyz
+Fecha: Tue Oct 02 00:26:54 CST 2018
+
+	Tipo de algoritmo: TransposicionLetraLetra
+	Modo: Codificación
+	Salida: zyxwvutsrqpoñnmlkjihgfedcba
+
+-----------------------------------------------------------------
+Frase original: zyxwvutsrqpoñnmlkjihgfedcba
+Fecha: Tue Oct 02 00:27:00 CST 2018
+
+	Tipo de algoritmo: TransposicionLetraLetra
+	Modo: Descodificación
+	Salida: abcdefghijklmnñopqrstuvwxyz
+
+-----------------------------------------------------------------
+Frase original: malavassi gay
+Fecha: Tue Oct 02 00:27:18 CST 2018
+
+	Tipo de algoritmo: CodificacionBinaria
+	Modo: Codificación
+	Salida: 01101 00001 01100 00001 10111 00001 10100 10100 01001 * 00111 00001 11010 
+
+-----------------------------------------------------------------
+Frase original: 01101 00001 01100 00001 10111 00001 10100 10100 01001 * 00111 00001 11010 
+Fecha: Tue Oct 02 00:27:26 CST 2018
+
+	Tipo de algoritmo: CodificacionBinaria
+	Modo: Descodificación
+	Salida: malavassi gay
+
+-----------------------------------------------------------------
+Frase original: abcde
+Fecha: Sat Oct 06 23:53:06 CST 2018
+
+	Tipo de algoritmo: PalabraClave
+	Modo: Codificación
+	Salida: accde
+
+-----------------------------------------------------------------
+Frase original: abcde
+Fecha: Sat Oct 06 23:53:11 CST 2018
+
+	Tipo de algoritmo: PalabraClave
+	Modo: Codificación
+	Salida: accde
+
+-----------------------------------------------------------------
+Frase original: abcde
+Fecha: Sat Oct 06 23:53:22 CST 2018
+
+	Tipo de algoritmo: PalabraClave
+	Modo: Codificación
+	Salida: accde
+
+-----------------------------------------------------------------

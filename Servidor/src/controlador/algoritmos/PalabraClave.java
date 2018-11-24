@@ -9,12 +9,11 @@ import java.util.List;
 
 public class PalabraClave extends Algoritmo {
 
-    private static final String clave = "tango";
-
     public LineaResultado Codificar(String mensaje){
         String codigo="";
         char actual;
         int actual_clave=0;
+        String clave = "tango";
 
         for(int i=0;i<mensaje.length();i++){
             actual=mensaje.charAt(i);
@@ -80,6 +79,7 @@ public class PalabraClave extends Algoritmo {
         String Final="";
         int aux_clave=0;
         String abecedario = super.getSimbolosAlfabetos();
+        String clave = "tango";
 
         for(int i=0;i<mensaje.length();i++){
             actual_mensaje= mensaje.charAt(i);

@@ -2,30 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="pantallas">
-      <change afterPath="$PROJECT_DIR$/src/CSS/Estilo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vista/FXRouter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vista/GUIAlfabetos.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vista/GUIAlfabetos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vista/GUIAlgoritmos.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vista/GUIAlgoritmos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Cliente/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Cliente/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cliente/out/production/Cliente/controlador/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Cliente/out/production/Cliente/controlador/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cliente/out/production/Cliente/vista/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cliente/out/production/Cliente/vista/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Cliente/out/production/Cliente/vista/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cliente/out/production/Cliente/vista/GUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../Cliente/out/production/Cliente/vista/GUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/Controlador$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/controlador/Controlador$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/Controlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/controlador/Controlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/EscritorPdf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/controlador/EscritorPdf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/EscritorTxt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/controlador/EscritorTxt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/EscritorXml.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/controlador/EscritorXml.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/SustVigenere.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/controlador/SustVigenere.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/AlfabetosDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/controlador/AlfabetosDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/Algoritmo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/controlador/Algoritmo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/AlgoritmosDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/CodTelefonico.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/Controlador$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/Controlador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/EscritorPdf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/EscritorTxt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/EscritorXml.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/IEscritura.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/controlador/IEscritura.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/SustVigenere.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/controlador/TrasLetraLetra.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/modelo/Alfabeto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/modelo/Alfabeto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/modelo/LineaResultado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/modelo/LineaResultado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/modelo/Resultado.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/modelo/Resultado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/modelo/TipoAlgoritmo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Servidor/servidor/ClienteHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/servidor/ClienteHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Servidor/servidor/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/servidor/Servidor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Servidor/vista/ControladorGUI.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Servidor/vista/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/vista/GUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Servidor/vista/GUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Servidor/vista/GUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bitacoras/filename.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/bitacoras/filename.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/Controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlador/SustVigenere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/SustVigenere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/ControladorGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/GUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/GUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlador/algoritmos/PalabraClave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/algoritmos/PalabraClave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlador/algoritmos/SustitucionVigenere.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlador/algoritmos/TransposicionLetraLetra.java" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +43,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Servidor$Main.ic" NAME="Main Coverage Results" MODIFIED="1537921621647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Servidor$Main.ic" NAME="Main Coverage Results" MODIFIED="1538593852668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>vista.*</FILTER>
     </SUITE>
   </component>
@@ -86,47 +92,70 @@
     <session id="1211017198">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.closed" value="35" />
+          <entry key="project.open.time.1" value="7" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.2" value="5" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.51" value="1" />
+          <entry key="project.open.time.62" value="1" />
+          <entry key="project.open.time.63" value="1" />
+          <entry key="project.open.time.64" value="2" />
+          <entry key="project.open.time.65" value="1" />
+          <entry key="project.open.time.66" value="1" />
+          <entry key="project.open.time.67" value="1" />
+          <entry key="project.open.time.69" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.73" value="2" />
           <entry key="project.open.time.74" value="1" />
           <entry key="project.open.time.76" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.77" value="2" />
+          <entry key="project.open.time.78" value="1" />
+          <entry key="project.opened" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="3" />
-          <entry key="fxml" value="15" />
-          <entry key="java" value="61" />
-          <entry key="txt" value="1" />
-          <entry key="xml" value="1" />
+          <entry key="MF" value="5" />
+          <entry key="class" value="30" />
+          <entry key="css" value="4" />
+          <entry key="fxml" value="28" />
+          <entry key="java" value="339" />
+          <entry key="tld" value="5" />
+          <entry key="txt" value="5" />
+          <entry key="xml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="3" />
-          <entry key="JAVA" value="61" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="XML" value="16" />
+          <entry key="CLASS" value="30" />
+          <entry key="CSS" value="4" />
+          <entry key="JAVA" value="339" />
+          <entry key="Manifest" value="5" />
+          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="XML" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="class" value="1" />
           <entry key="css" value="104" />
-          <entry key="dummy" value="24" />
+          <entry key="dummy" value="103" />
           <entry key="fxml" value="18" />
-          <entry key="java" value="1248" />
+          <entry key="java" value="8044" />
           <entry key="txt" value="9" />
           <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="CLASS" value="1" />
           <entry key="CSS" value="104" />
-          <entry key="JAVA" value="1248" />
-          <entry key="PLAIN_TEXT" value="33" />
+          <entry key="JAVA" value="8044" />
+          <entry key="PLAIN_TEXT" value="112" />
           <entry key="XML" value="26" />
         </counts>
       </usages-collector>
@@ -138,23 +167,30 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vista/GUI.java">
+        <entry file="file://$PROJECT_DIR$/src/controlador/ControladorCliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="53" column="36" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="36" />
+            <state relative-caret-position="170">
+              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#CargarIDsAlfabetos#0;class#ControladorCliente#0" />
+                <element signature="method#ObtenerSimbolosAlgabeto#0;class#ControladorCliente#0" />
+                <element signature="method#CargarFormatosEscritura#0;class#ControladorCliente#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/vista/GUI.fxml">
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="153" selection-start-line="10" selection-start-column="153" selection-end-line="10" selection-end-column="153" />
+          <provider editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controlador/algoritmos/PalabraClave.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="87" column="13" lean-forward="true" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -166,6 +202,7 @@
       <list>
         <option value="CSS File" />
         <option value="JavaFXApplication" />
+        <option value="Enum" />
         <option value="FxmlFile" />
         <option value="Class" />
       </list>
@@ -174,6 +211,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Scene</find>
+      <find>dis</find>
+      <find>org/apache</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -185,39 +224,75 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/vista/GUIAlgoritmos.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/bitacoras/bitacora.txt" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/controlador/IEscritura.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/vista/GUI.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/vista/GUIAlfabetos.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/modelo/estructuras/TablaAlfabetos.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/servidor/ClienteHandler.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/controlador/Algoritmo.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/controlador/ControladorAdministrador.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/controlador/algoritmos/CodigoTelefonico.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/controlador/IOServidorDTO.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/controlador/algoritmos/PalabraClave.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/controlador/AlfabetosDAO.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/modelo/LineaResultado.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/controlador/ControladorCliente.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/gui/Controller.java" />
-        <option value="$PROJECT_DIR$/src/vista/Controller.java" />
-        <option value="$PROJECT_DIR$/src/controlador/Servidor.java" />
-        <option value="$PROJECT_DIR$/src/controlador/ClienteHandler.java" />
-        <option value="$PROJECT_DIR$/src/modelo/AlgoritmosDTO.java" />
-        <option value="$PROJECT_DIR$/src/modelo/Alfabeto.java" />
-        <option value="$PROJECT_DIR$/src/controlador/AlgoritmosDTO.java" />
-        <option value="$PROJECT_DIR$/src/controlador/Algoritmo.java" />
-        <option value="$PROJECT_DIR$/src/controlador/AlfabetosDAO.java" />
-        <option value="$PROJECT_DIR$/src/controlador/CodTelefonico.java" />
-        <option value="$PROJECT_DIR$/src/controlador/TrasLetraLetra.java" />
-        <option value="$PROJECT_DIR$/src/controlador/EscritorTxt.java" />
-        <option value="$PROJECT_DIR$/src/servidor/Servidor.java" />
-        <option value="$PROJECT_DIR$/src/controlador/EscritorPdf.java" />
-        <option value="$PROJECT_DIR$/src/controlador/EscritorXml.java" />
-        <option value="$PROJECT_DIR$/src/bitacoras/filename.xml" />
-        <option value="$PROJECT_DIR$/src/controlador/SustVigenere.java" />
-        <option value="$PROJECT_DIR$/src/controlador/Controlador.java" />
-        <option value="$PROJECT_DIR$/src/BotonCSS.css" />
-        <option value="$PROJECT_DIR$/src/vista/ControladorGUI.java" />
-        <option value="$PROJECT_DIR$/src/CSS/Boton.css" />
-        <option value="$PROJECT_DIR$/src/vista/FXRouter.java" />
         <option value="$PROJECT_DIR$/src/CSS/Estilo.css" />
-        <option value="$PROJECT_DIR$/src/vista/GUI.java" />
-        <option value="$PROJECT_DIR$/src/vista/GUIAlfabetos.java" />
+        <option value="$PROJECT_DIR$/src/servidor/Servidor.java" />
+        <option value="$PROJECT_DIR$/src/controlador/Funciones.java" />
+        <option value="$PROJECT_DIR$/src/controlador/TrasLetraLetra.java" />
+        <option value="$PROJECT_DIR$/src/controlador/SustVigenere.java" />
+        <option value="$PROJECT_DIR$/src/controlador/CodTelefonico.java" />
+        <option value="$PROJECT_DIR$/src/vista/FXRouter.java" />
+        <option value="$PROJECT_DIR$/src/controlador/algoritmos/Algoritmo.java" />
+        <option value="$PROJECT_DIR$/src/controlador/DatosDTO.java" />
+        <option value="$PROJECT_DIR$/src/controlador/CargarDatosDTO.java" />
+        <option value="$PROJECT_DIR$/src/controlador/AlgoritmosDTO.java" />
+        <option value="$PROJECT_DIR$/src/controlador/EscritorPdf.java" />
+        <option value="$PROJECT_DIR$/src/controlador/EscritorTxt.java" />
+        <option value="$PROJECT_DIR$/src/controlador/EscritorXml.java" />
+        <option value="$PROJECT_DIR$/src/controlador/algoritmos/CodigoTelefonico.java" />
+        <option value="$PROJECT_DIR$/src/controlador/algoritmos/TrasposicionLetraLetra.java" />
+        <option value="$PROJECT_DIR$/src/vista/CSS/Estilo.css" />
+        <option value="$PROJECT_DIR$/src/modelo/Resultado.java" />
+        <option value="$PROJECT_DIR$/src/modelo/LineaResultado.java" />
+        <option value="$PROJECT_DIR$/src/controlador/IEscritura.java" />
         <option value="$PROJECT_DIR$/src/vista/GUIAlfabetos.fxml" />
-        <option value="$PROJECT_DIR$/src/vista/GUIAlgoritmos.java" />
+        <option value="$PROJECT_DIR$/src/modelo/estructuras/TablaAlfabetos.java" />
+        <option value="$PROJECT_DIR$/src/controlador/IOServidorDTO.java" />
+        <option value="$PROJECT_DIR$/src/Introspeccion.java" />
+        <option value="$PROJECT_DIR$/src/controlador/al.java" />
+        <option value="$PROJECT_DIR$/src/controlador/Controlador.java" />
+        <option value="$PROJECT_DIR$/src/controlador/frase/MezclaConsecuDuplica.java" />
+        <option value="$PROJECT_DIR$/src/controlador/frase/Mezclar.java" />
+        <option value="$PROJECT_DIR$/src/controlador/frase/MezclaSimbolos.java" />
+        <option value="$PROJECT_DIR$/src/controlador/frase/MezclaSimbolosBuilder.java" />
+        <option value="$PROJECT_DIR$/src/controlador/frase/MezclaNoConsecuNoDuplica.java" />
+        <option value="$PROJECT_DIR$/src/controlador/frase/MezclaConsecuNoDuplica.java" />
+        <option value="$PROJECT_DIR$/src/servidor/ClienteHandler.java" />
+        <option value="$PROJECT_DIR$/src/vista/GUIBitacoras.fxml" />
+        <option value="$PROJECT_DIR$/src/vista/GUIBitacoras.java" />
+        <option value="$PROJECT_DIR$/src/vista/Main.java" />
+        <option value="$PROJECT_DIR$/src/controlador/algoritmos/CodificacionBinaria.java" />
+        <option value="$PROJECT_DIR$/src/controlador/escritores/EscritorPDF.java" />
         <option value="$PROJECT_DIR$/src/vista/GUIAlgoritmos.fxml" />
+        <option value="$PROJECT_DIR$/src/controlador/algoritmos/MyObjectok.java" />
+        <option value="$USER_HOME$/Desktop/prueba/MyObjectok.java" />
+        <option value="$PROJECT_DIR$/src/vista/GUIAlgoritmos.java" />
+        <option value="$PROJECT_DIR$/src/vista/GUIAlfabetos.java" />
+        <option value="$PROJECT_DIR$/src/controlador/algoritmos/PalabraClave.java" />
+        <option value="$PROJECT_DIR$/src/controlador/algoritmos/SustitucionVigenere.java" />
+        <option value="$PROJECT_DIR$/src/controlador/ControladorAdministrador.java" />
+        <option value="$PROJECT_DIR$/src/controlador/AlfabetosDAO.java" />
+        <option value="$PROJECT_DIR$/src/controlador/Algoritmo.java" />
+        <option value="$PROJECT_DIR$/src/vista/GUI.java" />
+        <option value="$PROJECT_DIR$/src/controlador/ControladorCliente.java" />
         <option value="$PROJECT_DIR$/src/vista/GUI.fxml" />
       </list>
     </option>
@@ -228,12 +303,18 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="876" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="141" />
+    <option name="y" value="119" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -246,6 +327,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -253,6 +335,17 @@
             <path>
               <item name="Servidor" type="b2602c69:ProjectViewProjectNode" />
               <item name="Servidor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Servidor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Servidor" type="462c0819:PsiDirectoryNode" />
+              <item name="DatosDTO_JAR" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Servidor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Servidor" type="462c0819:PsiDirectoryNode" />
+              <item name="DatosDTO_JAR" type="462c0819:PsiDirectoryNode" />
+              <item name="DatosDTO_JAR.jar" type="ab9368bb:PsiFileNode" />
             </path>
             <path>
               <item name="Servidor" type="b2602c69:ProjectViewProjectNode" />
@@ -269,7 +362,15 @@
               <item name="Servidor" type="b2602c69:ProjectViewProjectNode" />
               <item name="Servidor" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CSS" type="462c0819:PsiDirectoryNode" />
+              <item name="controlador" type="462c0819:PsiDirectoryNode" />
+              <item name="algoritmos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Servidor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Servidor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controlador" type="462c0819:PsiDirectoryNode" />
+              <item name="escritores" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Servidor" type="b2602c69:ProjectViewProjectNode" />
@@ -281,23 +382,35 @@
               <item name="Servidor" type="b2602c69:ProjectViewProjectNode" />
               <item name="Servidor" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="servidor" type="462c0819:PsiDirectoryNode" />
+              <item name="modelo" type="462c0819:PsiDirectoryNode" />
+              <item name="estructuras" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Servidor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Servidor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="vista" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="Servidor" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Servidor" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="servidor" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -307,21 +420,26 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537928640285" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539634130733" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Cliente" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Algoritmos" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jose_\Documents\GitHub\EncriptadorJava\Servidor\src\modelo" />
-      <recent name="C:\Users\jose_\Documents\GitHub\EncriptadorJava\Servidor\src\controlador" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jose_\Documents\GitHub\EncriptadorJava\Servidor\src\CSS" />
       <recent name="C:\Users\jose_\Documents\GitHub\EncriptadorJava\Servidor\lib" />
       <recent name="C:\Users\jose_\Documents\GitHub\EncriptadorJava\Servidor\src" />
+      <recent name="C:\Users\jose_\Documents\GitHub\EncriptadorJava\Servidor\src\CSS" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jose_\Documents\GitHub\EncriptadorJava\Servidor\DatosDTO_JAR" />
+      <recent name="C:\Users\jose_\Documents\GitHub\EncriptadorJava\Servidor\src\controlador" />
+      <recent name="C:\Users\jose_\Documents\GitHub\EncriptadorJava\Servidor\src\modelo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -400,6 +518,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="stripes-1.5.5.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/lib/stripes-1.5.5.jar" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
@@ -423,9 +545,11 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Servidor" />
+      <item itemvalue="JAR Application.stripes-1.5.5.jar" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.stripes-1.5.5.jar" />
         <item itemvalue="Application.Servidor" />
       </list>
     </recent_temporary>
@@ -446,18 +570,55 @@
       <workItem from="1537858635334" duration="2054000" />
       <workItem from="1537896035810" duration="1081000" />
       <workItem from="1537915274537" duration="2006000" />
-      <workItem from="1537918377550" duration="10240000" />
+      <workItem from="1537918377550" duration="10270000" />
+      <workItem from="1537929014335" duration="145000" />
+      <workItem from="1538018229199" duration="5080000" />
+      <workItem from="1538026592417" duration="13347000" />
+      <workItem from="1538065671411" duration="56000" />
+      <workItem from="1538071290285" duration="1085000" />
+      <workItem from="1538072823561" duration="7772000" />
+      <workItem from="1538112728274" duration="4258000" />
+      <workItem from="1538156438770" duration="595000" />
+      <workItem from="1538187607663" duration="19045000" />
+      <workItem from="1538251857108" duration="11346000" />
+      <workItem from="1538270311981" duration="5377000" />
+      <workItem from="1538283723546" duration="1746000" />
+      <workItem from="1538341420539" duration="233000" />
+      <workItem from="1538352628147" duration="34000" />
+      <workItem from="1538352777849" duration="2638000" />
+      <workItem from="1538355878405" duration="6976000" />
+      <workItem from="1538379818608" duration="1759000" />
+      <workItem from="1538423642173" duration="2604000" />
+      <workItem from="1538426290181" duration="5940000" />
+      <workItem from="1538435413392" duration="1410000" />
+      <workItem from="1538456695041" duration="206000" />
+      <workItem from="1538457811673" duration="4065000" />
+      <workItem from="1538591199635" duration="224000" />
+      <workItem from="1538591466053" duration="3124000" />
+      <workItem from="1538682435982" duration="5623000" />
+      <workItem from="1538711263140" duration="8766000" />
+      <workItem from="1538754956568" duration="4654000" />
+      <workItem from="1538890636532" duration="979000" />
+      <workItem from="1539631314810" duration="2971000" />
     </task>
+    <task id="LOCAL-00001" summary="pantallas">
+      <created>1537928745594</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1537928745594</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25239000" />
+    <option name="totallyTimeSpent" value="147327000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1969914" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19340974" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="0.3298969" />
       <window_info id="Designer" order="3" />
@@ -465,8 +626,8 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32884097" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23719676" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32786885" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20350404" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39892185" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -476,21 +637,21 @@
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32884097" />
+      <window_info anchor="bottom" id="Event Log" order="12" weight="0.3295082" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32614556" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="15" />
-      <window_info anchor="right" id="Coverage" sideWeight="0.5017668" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49823323" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="JetGradle" order="3" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.3295129" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Coverage" order="10" sideWeight="0.5017668" side_tool="true" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,278 +671,386 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/modelo/AlgoritmosDTO.java" />
-    <entry file="file://$PROJECT_DIR$/src/controlador/CodTelefonico.java">
+    <entry file="file://$PROJECT_DIR$/src/controlador/frase/MezclaDemo.java" />
+    <entry file="file://$PROJECT_DIR$/bitacoras/bitacora.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="204">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Runnable.java">
+    <entry file="file://$PROJECT_DIR$/src/controlador/frase/MezclaConsecuNoDuplica.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/io/File.java">
+    <entry file="file://$PROJECT_DIR$/src/controlador/frase/Mezclar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="1005" column="19" selection-start-line="1005" selection-start-column="19" selection-end-line="1005" selection-end-column="19" />
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bitacoras/filename.txt">
+    <entry file="file://$PROJECT_DIR$/src/controlador/frase/MezclaConsecuDuplica.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/ReadTextFileFX.java" />
+    <entry file="file://$PROJECT_DIR$/src/vista/Main.java" />
+    <entry file="file://$PROJECT_DIR$/bitacoras/bitacora.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bitacoras/filename.xml">
+    <entry file="file://$PROJECT_DIR$/src/vista/GUIAlfabetos.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vista/GUIBitacoras.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/vista/GUIAlgoritmos.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/nio/file/Files.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1197">
+          <caret line="1267" column="23" selection-start-line="1267" selection-start-column="23" selection-end-line="1267" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/algoritmos/MyObjectok" />
+    <entry file="file://$PROJECT_DIR$/src/controlador/algoritmos/MyObjectok.java" />
+    <entry file="file://$USER_HOME$/Desktop/prueba/MyObjectok.java" />
+    <entry file="file://$USER_HOME$/Desktop/prueba/objetoParaCopiar.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/algoritmos/objetoParaCopiar.java" />
+    <entry file="file://$PROJECT_DIR$/src/controlador/frase/MezclaSimbolosBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="43" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/DatosDTO_JAR/DatosDTO_JAR.jar!/accionesCliente/TipoAcciones.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/DatosDTO_JAR/DatosDTO_JAR.jar!/accionesCliente/TiposGenerarFrase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/DatosDTO_JAR/DatosDTO_JAR.jar!/datosDTO/AlgoritmosDTO.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/DatosDTO_JAR/DatosDTO_JAR.jar!/datosDTO/CargarDatosDTO.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/EscritorXml.java">
+    <entry file="jar://$PROJECT_DIR$/DatosDTO_JAR/DatosDTO_JAR.jar!/datosDTO/GenerarFraseDTO.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        <state relative-caret-position="272">
+          <caret line="22" column="11" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/EscritorTxt.java">
+    <entry file="jar://$PROJECT_DIR$/DatosDTO_JAR/DatosDTO_JAR.jar!/datosDTO/DatosDTO.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/EscritorPdf.java">
+    <entry file="file://$PROJECT_DIR$/src/controlador/algoritmos/SustitucionVigenere.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="323">
+          <caret line="72" column="68" selection-start-line="72" selection-start-column="68" selection-end-line="72" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../AlgoritmosProyecto1/src/com/companyGS/Algoritmos.java">
+    <entry file="file://$PROJECT_DIR$/src/controlador/algoritmos/TransposicionLetraLetra.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="23" column="57" lean-forward="true" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+        <state relative-caret-position="68">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/TipoAlgoritmo.java">
+    <entry file="file://$PROJECT_DIR$/src/controlador/algoritmos/CodigoTelefonico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="306">
+          <caret line="78" column="46" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servidor/Servidor.java">
+    <entry file="file://$PROJECT_DIR$/src/controlador/escritores/EscritorTXT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="30" column="47" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/TrasLetraLetra.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#192#193#0" expanded="true" />
-            <element signature="e#219#220#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/IEscritura.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="85">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controlador/IValidable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/Algoritmo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servidor/ClienteHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-527">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/LineaResultado.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/ControladorGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/prueba.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/Controlador.java">
+    <entry file="file://$PROJECT_DIR$/src/vista/GUIBitacoras.java" />
+    <entry file="file://$PROJECT_DIR$/src/vista/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="98" column="5" lean-forward="true" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2576#2577#0" expanded="true" />
-            <element signature="e#2632#2633#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/Alfabeto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/AlfabetosDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/AlgoritmosDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/SustVigenere.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/FXRouter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="226" column="32" selection-start-line="226" selection-start-column="32" selection-end-line="226" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2496#2497#0" expanded="true" />
-            <element signature="e#2590#2591#0" expanded="true" />
-            <element signature="e#4050#4051#0" expanded="true" />
-            <element signature="e#4090#4091#0" expanded="true" />
-            <element signature="e#8683#8684#0" expanded="true" />
-            <element signature="e#8721#8722#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CSS/Estilo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/GUIAlfabetos.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="74" lean-forward="true" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/GUIAlfabetos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="158">
+          <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vista/GUIAlgoritmos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="52">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/GUIAlgoritmos.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/GUI.java">
+    <entry file="file://$PROJECT_DIR$/src/vista/GUIAlfabetos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="53" column="36" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="36" />
+        <state relative-caret-position="51">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/escritores/EscritorPDF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servidor/Servidor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/algoritmos/CodificacionBinaria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/IOServidorDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/Introspeccion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/IEscritura.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/Algoritmo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/AlfabetosDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/escritores/EscritorXML.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/LineaResultado.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/Resultado.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/estructuras/TablaAlfabetos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="13" column="52" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servidor/ClienteHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/Alfabeto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorAdministrador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#CargarIDsAlfabetos#0;class#ControladorCliente#0" />
+            <element signature="method#ObtenerSimbolosAlgabeto#0;class#ControladorCliente#0" />
+            <element signature="method#CargarFormatosEscritura#0;class#ControladorCliente#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vista/GUI.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="153" selection-start-line="10" selection-start-column="153" selection-end-line="10" selection-end-column="153" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/algoritmos/PalabraClave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="87" column="13" lean-forward="true" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Servidor</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>stripes-1.5.5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

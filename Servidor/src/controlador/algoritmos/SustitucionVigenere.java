@@ -70,13 +70,13 @@ public class SustitucionVigenere extends Algoritmo {
      * @param pLongitudFrase
      * @return
      */
-    private String ObtenerNuevaClave(String pClave, int pLongFrase) {
+    private String ObtenerNuevaClave(String pClave, int pLongitudFrase) {
         String nuevaClave = "";
 
-        if (pLongFrase > pClave.length()) {
+        if (pLongitudFrase > pClave.length()) {
             int contador = 0;
 
-            for (int i = 0; i < pLongFrase; i++) {
+            for (int i = 0; i < pLongitudFrase; i++) {
                 nuevaClave += pClave.charAt(contador);
                 contador++;
 

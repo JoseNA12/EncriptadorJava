@@ -22,10 +22,10 @@
          <children>
             <Button fx:id="btn_algoritmos" mnemonicParsing="false" onAction="#irPantallaAlfabetos" prefHeight="30.0" prefWidth="170.0" text="Alfabetos" />
             <Button fx:id="btn_mecanismos" mnemonicParsing="false" onAction="#irPantallaAlgoritmos" prefHeight="30.0" prefWidth="170.0" text="Algoritmos" GridPane.rowIndex="1" />
-            <Button fx:id="btn_bitacora" mnemonicParsing="false" prefHeight="30.0" prefWidth="170.0" text="Bitácora" GridPane.rowIndex="2" />
+            <Button fx:id="btn_bitacora" mnemonicParsing="false" onAction="#irPantallaBitacoras" prefHeight="30.0" prefWidth="170.0" text="Bitácora" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Label layoutX="135.0" layoutY="40.0" text="Mantenimiento">
+      <Label layoutX="135.0" layoutY="40.0" text="Mantenimiento" textFill="#bfbfbf">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Label>

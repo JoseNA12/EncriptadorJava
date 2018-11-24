@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="425.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.GUIAlgoritmos">
+   <children>
+      <Button fx:id="btn_atras" layoutX="46.0" layoutY="351.0" mnemonicParsing="false" onAction="#irPantallaInicial" text="Atras" />
+      <ListView fx:id="lview_algoritmos" layoutX="46.0" layoutY="67.0" prefHeight="265.0" prefWidth="294.0" />
+      <Label layoutX="46.0" layoutY="40.0" text="Algoritmos disponibles:" textFill="WHITE" />
+      <Button fx:id="btn_agregar" layoutX="262.0" layoutY="351.0" mnemonicParsing="false" text="Agregar" />
+      <Button fx:id="btn_eliminar" layoutX="163.0" layoutY="351.0" mnemonicParsing="false" text="Eliminar" />
+   </children>
+</AnchorPane>
